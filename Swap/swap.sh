@@ -16,8 +16,8 @@ green='\033[0;32m'
 yellow='\033[0;33m'
 plain='\033[0m'
 cur_dir=$(pwd)
-fstab=/etc/fstab
-sysctl=/etc/sysctl.conf
+fstab='/etc/fstab'
+sysctl='/etc/sysctl.conf'
 #Set var
 Info="[${green}Info${plain}]"
 Error="[${red}[Error]${plain}]"
@@ -67,17 +67,17 @@ Set_Swap(){
     chmod 0600 /swapfile
     swapon /swapfile
     free -m
-    if [ grep -q '/swapfile' "$fstab" ];then
+    if [ grep -q '/swapfile' ${fstab} ];then
         echo '/swapfile none swap sw 0 0' >> ${fstab}
     else
         echo 'fstab already setted'
     fi
-    if [ grep -q 'vm.swappiness' "$sysctl" ];then
+    if [ grep -q 'vm.swappiness' ${sysctl} ];then
         echo 'vm.swappiness=10' >> ${sysctl}
     else
         echo 'vm.swappiness already setted'
     fi
-    if [ grep -q 'vm.vfs_cache_pressure' "$sysctl" ];then
+    if [ grep -q 'vm.vfs_cache_pressure' ${sysctl} ];then
         echo 'vm.vfs_cache_pressure=50' >> ${sysctl}
     else
         echo 'vm.vfs_cache_pressure already setted'
@@ -112,15 +112,15 @@ Remove_Swap(){
         apt-get install swapon
     fi
     swapoff /swapfile
-    if ! [ grep -q '/swapfile' "$fstab" ];then
+    if ! [ grep -q '/swapfile' ${fstab} ];then
         sed '\|^/swapfile|d' ${fstab}
         echo 'fstab-swap deleted'
     fi
-    if ! [ grep -q 'vm.swappiness' "$sysctl" ];then
+    if ! [ grep -q 'vm.swappiness' ${sysctl} ];then
         sed '\|^vm.swappiness|d' ${sysctl}
         echo 'vm.swappiness deleted'
     fi
-    if ! [ grep -q 'vm.vfs_cache_pressure' "$sysctl" ];then
+    if ! [ grep -q 'vm.vfs_cache_pressure' ${sysctl} ];then
         sed '\|^vm.vfs_cache_pressure|d' ${sysctl}
         echo 'vm.vfs_cache_pressure deleted'
     fi
