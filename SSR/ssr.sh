@@ -5,12 +5,12 @@ export PATH
 #=================================================
 #   System Required: CentOS 6+/Debian 6+/Ubuntu 14.04+
 #   Description: Install the ShadowsocksR server
-#   Version: 1.1.0
+#   Version: 1.1.1
 #   Author: carry0987
 #   Web: https://github.com/carry0987
 #=================================================
 
-sh_ver='1.1.0'
+sh_ver='1.1.1'
 ipinfo_token_config='/usr/local/shadowsocksr/ipinfo-token.conf'
 filepath=$(cd "$(dirname "$0")"; pwd)
 file=$(echo -e "${filepath}"|awk -F "$0" '{print $1}')
@@ -186,7 +186,7 @@ View_User(){
     Get_IP
     Get_User
     now_mode=$(cat "${config_user_file}"|grep '"port_password"')
-    [[ -z ${protocol_param} ]] && protocol_param="0(Unlimited)"
+    [[ -z ${protocol_param} ]] && protocol_param="0 (Unlimited)"
     if [[ -z "${now_mode}" ]]; then
         ss_ssr_determine
         clear && echo "===================================================" && echo
@@ -1329,7 +1329,7 @@ echo -e "  ShadowsocksR Easy Setup ${Red_font_prefix}[v${sh_ver}]${Font_color_su
   ${Green_font_prefix}1.${Font_color_suffix} Install ShadowsocksR
   ${Green_font_prefix}2.${Font_color_suffix} Update ShadowsocksR
   ${Green_font_prefix}3.${Font_color_suffix} Uninstall ShadowsocksR
-  ${Green_font_prefix}4.${Font_color_suffix} Install libsodium(chacha20)
+  ${Green_font_prefix}4.${Font_color_suffix} Install libsodium (chacha20)
 ————————————
   ${Green_font_prefix}5.${Font_color_suffix} Check Account Info
   ${Green_font_prefix}6.${Font_color_suffix} Display Connection Info
