@@ -38,10 +38,10 @@ Update_Script(){
 display_status(){
     #Check if swap file exists
     if [[ ${current_swap} == "0" ]]; then
-        echo "${Info} Current Status: ${red}Swap Disabled${plain}"
+        echo -e "${Info} Current Status: ${red}Swap Disabled${plain}"
     else
-        echo "${Info} Current Status: ${green}Swap Enabled${plain}"
-        echo "${Info} Swap Size: ${current_swap} MB"
+        echo -e "${Info} Current Status: ${green}Swap Enabled${plain}"
+        echo -e "${Info} Swap Size: ${current_swap} MB"
     fi 
 }
 
@@ -88,7 +88,7 @@ Set_Swap(){
 Modify_Swap(){
     #Check Swapon
     if ! [ -x "$(command -v swapon)" ]; then
-        echo 'swapon is not installed, start downloading...' >&2
+        echo -e 'swapon is not installed, start downloading...' >&2
         apt-get update
         apt-get dist-upgrade
         apt-get install swapon
@@ -106,7 +106,7 @@ View_Swap_Status(){
 Remove_Swap(){
     #Check Swapon
     if ! [ -x "$(command -v swapon)" ]; then
-        echo 'swapon is not installed, start downloading...' >&2
+        echo -e 'swapon is not installed, start downloading...' >&2
         apt-get update
         apt-get dist-upgrade
         apt-get install swapon
@@ -124,7 +124,7 @@ Remove_Swap(){
         sed '\|^vm.vfs_cache_pressure|d' ${sysctl}
         echo 'vm.vfs_cache_pressure deleted'
     fi
-    echo "${Info} You should reboot system by yourself"
+    echo -e "${Info} You should reboot system by yourself"
 }
 
 clear
