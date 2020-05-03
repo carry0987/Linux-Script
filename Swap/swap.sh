@@ -19,8 +19,8 @@ cur_dir=$(pwd)
 fstab=/etc/fstab
 sysctl=/etc/sysctl.conf
 #Set var
-Info="${green}[Info]${plain}"
-Error="${red}[Error]${plain}"
+Info="[${green}Info${plain}]"
+Error="[${red}[Error]${plain}]"
 
 [[ $EUID -ne 0 ]] && echo -e "${Error} This script must be run as root!" && exit 1
 
