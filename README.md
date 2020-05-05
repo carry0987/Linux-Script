@@ -2,7 +2,6 @@
 Store linux script
 
 ## Script List
-
 * [***Proxy***](#Proxy)
   * [ssr.sh](#ssrsh)
 * [***Server***](#Server)
@@ -12,7 +11,7 @@ Store linux script
 
 ## Proxy
 ### ssr.sh
-- Description: ShadowsocksR Easy Setup Tool, 支持單端口/多端口切換和管理
+- Description: ShadowsocksR Easy Setup Tool
 - Support OS: CentOS 6+ / Debian 6+ / Ubuntu 14+
 
 #### Feature:
