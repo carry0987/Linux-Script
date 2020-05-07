@@ -5,12 +5,12 @@ export PATH
 #=================================================
 #   System Required: CentOS 6+/Debian 6+/Ubuntu 14.04+
 #   Description: Install the ShadowsocksR server
-#   Version: 1.1.1
+#   Version: 1.1.2
 #   Author: carry0987
 #   Web: https://github.com/carry0987
 #=================================================
 
-sh_ver='1.1.1'
+sh_ver='1.1.2'
 ipinfo_token_config='/usr/local/shadowsocksr/ipinfo-token.conf'
 filepath=$(cd "$(dirname "$0")"; pwd)
 file=$(echo -e "${filepath}"|awk -F "$0" '{print $1}')
@@ -190,7 +190,7 @@ View_User(){
     if [[ -z "${now_mode}" ]]; then
         ss_ssr_determine
         clear && echo "===================================================" && echo
-        echo -e " ShadowsocksR Config Info：" && echo
+        echo -e " ShadowsocksR Config Info : " && echo
         echo -e " IP\t     : ${Green_font_prefix}${ip}${Font_color_suffix}"
         echo -e " Port\t    : ${Green_font_prefix}${port}${Font_color_suffix}"
         echo -e " Password\t    : ${Green_font_prefix}${password}${Font_color_suffix}"
@@ -209,7 +209,7 @@ View_User(){
         user_total=`${jq_file} '.port_password' ${config_user_file} | sed '$d' | sed "1d" | wc -l`
         [[ ${user_total} = "0" ]] && echo -e "${Error} Cannot found multiple port users, Please check !" && exit 1
         clear && echo "===================================================" && echo
-        echo -e " ShadowsocksR Config Info：" && echo
+        echo -e " ShadowsocksR Config Info : " && echo
         echo -e " IP\t     : ${Green_font_prefix}${ip}${Font_color_suffix}"
         echo -e " Encryption Method\t    : ${Green_font_prefix}${method}${Font_color_suffix}"
         echo -e " Protocol\t    : ${Red_font_prefix}${protocol}${Font_color_suffix}"
@@ -1246,9 +1246,9 @@ Other_functions(){
     echo && echo -e "  What do you want to do?
     
   ${Green_font_prefix}1.${Font_color_suffix} Set BBR
-  Warning： BBR does not support OpenVZ !
+  Warning : BBR does not support OpenVZ !
   ${Green_font_prefix}2.${Font_color_suffix} Switch SSR log output mode
-  ——Info : SSR only outputs error logs by default, it can be switched to output detailed access logs" && echo
+  Info : SSR only outputs error logs by default, it can be switched to output detailed access logs" && echo
     read -e -p "(Default: Cancel):" other_num
     [[ -z "${other_num}" ]] && echo "Canceled..." && exit 1
     if [[ ${other_num} == "1" ]]; then
@@ -1346,7 +1346,7 @@ echo -e "  ShadowsocksR Easy Setup ${Red_font_prefix}[v${sh_ver}]${Font_color_su
  ${Green_font_prefix}15.${Font_color_suffix} Update Script
  "
 menu_status
-echo && read -e -p "Please enter the number [1-15]：" num
+echo && read -e -p "Please enter the number [1-15] : " num
 case "$num" in
     1)
     Install_SSR
