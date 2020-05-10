@@ -25,7 +25,7 @@ su root
 
 #### Installation:
 ``` bash
-wget -N --no-check-certificate https://raw.githubusercontent.com/carry0987/Linux-Script/master/GCP/gcp-setup.sh && chmod +x gcp-setup.sh && bash gcp-setup.sh
+wget -N --no-cache --no-check-certificate https://raw.githubusercontent.com/carry0987/Linux-Script/master/GCP/gcp-setup.sh && chmod +x gcp-setup.sh && bash gcp-setup.sh
 ```
 
 ### gcp-pkg.sh
@@ -34,7 +34,7 @@ wget -N --no-check-certificate https://raw.githubusercontent.com/carry0987/Linux
 
 #### Installation:
 ``` bash
-wget -N --no-check-certificate https://raw.githubusercontent.com/carry0987/Linux-Script/master/GCP/gcp-pkg.sh && chmod +x gcp-pkg.sh && bash gcp-pkg.sh
+wget -N --no-cache --no-check-certificate https://raw.githubusercontent.com/carry0987/Linux-Script/master/GCP/gcp-pkg.sh && chmod +x gcp-pkg.sh && bash gcp-pkg.sh
 ```
 
 ---
@@ -56,7 +56,7 @@ If you want to get location of IP, you should get the token from [IP-Info](https
 
 #### Installation:
 ``` bash
-wget -N --no-check-certificate https://raw.githubusercontent.com/carry0987/Linux-Script/master/SSR/ssr.sh && chmod +x ssr.sh && bash ssr.sh
+wget -N --no-cache --no-check-certificate https://raw.githubusercontent.com/carry0987/Linux-Script/master/SSR/ssr.sh && chmod +x ssr.sh && bash ssr.sh
 ```
 
 ---
@@ -67,7 +67,7 @@ wget -N --no-check-certificate https://raw.githubusercontent.com/carry0987/Linux
 
 #### Installation:
 ``` bash
-wget -N --no-check-certificate https://raw.githubusercontent.com/carry0987/Linux-Script/master/BBR/bbr.sh && chmod +x bbr.sh && bash bbr.sh
+wget -N --no-cache --no-check-certificate https://raw.githubusercontent.com/carry0987/Linux-Script/master/BBR/bbr.sh && chmod +x bbr.sh && bash bbr.sh
 ```
 
 ---
@@ -78,5 +78,5 @@ wget -N --no-check-certificate https://raw.githubusercontent.com/carry0987/Linux
 
 #### Installation:
 ``` bash
-wget -N --no-check-certificate https://raw.githubusercontent.com/carry0987/Linux-Script/master/Swap/swap.sh && chmod +x swap.sh && bash swap.sh
+wget -N --no-cache --no-check-certificate https://raw.githubusercontent.com/carry0987/Linux-Script/master/Swap/swap.sh && chmod +x swap.sh && bash swap.sh
 ```
