@@ -5,12 +5,12 @@ export PATH
 #=================================================
 #   System Required: CentOS 6+/Debian 6+/Ubuntu 14.04+
 #   Description: Add Swap And Tuning
-#   Version: 1.0.3
+#   Version: 1.0.4
 #   Author: carry0987
 #   Web: https://github.com/carry0987
 #=================================================
 
-sh_ver='1.0.3'
+sh_ver='1.0.4'
 red='\033[0;31m'
 green='\033[0;32m'
 yellow='\033[0;33m'
@@ -73,7 +73,7 @@ Set_Swap(){
         echo 'fstab already setted'
     fi
     if ! [ "$(grep -q 'vm.swappiness' ${sysctl})" ];then
-        echo 'vm.swappiness=10' >> ${sysctl}
+        echo 'vm.swappiness=50' >> ${sysctl}
     else
         echo 'vm.swappiness already setted'
     fi

@@ -200,7 +200,7 @@ centosversion() {
 }
 
 check_bbr_status() {
-    local param=$(sysctl net.ipv4.tcp_congestion_control | awk '{print $3}')
+    local param=$(sudo sysctl net.ipv4.tcp_congestion_control | awk '{print $3}')
     if [[ x"${param}" == x"bbr" ]]; then
         return 0
     else
@@ -273,7 +273,7 @@ reboot_os() {
     if [[ ${is_reboot} == "y" || ${is_reboot} == "Y" ]]; then
         reboot
     else
-        echo -e "${green}Info:${plain} Reboot has been canceled..."
+        echo -e "[${green}Info${plain}] Reboot has been canceled..."
         exit 0
     fi
 }
@@ -282,15 +282,15 @@ install_bbr() {
     check_bbr_status
     if [ $? -eq 0 ]; then
         echo
-        echo -e "${green}Info:${plain} TCP BBR has already been installed. nothing to do..."
+        echo -e "[${green}Info${plain}] TCP BBR has already been installed. nothing to do..."
         exit 0
     fi
     check_kernel_version
     if [ $? -eq 0 ]; then
         echo
-        echo -e "${green}Info:${plain} Your kernel version is greater than 4.9, directly setting TCP BBR..."
+        echo -e "[${green}Info${plain}] Your kernel version is greater than 4.9, directly setting TCP BBR..."
         sysctl_config
-        echo -e "${green}Info:${plain} Setting TCP BBR completed..."
+        echo -e "[${green}Info${plain}] Setting TCP BBR completed..."
         exit 0
     fi
 
@@ -377,7 +377,7 @@ echo " Kernel  : $kern"
 echo "----------------------------------------"
 echo " Auto install latest kernel for TCP BBR"
 echo
-echo " URL: https://github.com/carry0987"
+echo " URL: https://github.com/carry0987/Linux-Script"
 echo "----------------------------------------"
 echo
 echo "Press any key to start...or Press Ctrl+C to cancel"
