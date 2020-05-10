@@ -8,6 +8,9 @@ su root
 ```
 
 ## Script List
+* [***GCP***](#GCP)
+  * [gcp-setup.sh](#gcp-setupsh)
+  * [gcp-pkg.sh](#gcp-pkgsh)
 * [***Proxy***](#Proxy)
   * [ssr.sh](#ssrsh)
 * [***Server***](#Server)
@@ -15,6 +18,26 @@ su root
 * [***System***](#System)
   * [swap.sh](#swapsh)
 
+## GCP
+### gcp-setup.sh
+- Description: Run this script to setup gcp environment
+- Support OS: Debian 6+ / Ubuntu 14+
+
+#### Installation:
+``` bash
+wget -N --no-check-certificate https://raw.githubusercontent.com/carry0987/Linux-Script/master/GCP/gcp-setup.sh && chmod +x gcp-setup.sh && bash gcp-setup.sh
+```
+
+### gcp-pkg.sh
+- Description: Install main packages for gcp
+- Support OS: Debian 6+ / Ubuntu 14+
+
+#### Installation:
+``` bash
+wget -N --no-check-certificate https://raw.githubusercontent.com/carry0987/Linux-Script/master/GCP/gcp-pkg.sh && chmod +x gcp-pkg.sh && bash gcp-pkg.sh
+```
+
+---
 ## Proxy
 ### ssr.sh
 - Description: ShadowsocksR Easy Setup Tool
