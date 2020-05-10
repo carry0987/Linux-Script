@@ -5,12 +5,12 @@ export PATH
 #=================================================
 #   System Required: CentOS 6+/Debian 6+/Ubuntu 14.04+
 #   Description: Add Swap And Tuning
-#   Version: 1.0.1
+#   Version: 1.0.2
 #   Author: carry0987
 #   Web: https://github.com/carry0987
 #=================================================
 
-sh_ver='1.0.1'
+sh_ver='1.0.2'
 red='\033[0;31m'
 green='\033[0;32m'
 yellow='\033[0;33m'
@@ -67,17 +67,17 @@ Set_Swap(){
     chmod 0600 /swapfile
     swapon /swapfile
     free -m
-    if [[ grep -q '/swapfile' ${fstab} ]];then
+    if [ "$(grep -q '/swapfile' ${fstab})" ];then
         echo '/swapfile none swap sw 0 0' >> ${fstab}
     else
         echo 'fstab already setted'
     fi
-    if [[ grep -q 'vm.swappiness' ${sysctl} ]];then
+    if [ "$(grep -q 'vm.swappiness' ${sysctl})" ];then
         echo 'vm.swappiness=10' >> ${sysctl}
     else
         echo 'vm.swappiness already setted'
     fi
-    if [[ grep -q 'vm.vfs_cache_pressure' ${sysctl} ]];then
+    if [ "$(grep -q 'vm.vfs_cache_pressure' ${sysctl})" ];then
         echo 'vm.vfs_cache_pressure=50' >> ${sysctl}
     else
         echo 'vm.vfs_cache_pressure already setted'
