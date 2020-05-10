@@ -5,12 +5,12 @@ export PATH
 #=================================================
 #   System Required: CentOS 6+/Debian 6+/Ubuntu 14.04+
 #   Description: Add Swap And Tuning
-#   Version: 1.0.5
+#   Version: 1.0.6
 #   Author: carry0987
 #   Web: https://github.com/carry0987
 #=================================================
 
-sh_ver='1.0.5'
+sh_ver='1.0.6'
 red='\033[0;31m'
 green='\033[0;32m'
 yellow='\033[0;33m'
@@ -19,6 +19,7 @@ cur_dir=$(pwd)
 fstab='/etc/fstab'
 sysctl='/etc/sysctl.conf'
 #Set var
+Green_font_prefix="\033[32m" && Red_font_prefix="\033[31m" && Green_background_prefix="\033[42;37m" && Red_background_prefix="\033[41;37m" && Font_color_suffix="\033[0m"
 Info="[${green}Info${plain}]"
 Error="[${red}[Error]${plain}]"
 
