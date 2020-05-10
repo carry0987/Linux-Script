@@ -5,12 +5,12 @@ export PATH
 #=================================================
 #   System Required: CentOS 6+/Debian 6+/Ubuntu 14.04+
 #   Description: Add Swap And Tuning
-#   Version: 1.0.4
+#   Version: 1.0.5
 #   Author: carry0987
 #   Web: https://github.com/carry0987
 #=================================================
 
-sh_ver='1.0.4'
+sh_ver='1.0.5'
 red='\033[0;31m'
 green='\033[0;32m'
 yellow='\033[0;33m'
@@ -128,6 +128,9 @@ Remove_Swap(){
 }
 
 clear
+echo -e "  Swap Easy Setup ${Red_font_prefix}[v${sh_ver}]${Font_color_suffix}
+  ---- carry0987 | github.com/carry0987/Linux-Script/ ----
+  "
 echo '1) Set Swap'
 echo '2) Modify Swap'
 echo '3) Update script'
