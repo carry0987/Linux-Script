@@ -1,6 +1,12 @@
 # Linux-Script
 Store linux script
 
+## Info
+Please run the script with root user, to change to root user, use the below command
+```
+su root
+```
+
 ## Script List
 * [***Proxy***](#Proxy)
   * [ssr.sh](#ssrsh)
