@@ -668,7 +668,7 @@ Installation_dependency(){
 Install_SSR(){
     check_root
     [[ -e ${config_user_file} ]] && echo -e "${Error} SSR config file exists, Please check (If there is an old version, please uninstall first) !" && exit 1
-    [[ -e ${ssr_folder} ]] && echo -e "${Error} The folder of SSR is exists, Please check (If there is an old version, please uninstall first) !" && exit 1
+    [[ -e ${ssr_folder} ]] && echo -e "${Error} The folder of SSR exists, Please check (If there is an old version, please uninstall first) !" && exit 1
     echo -e "${Info} Start setting SSR..."
     Set_config_all
     echo -e "${Info} Start install SSR dependency.."
@@ -1192,7 +1192,7 @@ Restart_SSR(){
 }
 View_Log(){
     SSR_installation_status
-    [[ ! -e ${ssr_log_file} ]] && echo -e "${Error} ShadowsocksR log file is not exists !" && exit 1
+    [[ ! -e ${ssr_log_file} ]] && echo -e "${Error} ShadowsocksR log file doesn't exist !" && exit 1
     echo && echo -e "${Tip} Press ${Red_font_prefix}Ctrl+C${Font_color_suffix} to quit" && echo -e "Use ${Red_font_prefix}cat ${ssr_log_file}${Font_color_suffix} command to view the full log content" && echo
     tail -f ${ssr_log_file}
 }
