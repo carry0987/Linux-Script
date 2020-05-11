@@ -8,6 +8,9 @@ su root
 ```
 
 ## Script List
+* [***Tools***](#Tools)
+  * [tools.sh](#toolssh)
+  * [zip.sh](#zipsh)
 * [***GCP***](#GCP)
   * [gcp-setup.sh](#gcp-setupsh)
   * [gcp-pkg.sh](#gcp-pkgsh)
@@ -18,6 +21,17 @@ su root
 * [***System***](#System)
   * [swap.sh](#swapsh)
 
+## Tools
+### tools.sh
+- Description: Regular Command
+- Support OS: Debian 6+ / Ubuntu 14+
+
+#### Installation:
+``` bash
+wget -N --no-cache --no-check-certificate https://raw.githubusercontent.com/carry0987/Linux-Script/master/Tools/tools.sh && chmod +x tools.sh && bash tools.sh
+```
+
+---
 ## GCP
 ### gcp-setup.sh
 - Description: Run this script to setup gcp environment
