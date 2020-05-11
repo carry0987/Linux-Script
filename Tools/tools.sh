@@ -3,7 +3,7 @@
 #=================================================
 #   System Required: CentOS 6+/Debian 6+/Ubuntu 14.04+
 #   Description: Regular Command
-#   Version: 1.0.0
+#   Version: 1.0.1
 #   Author: carry0987
 #   Web: https://github.com/carry0987
 #=================================================
@@ -11,7 +11,7 @@
 set -e
 
 #Set variable
-sh_ver='1.0.0'
+sh_ver='1.0.1'
 red='\033[0;31m'
 green='\033[0;32m'
 yellow='\033[0;33m'
@@ -37,9 +37,9 @@ if [[ -n $1 && $1 =~ ^[0-9]+$ ]]; then
 fi
 
 if [[ ! -n $tool ]]; then
-    echo -e "  Regular Command ${Red_font_prefix}[v${sh_ver}]${Font_color_suffix}
-      ---- carry0987 | github.com/carry0987/Linux-Script/ ----
-      "
+    echo -e "Regular Command ${Red_font_prefix}[v${sh_ver}]${Font_color_suffix}
+---- carry0987 | github.com/carry0987/Linux-Script/ ----
+    "
     echo '1) Download files (link)'
     echo '2) Download files (list)'
     echo '3) Count Files'
