@@ -14,9 +14,9 @@ plain='\033[0m'
 
 cur_dir=$(pwd)
 
-[[ $EUID -ne 0 ]] && echo -e "${red}Error:${plain} This script must be run as root!" && exit 1
+[[ $EUID -ne 0 ]] && echo -e "[${red}Error${plain}] This script must be run as root!" && exit 1
 
-[[ -d "/proc/vz" ]] && echo -e "${red}Error:${plain} Your VPS is based on OpenVZ, which is not supported." && exit 1
+[[ -d "/proc/vz" ]] && echo -e "[${red}Error${plain}]Your VPS is based on OpenVZ, which is not supported." && exit 1
 
 if [ -f /etc/redhat-release ]; then
     release="centos"
@@ -125,7 +125,7 @@ version_ge(){
 get_latest_version() {
     latest_version=($(wget -qO- https://kernel.ubuntu.com/~kernel-ppa/mainline/ | awk -F'\"v' '/v[4-9]./{print $2}' | cut -d/ -f1 | grep -v - | sort -V))
 
-    [ ${#latest_version[@]} -eq 0 ] && echo -e "${red}Error:${plain} Get latest kernel version failed." && exit 1
+    [ ${#latest_version[@]} -eq 0 ] && echo -e "[${red}Error${plain}] Get latest kernel version failed." && exit 1
 
     kernel_arr=()
     for i in ${latest_version[@]}; do
@@ -152,7 +152,7 @@ get_latest_version() {
         deb_kernel_modules_name="linux-modules-${kernel}-i386.deb"
     fi
 
-    [ -z ${deb_name} ] && echo -e "${red}Error:${plain} Getting Linux kernel binary package name failed, maybe kernel build failed. Please choose other one and try again." && exit 1
+    [ -z ${deb_name} ] && echo -e "[${red}Error${plain}] Getting Linux kernel binary package name failed, maybe kernel build failed. Please choose other one and try again." && exit 1
 }
 
 get_opsy() {
@@ -220,7 +220,7 @@ check_kernel_version() {
 install_elrepo() {
 
     if centosversion 5; then
-        echo -e "${red}Error:${plain} not supported CentOS 5."
+        echo -e "[${red}Error${plain}] not supported CentOS 5."
         exit 1
     fi
 
@@ -233,7 +233,7 @@ install_elrepo() {
     fi
 
     if [ ! -f /etc/yum.repos.d/elrepo.repo ]; then
-        echo -e "${red}Error:${plain} Install elrepo failed, please check it."
+        echo -e "[${red}Error${plain}] Install elrepo failed, please check it."
         exit 1
     fi
 }
@@ -250,13 +250,13 @@ install_config() {
     if [[ x"${release}" == x"centos" ]]; then
         if centosversion 6; then
             if [ ! -f "/boot/grub/grub.conf" ]; then
-                echo -e "${red}Error:${plain} /boot/grub/grub.conf not found, please check it."
+                echo -e "[${red}Error${plain}] /boot/grub/grub.conf not found, please check it."
                 exit 1
             fi
             sed -i 's/^default=.*/default=0/g' /boot/grub/grub.conf
         elif centosversion 7; then
             if [ ! -f "/boot/grub2/grub.cfg" ]; then
-                echo -e "${red}Error:${plain} /boot/grub2/grub.cfg not found, please check it."
+                echo -e "[${red}Error${plain}] /boot/grub2/grub.cfg not found, please check it."
                 exit 1
             fi
             grub2-set-default 0
@@ -322,20 +322,20 @@ install_bbr() {
             if [ -f "${rpm_kernel_name}" ]; then
                 rpm -ivh ${rpm_kernel_name}
             else
-                echo -e "${red}Error:${plain} Download ${rpm_kernel_name} failed, please check it."
+                echo -e "[${red}Error${plain}] Download ${rpm_kernel_name} failed, please check it."
                 exit 1
             fi
             if [ -f "${rpm_kernel_devel_name}" ]; then
                 rpm -ivh ${rpm_kernel_devel_name}
             else
-                echo -e "${red}Error:${plain} Download ${rpm_kernel_devel_name} failed, please check it."
+                echo -e "[${red}Error${plain}] Download ${rpm_kernel_devel_name} failed, please check it."
                 exit 1
             fi
             rm -f ${rpm_kernel_name} ${rpm_kernel_devel_name}
         elif centosversion 7; then
             yum -y install kernel-ml kernel-ml-devel
             if [ $? -ne 0 ]; then
-                echo -e "${red}Error:${plain} Install latest kernel failed, please check it."
+                echo -e "[${red}Error${plain}] Install latest kernel failed, please check it."
                 exit 1
             fi
         fi
@@ -346,20 +346,20 @@ install_bbr() {
         if [ -n ${modules_deb_name} ]; then
             wget -c -t3 -T60 -O ${deb_kernel_modules_name} ${deb_kernel_modules_url}
             if [ $? -ne 0 ]; then
-                echo -e "${red}Error:${plain} Download ${deb_kernel_modules_name} failed, please check it."
+                echo -e "[${red}Error${plain}] Download ${deb_kernel_modules_name} failed, please check it."
                 exit 1
             fi
         fi
         wget -c -t3 -T60 -O ${deb_kernel_name} ${deb_kernel_url}
         if [ $? -ne 0 ]; then
-            echo -e "${red}Error:${plain} Download ${deb_kernel_name} failed, please check it."
+            echo -e "[${red}Error${plain}] Download ${deb_kernel_name} failed, please check it."
             exit 1
         fi
         [ -f ${deb_kernel_modules_name} ] && dpkg -i ${deb_kernel_modules_name}
         dpkg -i ${deb_kernel_name}
         rm -f ${deb_kernel_name} ${deb_kernel_modules_name}
     else
-        echo -e "${red}Error:${plain} OS is not be supported, please change to CentOS/Debian/Ubuntu and try again."
+        echo -e "[${red}Error${plain}] OS is not be supported, please change to CentOS/Debian/Ubuntu and try again."
         exit 1
     fi
 

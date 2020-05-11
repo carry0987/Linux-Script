@@ -21,7 +21,7 @@ sysctl='/etc/sysctl.conf'
 #Set var
 Green_font_prefix="\033[32m" && Red_font_prefix="\033[31m" && Green_background_prefix="\033[42;37m" && Red_background_prefix="\033[41;37m" && Font_color_suffix="\033[0m"
 Info="[${green}Info${plain}]"
-Error="[${red}[Error]${plain}]"
+Error="[${red}Error${plain}]"
 
 [[ $EUID -ne 0 ]] && echo -e "${Error} This script must be run as root!" && exit 1
 
