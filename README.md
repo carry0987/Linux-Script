@@ -10,7 +10,6 @@ su root
 ## Script List
 * [***Tools***](#Tools)
   * [tools.sh](#toolssh)
-  * [zip.sh](#zipsh)
 * [***GCP***](#GCP)
   * [gcp-setup.sh](#gcp-setupsh)
   * [gcp-pkg.sh](#gcp-pkgsh)
