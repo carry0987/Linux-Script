@@ -1,5 +1,5 @@
 # Linux-Script
-Store linux script
+Store Linux Script
 
 ## Info
 Please run the script with root user, to change to root user, use the below command
