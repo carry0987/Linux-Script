@@ -74,7 +74,7 @@ Set_Swap(){
         echo 'fstab already setted'
     fi
     if ! [ "$(grep -q 'vm.swappiness' ${sysctl})" ];then
-        echo 'vm.swappiness=50' >> ${sysctl}
+        echo 'vm.swappiness=20' >> ${sysctl}
     else
         echo 'vm.swappiness already setted'
     fi
