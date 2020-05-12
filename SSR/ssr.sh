@@ -1209,7 +1209,7 @@ Configure_BBR(){
 echo -e "${Green_font_prefix} [Please note before installation] ${Font_color_suffix}
 1. Install BBR would replace the kernel, there is a risk of replacement failure (can not boot after restart)
 2. This script only supports kernel replacement for Debian/Ubuntu systems, OpenVZ and Docker are not supported
-3. During Debian kernel replacement, it will prompt [Do you want to terminate the uninstall kernel], please select ${Green_font_prefix} NO ${Font_color_suffix}" && echo
+3. During Debian kernel replacement, it will prompt [Do you want to terminate the uninstall kernel], please select ${Green_font_prefix}NO ${Font_color_suffix}" && echo
     read -e -p "(Default: Cancel):" bbr_num
     [[ -z "${bbr_num}" ]] && echo "Canceled..." && exit 1
     if [[ ${bbr_num} == "1" ]]; then
