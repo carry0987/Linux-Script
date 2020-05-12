@@ -244,6 +244,9 @@ sysctl_config() {
     echo "net.core.default_qdisc = fq" >> /etc/sysctl.conf
     echo "net.ipv4.tcp_congestion_control = bbr" >> /etc/sysctl.conf
     sysctl -p >/dev/null 2>&1
+    echo '### BBR Status ###'
+    lsmod | grep bbr
+    echo '##################'
 }
 
 install_config() {
@@ -290,8 +293,15 @@ install_bbr() {
         echo
         echo -e "[${green}Info${plain}] Your kernel version is greater than 4.9, directly setting TCP BBR..."
         sysctl_config
-        echo -e "[${green}Info${plain}] Setting TCP BBR completed..."
-        exit 0
+        echo -e "[${green}Info${plain}] Setting TCP BBR completed"
+        secs=$((5))
+        while [ $secs -gt 0 ]
+        do
+            echo -ne 'Wait '"$secs\033[0K"' seconds to reboot'"\r"
+            sleep 1
+            : $((secs--))
+        done
+        sudo reboot
     fi
 
     if [[ x"${release}" == x"centos" ]]; then
