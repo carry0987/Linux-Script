@@ -918,7 +918,7 @@ get_IP_address(){
                 echo -e 'JQ Parser is not installed, start downloading...' >&2
                 apt-get update
                 apt-get dist-upgrade
-                apt-get install jq
+                apt-get install -y jq
             fi
             if [[ -f ${ipinfo_token_config} ]]; then
                 ipinfo_token=$(head -n 1 ${ipinfo_token_config})
