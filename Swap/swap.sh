@@ -5,12 +5,12 @@ export PATH
 #=================================================
 #   System Required: CentOS 6+/Debian 6+/Ubuntu 14.04+
 #   Description: Add Swap And Tuning
-#   Version: 1.0.8
+#   Version: 1.1.0
 #   Author: carry0987
 #   Web: https://github.com/carry0987
 #=================================================
 
-sh_ver='1.0.8'
+sh_ver='1.1.0'
 red='\033[0;31m'
 green='\033[0;32m'
 yellow='\033[0;33m'
@@ -114,15 +114,15 @@ Remove_Swap(){
     fi
     swapoff /swapfile
     if [ "$(grep -q '/swapfile' ${fstab})" ]; then
-        sed '\|^/swapfile|d' ${fstab}
+        sed -i '\|^/swapfile|d' ${fstab}
         echo 'fstab-swap deleted'
     fi
     if [ "$(grep -q 'vm.swappiness' ${sysctl})" ]; then
-        sed '\|^vm.swappiness|d' ${sysctl}
+        sed -i '\|^vm.swappiness|d' ${sysctl}
         echo 'vm.swappiness deleted'
     fi
     if [ "$(grep -q 'vm.vfs_cache_pressure' ${sysctl})" ]; then
-        sed '\|^vm.vfs_cache_pressure|d' ${sysctl}
+        sed -i '\|^vm.vfs_cache_pressure|d' ${sysctl}
         echo 'vm.vfs_cache_pressure deleted'
     fi
     echo -e "${Info} You should reboot system by yourself"
