@@ -218,7 +218,6 @@ check_kernel_version() {
 }
 
 install_elrepo() {
-
     if centosversion 5; then
         echo -e "[${red}Error${plain}] not supported CentOS 5."
         exit 1
