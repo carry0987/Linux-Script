@@ -117,7 +117,7 @@ case $tool in
         check_bbr_status
         if [ $? -eq 0 ]; then
             echo
-            echo -e "[${green}Info${plain}] TCP BBR has already been installed. nothing to do..."
+            echo -e "[${green}Info${plain}] TCP BBR has already been installed"
             exit 0
         else
             sed -i '/net.core.default_qdisc/d' /etc/sysctl.conf
