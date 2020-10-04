@@ -5,12 +5,12 @@ export PATH
 #=================================================
 #   System Required: CentOS 6+/Debian 6+/Ubuntu 14.04+
 #   Description: Install the ShadowsocksR server
-#   Version: 1.1.3
+#   Version: 1.1.4
 #   Author: carry0987
 #   Web: https://github.com/carry0987
 #=================================================
 
-sh_ver='1.1.3'
+sh_ver='1.1.4'
 ipinfo_token_config='/usr/local/shadowsocksr/ipinfo-token.conf'
 filepath=$(cd "$(dirname "$0")"; pwd)
 file=$(echo -e "${filepath}"|awk -F "$0" '{print $1}')
@@ -1347,7 +1347,7 @@ echo -e "  ShadowsocksR Easy Setup ${Red_font_prefix}[v${sh_ver}]${Font_color_su
  ${Green_font_prefix}16.${Font_color_suffix} Exit
  "
 menu_status
-echo && read -e -p "Please enter the number [1-15] : " num
+echo && read -e -p "Please enter the number [1-16] : " num
 case "$num" in
     1)
     Install_SSR
@@ -1399,7 +1399,7 @@ case "$num" in
     exit 0
     ;;
     *)
-    echo -e "${Error} Please enter correct number [1-15]"
+    echo -e "${Error} Please enter correct number [1-16]"
     exit 0
     ;;
 esac
