@@ -110,7 +110,6 @@ case $tool in
         if [ $check_user == 'root' ]; then
             curl -O https://raw.githubusercontent.com/carry0987/Linux-Script/master/BBR/bbr.sh && chmod +x bbr.sh && bash bbr.sh
         else
-            echo '######################'
             echo -e "${Error} This script must be run as root!" && exit 1
         fi
         ;;
