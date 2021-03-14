@@ -3,7 +3,7 @@
 #=================================================
 #   System Required: CentOS 6+/Debian 6+/Ubuntu 14.04+
 #   Description: Regular Command
-#   Version: 1.0.2
+#   Version: 1.0.3
 #   Author: carry0987
 #   Web: https://github.com/carry0987
 #=================================================
@@ -11,7 +11,7 @@
 set -e
 
 #Set variable
-sh_ver='1.0.2'
+sh_ver='1.0.3'
 red='\033[0;31m'
 green='\033[0;32m'
 yellow='\033[0;33m'
@@ -106,32 +106,12 @@ case $tool in
         /etc/init.d/cron status
         ;;
     6)
-        check_bbr_status() {
-            local param=$(sudo sysctl net.ipv4.tcp_congestion_control | awk '{print $3}')
-            if [[ x"${param}" == x"bbr" ]]; then
-                return 0
-            else
-                return 1
-            fi
-        }
-        check_bbr_status
-        if [ $? -eq 0 ]; then
-            echo
-            echo -e "[${green}Info${plain}] TCP BBR has already been installed"
-            exit 0
+        check_user=$USER
+        if [ $check_user == 'root' ]; then
+            curl -O https://raw.githubusercontent.com/carry0987/Linux-Script/master/BBR/bbr.sh && chmod +x bbr.sh && bash bbr.sh
         else
-            sed -i '/net.core.default_qdisc/d' /etc/sysctl.conf
-            sed -i '/net.ipv4.tcp_congestion_control/d' /etc/sysctl.conf
-            echo "net.core.default_qdisc = fq" >> /etc/sysctl.conf
-            echo 'Successful setting net core'
-            echo "net.ipv4.tcp_congestion_control = bbr" >> /etc/sysctl.conf
-            echo 'Successful setting tcp congestion control'
             echo '######################'
-            echo 'TCP-BBR Status'
-            echo '######################'
-            sysctl -p
-            sysctl net.ipv4.tcp_available_congestion_control
-            echo '######################'
+            echo -e "${Error} This script must be run as root!" && exit 1
         fi
         ;;
     7)
