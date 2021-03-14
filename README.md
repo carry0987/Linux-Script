@@ -26,8 +26,13 @@ su root
 - Support OS: Debian 6+ / Ubuntu 14+
 
 #### Installation:
+WGET
 ``` bash
 wget -N --no-cache --no-check-certificate https://raw.githubusercontent.com/carry0987/Linux-Script/master/Tools/tools.sh && chmod +x tools.sh && bash tools.sh
+```
+CURL
+```bash
+curl -O https://raw.githubusercontent.com/carry0987/Linux-Script/master/Tools/tools.sh && chmod +x tools.sh && bash tools.sh
 ```
 
 ---
@@ -37,8 +42,13 @@ wget -N --no-cache --no-check-certificate https://raw.githubusercontent.com/carr
 - Support OS: Debian 6+ / Ubuntu 14+
 
 #### Installation:
+WGET
 ``` bash
 wget -N --no-cache --no-check-certificate https://raw.githubusercontent.com/carry0987/Linux-Script/master/GCP/gcp-setup.sh && chmod +x gcp-setup.sh && bash gcp-setup.sh
+```
+CURL
+```bash
+curl -O https://raw.githubusercontent.com/carry0987/Linux-Script/master/GCP/gcp-setup.sh && chmod +x gcp-setup.sh && bash gcp-setup.sh
 ```
 
 ### gcp-pkg.sh
@@ -46,8 +56,13 @@ wget -N --no-cache --no-check-certificate https://raw.githubusercontent.com/carr
 - Support OS: Debian 6+ / Ubuntu 14+
 
 #### Installation:
+WGET
 ``` bash
 wget -N --no-cache --no-check-certificate https://raw.githubusercontent.com/carry0987/Linux-Script/master/GCP/gcp-pkg.sh && chmod +x gcp-pkg.sh && bash gcp-pkg.sh
+```
+CURL
+```bash
+curl -O https://raw.githubusercontent.com/carry0987/Linux-Script/master/GCP/gcp-pkg.sh && chmod +x gcp-pkg.sh && bash gcp-pkg.sh
 ```
 
 ---
@@ -68,8 +83,13 @@ wget -N --no-cache --no-check-certificate https://raw.githubusercontent.com/carr
 If you want to get location of IP, you should get the token from [IP-Info](https://ipinfo.io/)
 
 #### Installation:
+WGET
 ``` bash
 wget -N --no-cache --no-check-certificate https://raw.githubusercontent.com/carry0987/Linux-Script/master/SSR/ssr.sh && chmod +x ssr.sh && bash ssr.sh
+```
+CURL
+```bash
+curl -O https://raw.githubusercontent.com/carry0987/Linux-Script/master/SSR/ssr.sh && chmod +x ssr.sh && bash ssr.sh
 ```
 
 ---
@@ -79,8 +99,13 @@ wget -N --no-cache --no-check-certificate https://raw.githubusercontent.com/carr
 - Support OS: Debian 6+ / Ubuntu 14+
 
 #### Installation:
+WGET
 ``` bash
 wget -N --no-cache --no-check-certificate https://raw.githubusercontent.com/carry0987/Linux-Script/master/BBR/bbr.sh && chmod +x bbr.sh && bash bbr.sh
+```
+CURL
+```bash
+curl -O https://raw.githubusercontent.com/carry0987/Linux-Script/master/BBR/bbr.sh && chmod +x bbr.sh && bash bbr.sh
 ```
 
 ---
@@ -90,6 +115,11 @@ wget -N --no-cache --no-check-certificate https://raw.githubusercontent.com/carr
 - Support OS: Debian 6+ / Ubuntu 14+
 
 #### Installation:
+WGET
 ``` bash
 wget -N --no-cache --no-check-certificate https://raw.githubusercontent.com/carry0987/Linux-Script/master/Swap/swap.sh && chmod +x swap.sh && bash swap.sh
+```
+CURL
+```bash
+curl -O https://raw.githubusercontent.com/carry0987/Linux-Script/master/Swap/swap.sh && chmod +x swap.sh && bash swap.sh
 ```
