@@ -270,7 +270,7 @@ install_config() {
 
 reboot_os() {
     echo
-    echo -e "${green}Info:${plain} The system needs to reboot."
+    echo -e "[${green}Info${plain}] The system needs to reboot."
     read -p "Do you want to restart system? [y/n]" is_reboot
     if [[ ${is_reboot} == "y" || ${is_reboot} == "Y" ]]; then
         secs=$((5))
@@ -350,7 +350,7 @@ install_bbr() {
         fi
     elif [[ x"${release}" == x"debian" || x"${release}" == x"ubuntu" ]]; then
         [[ ! -e "/usr/bin/wget" ]] && apt-get -y update && apt-get -y install wget
-        echo -e "${green}Info:${plain} Getting latest kernel version..."
+        echo -e "[${green}Info${plain}] Getting latest kernel version..."
         get_latest_version
         if [ -n ${modules_deb_name} ]; then
             wget -c -t3 -T60 -O ${deb_kernel_modules_name} ${deb_kernel_modules_url}
