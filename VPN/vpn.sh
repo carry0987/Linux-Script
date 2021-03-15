@@ -338,7 +338,7 @@ EOF
 
 bigecho "Updating sysctl settings..."
 
-if ! grep -qs "hwdsl2 VPN script" /etc/sysctl.conf; then
+if ! grep -qs "carry0987 VPN script" /etc/sysctl.conf; then
   conf_bk "/etc/sysctl.conf"
   if [ "$(getconf LONG_BIT)" = "64" ]; then
     SHM_MAX=68719476736
@@ -349,7 +349,7 @@ if ! grep -qs "hwdsl2 VPN script" /etc/sysctl.conf; then
   fi
 cat >> /etc/sysctl.conf <<EOF
 
-# Added by hwdsl2 VPN script
+# Added by carry0987 VPN script
 kernel.msgmnb = 65536
 kernel.msgmax = 65536
 kernel.shmmax = $SHM_MAX
@@ -379,7 +379,7 @@ bigecho "Updating IPTables rules..."
 IPT_FILE=/etc/iptables.rules
 IPT_FILE2=/etc/iptables/rules.v4
 ipt_flag=0
-if ! grep -qs "hwdsl2 VPN script" "$IPT_FILE"; then
+if ! grep -qs "carry0987 VPN script" "$IPT_FILE"; then
   ipt_flag=1
 fi
 
@@ -404,7 +404,7 @@ if [ "$ipt_flag" = "1" ]; then
   iptables -A FORWARD -j DROP
   iptables -t nat -I POSTROUTING -s "$XAUTH_NET" -o "$NET_IFACE" -m policy --dir out --pol none -j MASQUERADE
   iptables -t nat -I POSTROUTING -s "$L2TP_NET" -o "$NET_IFACE" -j MASQUERADE
-  echo "# Modified by hwdsl2 VPN script" > "$IPT_FILE"
+  echo "# Modified by carry0987 VPN script" > "$IPT_FILE"
   iptables-save >> "$IPT_FILE"
 
   if [ -f "$IPT_FILE2" ]; then
@@ -460,7 +460,7 @@ for svc in fail2ban ipsec xl2tpd; do
   systemctl enable "$svc" 2>/dev/null
 done
 
-if ! grep -qs "hwdsl2 VPN script" /etc/rc.local; then
+if ! grep -qs "carry0987 VPN script" /etc/rc.local; then
   if [ -f /etc/rc.local ]; then
     conf_bk "/etc/rc.local"
     sed --follow-symlinks -i '/^exit 0/d' /etc/rc.local
@@ -469,7 +469,7 @@ if ! grep -qs "hwdsl2 VPN script" /etc/rc.local; then
   fi
 cat >> /etc/rc.local <<'EOF'
 
-# Added by hwdsl2 VPN script
+# Added by carry0987 VPN script
 (sleep 15
 service ipsec restart
 service xl2tpd restart
