@@ -3,7 +3,7 @@
 #=================================================
 #   System Required: CentOS 6+/Debian 6+/Ubuntu 14.04+
 #   Description: Regular Command
-#   Version: 1.0.4
+#   Version: 1.0.5
 #   Author: carry0987
 #   Web: https://github.com/carry0987
 #=================================================
@@ -11,7 +11,7 @@
 set -e
 
 #Set variable
-sh_ver='1.0.4'
+sh_ver='1.0.5'
 red='\033[0;31m'
 green='\033[0;32m'
 yellow='\033[0;33m'
@@ -45,7 +45,7 @@ if [[ ! -n $tool ]]; then
     echo '3) Count Files'
     echo '4) Delete File Or Folder'
     echo '5) Check Crontab status'
-    echo '6) Set TCP-BBR'
+    echo '6) Check TCP-BBR'
     echo '7) Update Packages'
     echo '8) Install Packages'
     echo '9) Check Kernal version'
@@ -108,7 +108,12 @@ case $tool in
     6)
         #Check User
         if [[ !$EUID -ne 0 ]]; then
-            curl -O https://raw.githubusercontent.com/carry0987/Linux-Script/master/BBR/bbr.sh && chmod +x bbr.sh && bash bbr.sh
+            echo '######################'
+            echo 'TCP-BBR Status'
+            echo '######################'
+            sudo sysctl -p
+            sudo sysctl net.ipv4.tcp_available_congestion_control
+            echo '######################'
         else
             echo -e "${Error} This script must be run as root!" && exit 1
         fi
