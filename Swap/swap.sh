@@ -112,7 +112,7 @@ Remove_Swap(){
         apt-get dist-upgrade
         apt-get install swapon
     fi
-    sudo swapoff /swapfile
+    swapoff /swapfile
     if [ "$(grep -q '/swapfile' ${fstab})" ]; then
         sed -i '\|^/swapfile|d' ${fstab}
         echo 'fstab-swap deleted'
