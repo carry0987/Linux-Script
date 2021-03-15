@@ -3,7 +3,7 @@
 #=================================================
 #   System Required: CentOS 6+/Debian 6+/Ubuntu 14.04+
 #   Description: Regular Command
-#   Version: 1.0.3
+#   Version: 1.0.4
 #   Author: carry0987
 #   Web: https://github.com/carry0987
 #=================================================
@@ -11,7 +11,7 @@
 set -e
 
 #Set variable
-sh_ver='1.0.3'
+sh_ver='1.0.4'
 red='\033[0;31m'
 green='\033[0;32m'
 yellow='\033[0;33m'
@@ -106,16 +106,16 @@ case $tool in
         /etc/init.d/cron status
         ;;
     6)
-        check_user=$USER
-        if [ $check_user == 'root' ]; then
+        #Check User
+        if [[ !$EUID -ne 0 ]]; then
             curl -O https://raw.githubusercontent.com/carry0987/Linux-Script/master/BBR/bbr.sh && chmod +x bbr.sh && bash bbr.sh
         else
             echo -e "${Error} This script must be run as root!" && exit 1
         fi
         ;;
     7)
-        check_user=$USER
-        if [ $check_user == 'root' ]; then
+        #Check User
+        if [[ !$EUID -ne 0 ]]; then
             apt-get update
             apt-get dist-upgrade
             apt-get clean
@@ -131,8 +131,8 @@ case $tool in
             echo 'The package name is empty !'
             exit 0
         fi
-        check_user=$USER
-        if [ $check_user == 'root' ]; then
+        #Check User
+        if [[ !$EUID -ne 0 ]]; then
             apt-get update
             apt-get dist-upgrade
             apt-get clean
