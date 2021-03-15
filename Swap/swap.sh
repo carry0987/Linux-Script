@@ -5,12 +5,12 @@ export PATH
 #=================================================
 #   System Required: CentOS 6+/Debian 6+/Ubuntu 14.04+
 #   Description: Add Swap And Tuning
-#   Version: 1.1.1
+#   Version: 1.1.2
 #   Author: carry0987
 #   Web: https://github.com/carry0987
 #=================================================
 
-sh_ver='1.1.1'
+sh_ver='1.1.2'
 red='\033[0;31m'
 green='\033[0;32m'
 yellow='\033[0;33m'
@@ -112,7 +112,7 @@ Remove_Swap(){
         apt-get dist-upgrade
         apt-get install swapon
     fi
-    swapoff /swapfile
+    sudo swapoff /swapfile
     if [ "$(grep -q '/swapfile' ${fstab})" ]; then
         sed -i '\|^/swapfile|d' ${fstab}
         echo 'fstab-swap deleted'
