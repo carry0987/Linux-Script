@@ -11,6 +11,9 @@ if [ $check_user == 'root' ]; then
     read -e -p 'Where is your .bashrc file? /home/>' select_user
     sed -i 's/HISTCONTROL=ignoreboth/HISTCONTROL=ignoreboth:erasedups/g' /home/${select_user}/.bashrc
     source /home/${select_user}/.bashrc
+else
+    sed -i 's/HISTCONTROL=ignoreboth/HISTCONTROL=ignoreboth:erasedups/g' /home/${check_user}/.bashrc
+    source /home/${check_user}/.bashrc
 fi
 
 #Set up locale
