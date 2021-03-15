@@ -244,6 +244,8 @@ sysctl_config() {
     echo "net.ipv4.tcp_congestion_control = bbr" >> /etc/sysctl.conf
     sysctl -p >/dev/null 2>&1
     echo '### BBR Status ###'
+    sudo sysctl -p
+    sudo sysctl net.ipv4.tcp_available_congestion_control
     echo "$(lsmod | grep bbr)"
     echo '##################'
 }
