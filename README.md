@@ -123,3 +123,24 @@ CURL
 ```bash
 curl -H 'Cache-Control: no-cache' -O https://raw.githubusercontent.com/carry0987/Linux-Script/master/Swap/swap.sh && chmod +x swap.sh && bash swap.sh
 ```
+
+---
+## Common Setting
+### .bashrc
+```bash
+alias ll='ls -l'
+alias la='ls -a'
+alias tt='sudo sh tools.sh'
+alias sr='screen -r'
+```
+
+### .vimrc
+```bash
+set nu
+set tabstop=4
+set expandtab
+set mouse=a
+set cursorline
+set viminfo+=n~/.vim/viminfo
+syntax on
+```
