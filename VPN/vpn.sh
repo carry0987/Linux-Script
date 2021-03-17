@@ -88,9 +88,9 @@ fi
 
 if [ -z "$VPN_IPSEC_PSK" ] && [ -z "$VPN_USER" ] && [ -z "$VPN_PASSWORD" ]; then
   show_msg "VPN credentials not set by user. Generating random PSK and password..."
-  VPN_IPSEC_PSK=$(get_random 20)
+  VPN_IPSEC_PSK=$(get_random 24)
   VPN_USER=vpnuser
-  VPN_PASSWORD=$(get_random 8)
+  VPN_PASSWORD=$(get_random 12)
 fi
 
 if [ -z "$VPN_IPSEC_PSK" ] || [ -z "$VPN_USER" ] || [ -z "$VPN_PASSWORD" ]; then
