@@ -32,7 +32,7 @@ wget -N --no-cache --no-check-certificate https://raw.githubusercontent.com/carr
 ```
 CURL
 ```bash
-curl -O https://raw.githubusercontent.com/carry0987/Linux-Script/master/Tools/tools.sh && chmod +x tools.sh && bash tools.sh
+curl -H 'Cache-Control: no-cache' -O https://raw.githubusercontent.com/carry0987/Linux-Script/master/Tools/tools.sh && chmod +x tools.sh && bash tools.sh
 ```
 
 ---
@@ -48,7 +48,7 @@ wget -N --no-cache --no-check-certificate https://raw.githubusercontent.com/carr
 ```
 CURL
 ```bash
-curl -O https://raw.githubusercontent.com/carry0987/Linux-Script/master/GCP/gcp-setup.sh && chmod +x gcp-setup.sh && bash gcp-setup.sh
+curl -H 'Cache-Control: no-cache' -O https://raw.githubusercontent.com/carry0987/Linux-Script/master/GCP/gcp-setup.sh && chmod +x gcp-setup.sh && bash gcp-setup.sh
 ```
 
 ### gcp-pkg.sh
@@ -62,7 +62,7 @@ wget -N --no-cache --no-check-certificate https://raw.githubusercontent.com/carr
 ```
 CURL
 ```bash
-curl -O https://raw.githubusercontent.com/carry0987/Linux-Script/master/GCP/gcp-pkg.sh && chmod +x gcp-pkg.sh && bash gcp-pkg.sh
+curl -H 'Cache-Control: no-cache' -O https://raw.githubusercontent.com/carry0987/Linux-Script/master/GCP/gcp-pkg.sh && chmod +x gcp-pkg.sh && bash gcp-pkg.sh
 ```
 
 ---
@@ -89,7 +89,7 @@ wget -N --no-cache --no-check-certificate https://raw.githubusercontent.com/carr
 ```
 CURL
 ```bash
-curl -O https://raw.githubusercontent.com/carry0987/Linux-Script/master/SSR/ssr.sh && chmod +x ssr.sh && bash ssr.sh
+curl -H 'Cache-Control: no-cache' -O https://raw.githubusercontent.com/carry0987/Linux-Script/master/SSR/ssr.sh && chmod +x ssr.sh && bash ssr.sh
 ```
 
 ---
@@ -105,7 +105,7 @@ wget -N --no-cache --no-check-certificate https://raw.githubusercontent.com/carr
 ```
 CURL
 ```bash
-curl -O https://raw.githubusercontent.com/carry0987/Linux-Script/master/BBR/bbr.sh && chmod +x bbr.sh && bash bbr.sh
+curl -H 'Cache-Control: no-cache' -O https://raw.githubusercontent.com/carry0987/Linux-Script/master/BBR/bbr.sh && chmod +x bbr.sh && bash bbr.sh
 ```
 
 ---
@@ -121,5 +121,5 @@ wget -N --no-cache --no-check-certificate https://raw.githubusercontent.com/carr
 ```
 CURL
 ```bash
-curl -O https://raw.githubusercontent.com/carry0987/Linux-Script/master/Swap/swap.sh && chmod +x swap.sh && bash swap.sh
+curl -H 'Cache-Control: no-cache' -O https://raw.githubusercontent.com/carry0987/Linux-Script/master/Swap/swap.sh && chmod +x swap.sh && bash swap.sh
 ```
