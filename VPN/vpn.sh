@@ -33,6 +33,11 @@ check_ip() {
   printf '%s' "$1" | tr -d '\n' | grep -Eq "$IP_REGEX"
 }
 
+get_random() {
+    local random=`openssl rand -base64 32`
+    echo random
+}
+
 vpnsetup() {
 
 os_type=$(lsb_release -si 2>/dev/null)
@@ -42,7 +47,6 @@ if [ -z "$os_type" ]; then
 fi
 if ! printf '%s' "$os_type" | head -n 1 | grep -qiF -e ubuntu -e debian -e raspbian; then
   echo "Error: This script only supports Ubuntu and Debian." >&2
-  echo "For CentOS/RHEL, use https://git.io/vpnsetup-centos" >&2
   exit 1
 fi
 
@@ -168,7 +172,7 @@ apt-get -yq install fail2ban || exiterr2
 
 bigecho "Compiling and installing Libreswan..."
 
-SWAN_VER=4.3
+SWAN_VER=4.1
 swan_file="libreswan-$SWAN_VER.tar.gz"
 swan_url1="https://github.com/libreswan/libreswan/archive/v$SWAN_VER.tar.gz"
 swan_url2="https://download.libreswan.org/$swan_file"

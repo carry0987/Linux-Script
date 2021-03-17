@@ -6,14 +6,15 @@ sudo ln -fs /bin/bash /bin/sh
 sudo timedatectl set-ntp yes
 
 #Check operating user
-check_user=$USER
-if [ $check_user == 'root' ]; then
+check_user=$EUID
+user_name=$USER
+if [ $check_user -eq 0 ]; then
     read -e -p 'Where is your .bashrc file? /home/>' select_user
-    sed -i 's/HISTCONTROL=ignoreboth/HISTCONTROL=ignoreboth:erasedups/g' /home/${select_user}/.bashrc
+    sed '/HISTCONTROL/s/.*/HISTCONTROL=ignoreboth:erasedups/' /home/${select_user}/.bashrc
     source /home/${select_user}/.bashrc
 else
-    sed -i 's/HISTCONTROL=ignoreboth/HISTCONTROL=ignoreboth:erasedups/g' /home/${check_user}/.bashrc
-    source /home/${check_user}/.bashrc
+    sed '/HISTCONTROL/s/.*/HISTCONTROL=ignoreboth:erasedups/' /home/${select_user}/.bashrc
+    source /home/${user_name}/.bashrc
 fi
 
 #Reboot
