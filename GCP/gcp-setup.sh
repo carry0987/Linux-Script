@@ -10,10 +10,10 @@ check_user=$EUID
 user_name=$USER
 if [ $check_user -eq 0 ]; then
     read -e -p 'Where is your .bashrc file? /home/>' select_user
-    sed '/HISTCONTROL/s/.*/HISTCONTROL=ignoreboth:erasedups/' /home/${select_user}/.bashrc
+    sed -i '/HISTCONTROL/s/.*/HISTCONTROL=ignoreboth:erasedups/' /home/${select_user}/.bashrc
     source /home/${select_user}/.bashrc
 else
-    sed '/HISTCONTROL/s/.*/HISTCONTROL=ignoreboth:erasedups/' /home/${select_user}/.bashrc
+    sed -i '/HISTCONTROL/s/.*/HISTCONTROL=ignoreboth:erasedups/' /home/${select_user}/.bashrc
     source /home/${user_name}/.bashrc
 fi
 
