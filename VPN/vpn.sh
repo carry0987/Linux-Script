@@ -23,10 +23,10 @@ YOUR_PASSWORD=''
 export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
 SYS_DT=$(date +%F-%T | tr ':' '_')
 
-exiterr()  { echo "Error: $1" >&2; exit 1; }
-exiterr2() { exiterr "'apt-get install' failed."; }
+show_err()  { echo "Error: $1" >&2; exit 1; }
+show_err2() { show_err "'apt-get install' failed."; }
 conf_bk() { /bin/cp -f "$1" "$1.old-$SYS_DT" 2>/dev/null; }
-bigecho() { echo; echo "## $1"; echo; }
+show_msg() { echo; echo "## $1"; echo; }
 
 check_ip() {
   IP_REGEX='^(([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\.){3}([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])$'
@@ -34,8 +34,8 @@ check_ip() {
 }
 
 get_random() {
-    local random=`openssl rand -base64 32`
-    echo random
+    local random=`openssl rand -base64 $1`
+    echo $random
 }
 
 vpnsetup() {
@@ -51,15 +51,15 @@ if ! printf '%s' "$os_type" | head -n 1 | grep -qiF -e ubuntu -e debian -e raspb
 fi
 
 if [ "$(sed 's/\..*//' /etc/debian_version)" = "7" ]; then
-  exiterr "Debian 7 is not supported."
+  show_err "Debian 7 is not supported."
 fi
 
 if [ -f /proc/user_beancounters ]; then
-  exiterr "OpenVZ VPS is not supported. Try OpenVPN: github.com/Nyr/openvpn-install"
+  show_err "OpenVZ VPS is not supported. Try OpenVPN: github.com/Nyr/openvpn-install"
 fi
 
-if [ "$(id -u)" != 0 ]; then
-  exiterr "Script must be run as root. Try 'sudo sh $0'"
+if [[ $(id -u) != 0 || $EUID -ne 0 ]]; then
+  show_err "Script must be run as root. Try 'sudo sh $0'"
 fi
 
 def_iface=$(route 2>/dev/null | grep -m 1 '^default' | grep -o '[^ ]*$')
@@ -69,7 +69,7 @@ if [ -n "$def_state" ] && [ "$def_state" != "down" ]; then
   if ! uname -m | grep -qi '^arm'; then
     case "$def_iface" in
       wl*)
-        exiterr "Wireless interface '$def_iface' detected. DO NOT run this script on your PC or Mac!"
+        show_err "Wireless interface '$def_iface' detected. DO NOT run this script on your PC or Mac!"
         ;;
     esac
   fi
@@ -77,7 +77,7 @@ if [ -n "$def_state" ] && [ "$def_state" != "down" ]; then
 else
   eth0_state=$(cat "/sys/class/net/eth0/operstate" 2>/dev/null)
   if [ -z "$eth0_state" ] || [ "$eth0_state" = "down" ]; then
-    exiterr "Could not detect the default network interface."
+    show_err "Could not detect the default network interface."
   fi
   NET_IFACE=eth0
 fi
@@ -87,36 +87,36 @@ fi
 [ -n "$YOUR_PASSWORD" ] && VPN_PASSWORD="$YOUR_PASSWORD"
 
 if [ -z "$VPN_IPSEC_PSK" ] && [ -z "$VPN_USER" ] && [ -z "$VPN_PASSWORD" ]; then
-  bigecho "VPN credentials not set by user. Generating random PSK and password..."
-  VPN_IPSEC_PSK=$(LC_CTYPE=C tr -dc 'A-HJ-NPR-Za-km-z2-9' < /dev/urandom | head -c 20)
+  show_msg "VPN credentials not set by user. Generating random PSK and password..."
+  VPN_IPSEC_PSK=$(get_random 20)
   VPN_USER=vpnuser
-  VPN_PASSWORD=$(LC_CTYPE=C tr -dc 'A-HJ-NPR-Za-km-z2-9' < /dev/urandom | head -c 16)
+  VPN_PASSWORD=$(get_random 16)
 fi
 
 if [ -z "$VPN_IPSEC_PSK" ] || [ -z "$VPN_USER" ] || [ -z "$VPN_PASSWORD" ]; then
-  exiterr "All VPN credentials must be specified. Edit the script and re-enter them."
+  show_err "All VPN credentials must be specified. Edit the script and re-enter them."
 fi
 
 if printf '%s' "$VPN_IPSEC_PSK $VPN_USER $VPN_PASSWORD" | LC_ALL=C grep -q '[^ -~]\+'; then
-  exiterr "VPN credentials must not contain non-ASCII characters."
+  show_err "VPN credentials must not contain non-ASCII characters."
 fi
 
 case "$VPN_IPSEC_PSK $VPN_USER $VPN_PASSWORD" in
   *[\\\"\']*)
-    exiterr "VPN credentials must not contain these special characters: \\ \" '"
+    show_err "VPN credentials must not contain these special characters: \\ \" '"
     ;;
 esac
 
 if { [ -n "$VPN_DNS_SRV1" ] && ! check_ip "$VPN_DNS_SRV1"; } \
   || { [ -n "$VPN_DNS_SRV2" ] && ! check_ip "$VPN_DNS_SRV2"; } then
-  exiterr "The DNS server specified is invalid."
+  show_err "The DNS server specified is invalid."
 fi
 
 if [ -x /sbin/iptables ] && ! iptables -nL INPUT >/dev/null 2>&1; then
-  exiterr "IPTables check failed. Reboot and re-run this script."
+  show_err "IPTables check failed. Reboot and re-run this script."
 fi
 
-bigecho "VPN setup in progress... Please be patient."
+show_msg "VPN setup in progress... Please be patient."
 
 # Create and change to working dir
 mkdir -p /opt/src
@@ -127,24 +127,24 @@ APT_LK=/var/lib/apt/lists/lock
 PKG_LK=/var/lib/dpkg/lock
 while fuser "$APT_LK" "$PKG_LK" >/dev/null 2>&1 \
   || lsof "$APT_LK" >/dev/null 2>&1 || lsof "$PKG_LK" >/dev/null 2>&1; do
-  [ "$count" = "0" ] && bigecho "Waiting for apt to be available..."
-  [ "$count" -ge "60" ] && exiterr "Could not get apt/dpkg lock."
+  [ "$count" = "0" ] && show_msg "Waiting for apt to be available..."
+  [ "$count" -ge "60" ] && show_err "Could not get apt/dpkg lock."
   count=$((count+1))
   printf '%s' '.'
   sleep 3
 done
 
-bigecho "Populating apt-get cache..."
+show_msg "Populating apt-get cache..."
 
 export DEBIAN_FRONTEND=noninteractive
-apt-get -yq update || exiterr "'apt-get update' failed."
+apt-get -yq update || show_err "'apt-get update' failed."
 
-bigecho "Installing packages required for setup..."
+show_msg "Installing packages required for setup..."
 
 apt-get -yq install wget dnsutils openssl \
-  iptables iproute2 gawk grep sed net-tools || exiterr2
+  iptables iproute2 gawk grep sed net-tools || show_err2
 
-bigecho "Trying to auto discover IP of this server..."
+show_msg "Trying to auto discover IP of this server..."
 
 cat <<'EOF'
 In case the script hangs here for more than a few minutes,
@@ -157,20 +157,20 @@ PUBLIC_IP=${VPN_PUBLIC_IP:-''}
 [ -z "$PUBLIC_IP" ] && PUBLIC_IP=$(dig @resolver1.opendns.com -t A -4 myip.opendns.com +short)
 
 check_ip "$PUBLIC_IP" || PUBLIC_IP=$(wget -t 3 -T 15 -qO- http://ipv4.icanhazip.com)
-check_ip "$PUBLIC_IP" || exiterr "Cannot detect this server's public IP. Edit the script and manually enter it."
+check_ip "$PUBLIC_IP" || show_err "Cannot detect this server's public IP. Edit the script and manually enter it."
 
-bigecho "Installing packages required for the VPN..."
+show_msg "Installing packages required for the VPN..."
 
 apt-get -yq install libnss3-dev libnspr4-dev pkg-config \
   libpam0g-dev libcap-ng-dev libcap-ng-utils libselinux1-dev \
   libcurl4-nss-dev flex bison gcc make libnss3-tools \
-  libevent-dev ppp xl2tpd || exiterr2
+  libevent-dev ppp xl2tpd || show_err2
 
-bigecho "Installing Fail2Ban to protect SSH..."
+show_msg "Installing Fail2Ban to protect SSH..."
 
-apt-get -yq install fail2ban || exiterr2
+apt-get -yq install fail2ban || show_err2
 
-bigecho "Compiling and installing Libreswan..."
+show_msg "Compiling and installing Libreswan..."
 
 SWAN_VER=4.1
 swan_file="libreswan-$SWAN_VER.tar.gz"
@@ -198,7 +198,7 @@ if ! grep -qs IFLA_XFRM_LINK /usr/include/linux/if_link.h; then
   echo "USE_XFRM_INTERFACE_IFLA_HEADER=true" >> Makefile.inc.local
 fi
 if [ "$(packaging/utils/lswan_detect.sh init)" = "systemd" ]; then
-  apt-get -yq install libsystemd-dev || exiterr2
+  apt-get -yq install libsystemd-dev || show_err2
 fi
 NPROCS=$(grep -c ^processor /proc/cpuinfo)
 [ -z "$NPROCS" ] && NPROCS=1
@@ -207,10 +207,10 @@ make "-j$((NPROCS+1))" -s base && make -s install-base
 cd /opt/src || exit 1
 /bin/rm -rf "/opt/src/libreswan-$SWAN_VER"
 if ! /usr/local/sbin/ipsec --version 2>/dev/null | grep -qF "$SWAN_VER"; then
-  exiterr "Libreswan $SWAN_VER failed to build."
+  show_err "Libreswan $SWAN_VER failed to build."
 fi
 
-bigecho "Creating VPN configuration..."
+show_msg "Creating VPN configuration..."
 
 L2TP_NET=${VPN_L2TP_NET:-'192.168.42.0/24'}
 L2TP_LOCAL=${VPN_L2TP_LOCAL:-'192.168.42.1'}
@@ -340,7 +340,7 @@ cat > /etc/ipsec.d/passwd <<EOF
 $VPN_USER:$VPN_PASSWORD_ENC:xauth-psk
 EOF
 
-bigecho "Updating sysctl settings..."
+show_msg "Updating sysctl settings..."
 
 if ! grep -qs "carry0987 VPN script" /etc/sysctl.conf; then
   conf_bk "/etc/sysctl.conf"
@@ -378,7 +378,7 @@ net.ipv4.tcp_wmem = 10240 87380 12582912
 EOF
 fi
 
-bigecho "Updating IPTables rules..."
+show_msg "Updating IPTables rules..."
 
 IPT_FILE=/etc/iptables.rules
 IPT_FILE2=/etc/iptables/rules.v4
@@ -417,7 +417,7 @@ if [ "$ipt_flag" = "1" ]; then
   fi
 fi
 
-bigecho "Enabling services on boot..."
+show_msg "Enabling services on boot..."
 
 IPT_PST=/etc/init.d/iptables-persistent
 IPT_PST2=/usr/share/netfilter-persistent/plugins.d/15-ip4tables
@@ -482,7 +482,7 @@ exit 0
 EOF
 fi
 
-bigecho "Starting services..."
+show_msg "Starting services..."
 
 sysctl -e -q -p
 
