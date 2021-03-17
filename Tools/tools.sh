@@ -3,7 +3,7 @@
 #=================================================
 #   System Required: CentOS 6+/Debian 6+/Ubuntu 14.04+
 #   Description: Regular Command
-#   Version: 1.0.5
+#   Version: 1.0.6
 #   Author: carry0987
 #   Web: https://github.com/carry0987
 #=================================================
@@ -11,7 +11,7 @@
 set -e
 
 #Set variable
-sh_ver='1.0.5'
+sh_ver='1.0.6'
 red='\033[0;31m'
 green='\033[0;32m'
 yellow='\033[0;33m'
@@ -107,7 +107,7 @@ case $tool in
         ;;
     6)
         #Check User
-        if [[ !$EUID -ne 0 ]]; then
+        if [[ $EUID -eq 0 ]]; then
             echo '######################'
             echo 'TCP-BBR Status'
             echo '######################'
@@ -120,7 +120,7 @@ case $tool in
         ;;
     7)
         #Check User
-        if [[ !$EUID -ne 0 ]]; then
+        if [[ $EUID -eq 0 ]]; then
             apt-get update
             apt-get dist-upgrade
             apt-get clean
@@ -137,7 +137,7 @@ case $tool in
             exit 0
         fi
         #Check User
-        if [[ !$EUID -ne 0 ]]; then
+        if [[ $EUID -eq 0 ]]; then
             apt-get update
             apt-get dist-upgrade
             apt-get clean
