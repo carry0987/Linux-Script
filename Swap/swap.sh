@@ -5,12 +5,12 @@ export PATH
 #=================================================
 #   System Required: CentOS 6+/Debian 6+/Ubuntu 14.04+
 #   Description: Add Swap And Tuning
-#   Version: 1.1.3
+#   Version: 1.1.4
 #   Author: carry0987
 #   Web: https://github.com/carry0987
 #=================================================
 
-sh_ver='1.1.3'
+sh_ver='1.1.4'
 red='\033[0;31m'
 green='\033[0;32m'
 yellow='\033[0;33m'
@@ -56,6 +56,22 @@ Set_Swap(){
         echo -e 'Set Swap Size to '${get_size}
         swap_size=${get_size}
     fi
+    echo 'Please enter the priority of swappiness'
+    read -p 'Default: 60>' get_swappiness
+    if [[ -z ${get_swappiness} ]]; then
+        swap_swappiness=60
+    else
+        echo -e 'Set swappiness to '${get_swappiness}
+        swap_swappiness=${get_swappiness}
+    fi
+    echo 'Please enter the cache pressure of SWAP'
+    read -p 'Default: 100>' get_vfs
+    if [[ -z ${get_vfs} ]]; then
+        swap_cache=100
+    else
+        echo -e 'Set Swap Size to '${get_vfs}
+        swap_cache=${get_vfs}
+    fi
     #Check Swapon
     if ! [ -x "$(command -v swapon)" ]; then
         echo 'swapon is not installed, start downloading...' >&2
@@ -74,12 +90,12 @@ Set_Swap(){
         echo 'fstab already setted'
     fi
     if ! [ "$(grep 'vm.swappiness' ${sysctl})" ]; then
-        echo 'vm.swappiness=20' | sudo tee -a ${sysctl}
+        echo 'vm.swappiness='$swap_swappiness | sudo tee -a ${sysctl}
     else
         echo 'vm.swappiness already setted'
     fi
     if ! [ "$(grep 'vm.vfs_cache_pressure' ${sysctl})" ]; then
-        echo 'vm.vfs_cache_pressure=50' | sudo tee -a ${sysctl}
+        echo 'vm.vfs_cache_pressure='$swap_cache | sudo tee -a ${sysctl}
     else
         echo 'vm.vfs_cache_pressure already setted'
     fi
