@@ -143,7 +143,7 @@ curl -H 'Cache-Control: no-cache' -O https://raw.githubusercontent.com/carry0987
 ## Common Setting
 ### .bashrc
 ```bash
-alias ll='ls -l'
+alias ll='ls -lh'
 alias la='ls -a'
 alias tt='sudo sh tools.sh'
 alias sr='screen -r'
