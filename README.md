@@ -156,6 +156,7 @@ set tabstop=4
 set expandtab
 set mouse=a
 set cursorline
+set hlsearch
 set viminfo+=n~/.vim/viminfo
 syntax on
 ```
