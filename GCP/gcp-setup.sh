@@ -45,6 +45,10 @@ sudo echo 'LANG='$language >> /etc/default/locale
 sudo echo 'LANGUAGE='$language >> /etc/default/locale
 sudo echo 'LC_ALL='$language >> /etc/default/locale
 sudo echo 'LC_CTYPE='$language >> /etc/default/locale
+export LANG=${language}
+export LANGUAGE=${language}
+export LC_ALL=${language}
+export LC_CTYPE=${language}
 echo '#####################'
 sudo cat /etc/default/locale
 echo '#####################'
