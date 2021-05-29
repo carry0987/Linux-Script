@@ -160,3 +160,10 @@ set hlsearch
 set viminfo+=n~/.vim/viminfo
 syntax on
 ```
+
+---
+## Hint
+If `bash: command not found`
+```bash
+export PATH="$PATH:/sbin:/usr/sbin:usr/local/sbin"
+```
