@@ -26,7 +26,7 @@ if [[ -z $username || $username == 'root' ]]; then
         su 'root'
     fi
     set_user='root'
-    cd '/home/'$set_user
+    cd '/'$set_user
 else
     set_user=$username
     cd '/home/'$set_user
