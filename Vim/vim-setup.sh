@@ -12,12 +12,10 @@ make_vim_folder(){
 
 make_vimrc(){
     if [[ -f $1'.vimrc' ]]; then
-        echo 'syntax enable' >> $1'.vimrc'
+        echo 'syntax on' >> $1'.vimrc'
         echo 'colorscheme monokai' >> $1'.vimrc'
     else
         wget -P $1 'https://raw.githubusercontent.com/carry0987/Linux-Script/master/Vim/.vimrc'
-        echo 'syntax enable' >> $1'.vimrc'
-        echo 'colorscheme monokai' >> $1'.vimrc'
     fi
 }
 
