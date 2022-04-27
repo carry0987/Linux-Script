@@ -26,13 +26,14 @@ if [[ -z $username || $username == 'root' ]]; then
         su 'root'
     fi
     set_user='root'
-    cd '/'$set_user
+    work_path='/'$set_user
 else
     set_user=$username
-    cd '/home/'$set_user
+    work_path='/home/'$set_user
 fi
 
-make_vim_folder '/home/'$set_user'/'
-make_vimrc '/home/'$set_user'/'
+cd work_path
+make_vim_folder $work_path'/'
+make_vimrc $work_path'/'
 
 exit 0
