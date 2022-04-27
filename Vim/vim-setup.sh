@@ -32,7 +32,7 @@ else
     work_path='/home/'$set_user
 fi
 
-cd work_path
+cd $work_path
 make_vim_folder $work_path'/'
 make_vimrc $work_path'/'
 
