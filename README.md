@@ -13,6 +13,8 @@ su root
 * [***GCP***](#GCP)
   * [gcp-setup.sh](#gcp-setupsh)
   * [gcp-pkg.sh](#gcp-pkgsh)
+* [***Vim***](#Vim)
+  * [vim-setup](#vim-setupsh)
 * [***Docker***](#Docker)
   * [Docker-Set](Docker/docker.md)
   * [Portainer](Docker/portainer.md)
@@ -67,6 +69,21 @@ wget -N --no-cache --no-check-certificate https://raw.githubusercontent.com/carr
 CURL
 ```bash
 curl -H 'Cache-Control: no-cache' -O https://raw.githubusercontent.com/carry0987/Linux-Script/master/GCP/gcp-pkg.sh && chmod +x gcp-pkg.sh && bash gcp-pkg.sh
+```
+
+---
+## Vim
+### vim-setup.sh
+- Description: Run this script to setup vim config
+
+#### Installation:
+WGET
+``` bash
+wget -N --no-cache --no-check-certificate https://raw.githubusercontent.com/carry0987/Linux-Script/master/Vim/vim-setup.sh && chmod +x vim-setup.sh && bash vim-setup.sh
+```
+CURL
+```bash
+curl -H 'Cache-Control: no-cache' -O https://raw.githubusercontent.com/carry0987/Linux-Script/master/Vim/vim-setup.sh && chmod +x vim-setup.sh && bash vim-setup.sh
 ```
 
 ---
@@ -155,12 +172,15 @@ alias sr='screen -r'
 ### .vimrc
 ```bash
 set nu
+set ai
+set shiftwidth=4
 set tabstop=4
 set expandtab
 set mouse=a
 set cursorline
 set hlsearch
 set viminfo+=n~/.vim/viminfo
+set t_Co=256
 syntax on
 ```
 
