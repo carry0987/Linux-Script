@@ -69,7 +69,7 @@ Set_Swap(){
     if [[ -z ${get_vfs} ]]; then
         swap_cache=100
     else
-        echo -e 'Set Swap Size to '${get_vfs}
+        echo -e 'Set Swap cache pressure to '${get_vfs}
         swap_cache=${get_vfs}
     fi
     #Check Swapon
