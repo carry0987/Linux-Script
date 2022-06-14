@@ -5,12 +5,12 @@ export PATH
 #=================================================
 #   System Required: CentOS 6+/Debian 6+/Ubuntu 14.04+
 #   Description: Add Swap And Tuning
-#   Version: 1.1.7
+#   Version: 1.1.8
 #   Author: carry0987
 #   Web: https://github.com/carry0987
 #=================================================
 
-sh_ver='1.1.7'
+sh_ver='1.1.8'
 red='\033[0;31m'
 green='\033[0;32m'
 yellow='\033[0;33m'
@@ -79,6 +79,7 @@ Set_Swap(){
         apt-get dist-upgrade
         apt-get install swapon
     fi
+    echo 'Setting SWAP...'
     dd if=/dev/zero of=/swapfile bs=1M count=${swap_size}
     mkswap -f /swapfile
     chmod 0600 /swapfile
