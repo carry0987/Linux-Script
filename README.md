@@ -18,13 +18,13 @@ su root
 * [***Docker***](#Docker)
   * [Docker-Set](Docker/docker.md)
   * [Portainer](Docker/portainer.md)
-* [***Proxy***](#Proxy)
-  * [ssr.sh](#ssrsh)
-  * [vpn.sh](#vpnsh)
 * [***Server***](#Server)
   * [bbr.sh](#bbrsh)
 * [***System***](#System)
   * [swap.sh](#swapsh)
+* [***Proxy***](#Proxy)
+  * [ssr.sh](#ssrsh)
+  * [vpn.sh](#vpnsh)
 
 ## Tools
 ### tools.sh
@@ -87,6 +87,38 @@ curl -H 'Cache-Control: no-cache' -O https://raw.githubusercontent.com/carry0987
 ```
 
 ---
+## Server
+### bbr.sh
+- Description: BBR Easy Setup Tool
+- Support OS: Debian 6+ / Ubuntu 14+
+
+#### Installation:
+WGET
+``` bash
+wget -N --no-cache --no-check-certificate https://raw.githubusercontent.com/carry0987/Linux-Script/master/BBR/bbr.sh && chmod +x bbr.sh && bash bbr.sh
+```
+CURL
+```bash
+curl -H 'Cache-Control: no-cache' -O https://raw.githubusercontent.com/carry0987/Linux-Script/master/BBR/bbr.sh && chmod +x bbr.sh && bash bbr.sh
+```
+
+---
+## System
+### swap.sh
+- Description: Swap Easy Setup Tool
+- Support OS: Debian 6+ / Ubuntu 14+
+
+#### Installation:
+WGET
+``` bash
+wget -N --no-cache --no-check-certificate https://raw.githubusercontent.com/carry0987/Linux-Script/master/Swap/swap.sh && chmod +x swap.sh && bash swap.sh
+```
+CURL
+```bash
+curl -H 'Cache-Control: no-cache' -O https://raw.githubusercontent.com/carry0987/Linux-Script/master/Swap/swap.sh && chmod +x swap.sh && bash swap.sh
+```
+
+---
 ## Proxy
 ### ssr.sh
 - Description: ShadowsocksR Easy Setup Tool
@@ -125,38 +157,6 @@ wget -N --no-cache --no-check-certificate https://raw.githubusercontent.com/carr
 CURL
 ```bash
 curl -H 'Cache-Control: no-cache' -O https://raw.githubusercontent.com/carry0987/Linux-Script/master/VPN/vpn.sh && chmod +x vpn.sh && bash vpn.sh
-```
-
----
-## Server
-### bbr.sh
-- Description: BBR Easy Setup Tool
-- Support OS: Debian 6+ / Ubuntu 14+
-
-#### Installation:
-WGET
-``` bash
-wget -N --no-cache --no-check-certificate https://raw.githubusercontent.com/carry0987/Linux-Script/master/BBR/bbr.sh && chmod +x bbr.sh && bash bbr.sh
-```
-CURL
-```bash
-curl -H 'Cache-Control: no-cache' -O https://raw.githubusercontent.com/carry0987/Linux-Script/master/BBR/bbr.sh && chmod +x bbr.sh && bash bbr.sh
-```
-
----
-## System
-### swap.sh
-- Description: Swap Easy Setup Tool
-- Support OS: Debian 6+ / Ubuntu 14+
-
-#### Installation:
-WGET
-``` bash
-wget -N --no-cache --no-check-certificate https://raw.githubusercontent.com/carry0987/Linux-Script/master/Swap/swap.sh && chmod +x swap.sh && bash swap.sh
-```
-CURL
-```bash
-curl -H 'Cache-Control: no-cache' -O https://raw.githubusercontent.com/carry0987/Linux-Script/master/Swap/swap.sh && chmod +x swap.sh && bash swap.sh
 ```
 
 ---
