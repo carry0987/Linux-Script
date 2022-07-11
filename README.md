@@ -181,6 +181,7 @@ set cursorline
 set hlsearch
 set viminfo+=n~/.vim/viminfo
 set t_Co=256
+set encoding=utf8
 syntax on
 ```
 
