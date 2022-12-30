@@ -3,7 +3,7 @@
 #=================================================
 #   System Required: CentOS 6+/Debian 6+/Ubuntu 14.04+
 #   Description: Regular Command
-#   Version: 1.0.6
+#   Version: 1.0.7
 #   Author: carry0987
 #   Web: https://github.com/carry0987
 #=================================================
@@ -11,7 +11,7 @@
 set -e
 
 #Set variable
-sh_ver='1.0.6'
+sh_ver='1.0.7'
 red='\033[0;31m'
 green='\033[0;32m'
 yellow='\033[0;33m'
@@ -30,6 +30,19 @@ Update_Script(){
     [[ -z ${sh_new_ver} ]] && echo -e "${Error} Cannot connect to Github !" && exit 0
     wget -N --no-check-certificate "https://raw.githubusercontent.com/carry0987/Linux-Script/master/Tools/tools.sh"
     echo -e "The script is up to date [ ${sh_new_ver} ] !(Note: Because the update method is to directly overwrite the currently running script, some errors may be prompted below, just ignore it)" && exit 0
+}
+
+#Reboot
+reboot_countdown(){
+    echo -e "${Info} Rebooting...\r"
+    secs=$((5))
+    while [ $secs -gt 0 ]
+    do
+        echo -ne 'Wait '"$secs\033[0K"' seconds to reboot'"\r"
+        sleep 1
+        : $((secs--))
+    done
+    reboot
 }
 
 if [[ -n $1 && $1 =~ ^[0-9]+$ ]]; then
@@ -53,7 +66,8 @@ if [[ ! -n $tool ]]; then
     echo '11) Resource Monitor (Sort By Memory)'
     echo '12) Estimate Usage Of Folder'
     echo '13) Update Script'
-    echo '14) Exit'
+    echo '14) Reboot'
+    echo '15) Exit'
     read -p 'Which tool do you want to use ? ' tool
 fi
 
@@ -152,14 +166,6 @@ case $tool in
     9)
         uname -a
         #rpi-update
-        #secs=$((5))
-        #while [ $secs -gt 0 ]
-        #do
-        #    echo -ne 'Wait '"$secs\033[0K"' seconds to reboot'"\r"
-        #    sleep 1
-        #    : $((secs--))
-        #done
-        #reboot
         ;;
     10)
         ps -eo pid,ppid,cmd,%mem,%cpu --sort=-%cpu | head
@@ -179,7 +185,10 @@ case $tool in
     13)
         Update_Script
         ;;
-    14 | 'q')
+    14)
+        reboot_countdown
+        ;;
+    15 | 'q')
         echo 'Exited'
         ;;
     *)
