@@ -10,9 +10,9 @@ su root
 ## Script List
 * [***Tools***](#Tools)
   * [tools.sh](#toolssh)
-* [***GCP***](#GCP)
-  * [gcp-setup.sh](#gcp-setupsh)
-  * [gcp-pkg.sh](#gcp-pkgsh)
+* [***Setup***](#Setup)
+  * [Set-LC.sh](#Set-LCsh)
+  * [Install-Main-Pkg.sh](#Install-Main-Pkgsh)
 * [***Vim***](#Vim)
   * [vim-setup](#vim-setupsh)
 * [***Docker***](#Docker)
@@ -34,41 +34,41 @@ su root
 #### Installation:
 WGET
 ``` bash
-wget -N --no-cache --no-check-certificate https://raw.githubusercontent.com/carry0987/Linux-Script/master/Tools/tools.sh && chmod +x tools.sh && bash tools.sh
+wget -N --no-cache --no-check-certificate https://raw.githubusercontent.com/carry0987/Linux-Script/master/Tools/tools.sh && chmod +x tools.sh && mv -v tools.sh /usr/local/bin/tools && bash tools
 ```
 CURL
 ```bash
-curl -H 'Cache-Control: no-cache' -O https://raw.githubusercontent.com/carry0987/Linux-Script/master/Tools/tools.sh && chmod +x tools.sh && bash tools.sh
+curl -H 'Cache-Control: no-cache' -O https://raw.githubusercontent.com/carry0987/Linux-Script/master/Tools/tools.sh && chmod +x tools.sh && mv -v tools.sh /usr/local/bin/tools && bash tools
 ```
 
 ---
-## GCP
-### gcp-setup.sh
-- Description: Run this script to setup gcp environment
+## Setup
+### Set-LC.sh
+- Description: Run this script to setup default environment
 - Support OS: Debian 6+ / Ubuntu 14+
 
 #### Installation:
 WGET
 ``` bash
-wget -N --no-cache --no-check-certificate https://raw.githubusercontent.com/carry0987/Linux-Script/master/GCP/gcp-setup.sh && chmod +x gcp-setup.sh && bash gcp-setup.sh
+wget -N --no-cache --no-check-certificate https://raw.githubusercontent.com/carry0987/Linux-Script/master/Setup/Set-LC.sh && chmod +x Set-LC.sh && bash Set-LC.sh
 ```
 CURL
 ```bash
-curl -H 'Cache-Control: no-cache' -O https://raw.githubusercontent.com/carry0987/Linux-Script/master/GCP/gcp-setup.sh && chmod +x gcp-setup.sh && bash gcp-setup.sh
+curl -H 'Cache-Control: no-cache' -O https://raw.githubusercontent.com/carry0987/Linux-Script/master/Setup/Set-LC.sh && chmod +x Set-LC.sh && bash Set-LC.sh
 ```
 
-### gcp-pkg.sh
-- Description: Install main packages for gcp
+### Install-Main-Pkg.sh
+- Description: Install main packages for new server
 - Support OS: Debian 6+ / Ubuntu 14+
 
 #### Installation:
 WGET
 ``` bash
-wget -N --no-cache --no-check-certificate https://raw.githubusercontent.com/carry0987/Linux-Script/master/GCP/gcp-pkg.sh && chmod +x gcp-pkg.sh && bash gcp-pkg.sh
+wget -N --no-cache --no-check-certificate https://raw.githubusercontent.com/carry0987/Linux-Script/master/Setup/Install-Main-Pkg.sh && chmod +x Install-Main-Pkg.sh && bash Install-Main-Pkg.sh
 ```
 CURL
 ```bash
-curl -H 'Cache-Control: no-cache' -O https://raw.githubusercontent.com/carry0987/Linux-Script/master/GCP/gcp-pkg.sh && chmod +x gcp-pkg.sh && bash gcp-pkg.sh
+curl -H 'Cache-Control: no-cache' -O https://raw.githubusercontent.com/carry0987/Linux-Script/master/Setup/Install-Main-Pkg.sh && chmod +x Install-Main-Pkg.sh && bash Install-Main-Pkg.sh
 ```
 
 ---
@@ -165,7 +165,7 @@ curl -H 'Cache-Control: no-cache' -O https://raw.githubusercontent.com/carry0987
 ```bash
 alias ll='ls -lh'
 alias la='ls -a'
-alias tt='sudo sh tools.sh'
+alias tt='sudo sh tools'
 alias sr='screen -r'
 ```
 
