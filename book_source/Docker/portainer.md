@@ -3,7 +3,7 @@ Install protainer via `docker-compose`
 
 ## Nginx
 1. Create nginx config
-```bahs
+```bash
 sudo vim /etc/nginx/sites-available/portainer.example.com
 ```
 
