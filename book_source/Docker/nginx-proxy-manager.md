@@ -8,27 +8,27 @@ docker network create scoobydoo
 
 2. Create a docker-compose.yml file
 ```yaml
-version: '3.8'
-services:
-  app:
-    image: jc21/nginx-proxy-manager:latest
-    restart: unless-stopped
-    ports:
-      - 80:80
-      - 81:81
-      - 443:443
-    volumes:
-      - ./data:/data
-      - ./letsencrypt:/etc/letsencrypt
-    healthcheck:
-      test: ['CMD', '/bin/check-health']
-      interval: 10s
-      timeout: 3s
+  version: '3.8'
+  services:
+    app:
+      image: jc21/nginx-proxy-manager:latest
+      restart: unless-stopped
+      ports:
+        - 80:80
+        - 81:81
+        - 443:443
+      volumes:
+        - ./data:/data
+        - ./letsencrypt:/etc/letsencrypt
+      healthcheck:
+        test: ['CMD', '/bin/check-health']
+        interval: 10s
+        timeout: 3s
 
-networks:
-  default:
-    external: true
-    name: scoobydoo
+  networks:
+    default:
+      external: true
+      name: scoobydoo
 ```
 
 3. Start the container
@@ -61,26 +61,26 @@ Forward Port: 81
 
 3. Remove the default port 81 from docker-compose.yml
 ```yaml
-version: '3.8'
-services:
-  app:
-    image: jc21/nginx-proxy-manager:latest
-    restart: unless-stopped
-    ports:
-      - 80:80
-      - 443:443
-    volumes:
-      - ./data:/data
-      - ./letsencrypt:/etc/letsencrypt
-    healthcheck:
-      test: ['CMD', '/bin/check-health']
-      interval: 10s
-      timeout: 3s
+  version: '3.8'
+  services:
+    app:
+      image: jc21/nginx-proxy-manager:latest
+      restart: unless-stopped
+      ports:
+        - 80:80
+        - 443:443
+      volumes:
+        - ./data:/data
+        - ./letsencrypt:/etc/letsencrypt
+      healthcheck:
+        test: ['CMD', '/bin/check-health']
+        interval: 10s
+        timeout: 3s
 
-networks:
-  default:
-    external: true
-    name: scoobydoo
+  networks:
+    default:
+      external: true
+      name: scoobydoo
 ```
 
 4. Restart the container
