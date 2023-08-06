@@ -87,3 +87,5 @@ Forward Port: 81
 ```bash
 docker-compose down && docker-compose up -d
 ```
+
+5. Now if you go to **npm.example.com** you will see the NginxProxyManager web interface
