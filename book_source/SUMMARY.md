@@ -7,6 +7,7 @@
 * [Vim](./Vim/README.md)
 * [Docker](./Docker/docker.md)
     * [Docker Setup](./Docker/docker.md)
+    * [Nginx Proxy Manager](./Docker/nginx-proxy-manager.md)
     * [Portainer](./Docker/portainer.md)
 * [Server](./Server/README.md)
 * [System](./System/README.md)
