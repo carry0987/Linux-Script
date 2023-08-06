@@ -11,6 +11,7 @@ export PATH
 #=================================================
 
 sh_ver='1.1.4'
+repo_url='https://raw.githubusercontent.com/carry0987/Linux-Script/master/book_resource/Proxy/SSR'
 ipinfo_token_config='/usr/local/shadowsocksr/ipinfo-token.conf'
 filepath=$(cd "$(dirname "$0")"; pwd)
 file=$(echo -e "${filepath}"|awk -F "$0" '{print $1}')
@@ -62,7 +63,7 @@ BBR_installation_status(){
     if [[ ! -e ${BBR_file} ]]; then
         echo -e "${Error} Cannot found BBR script, downloading..."
         cd "${file}"
-        if ! wget -N --no-check-certificate https://raw.githubusercontent.com/carry0987/Linux-Script/master/BBR/bbr.sh; then
+        if ! wget -N --no-check-certificate https://raw.githubusercontent.com/carry0987/Linux-Script/master/book_resource/Server/bbr.sh; then
             echo -e "${Error} Failed to download BBR script !" && exit 1
         else
             echo -e "${Info} BBR script downloaded !"
@@ -605,7 +606,7 @@ Debian_apt(){
 #Download ShadowsocksR
 Download_SSR(){
     cd "/usr/local/"
-    wget -N --no-check-certificate "https://raw.githubusercontent.com/carry0987/Linux-Script/master/SSR/archive/manyuser.zip"
+    wget -N --no-check-certificate "${repo_url}/archive/manyuser.zip"
     [[ ! -e "manyuser.zip" ]] && echo -e "${Error} Failed to download the zip file of SSR Server" && rm -rf manyuser.zip && exit 1
     unzip "manyuser.zip"
     [[ ! -e "/usr/local/shadowsocksr-manyuser/" ]] && echo -e "${Error} Failed to extract the zip file of SSR Server" && rm -rf manyuser.zip && exit 1
@@ -619,14 +620,14 @@ Download_SSR(){
 }
 Service_SSR(){
     if [[ ${release} = "centos" ]]; then
-        if ! wget --no-check-certificate https://raw.githubusercontent.com/carry0987/Linux-Script/master/SSR/service/ssr_centos -O /etc/init.d/ssr; then
+        if ! wget --no-check-certificate ${repo_url}/service/ssr_centos -O /etc/init.d/ssr; then
             echo -e "${Error} Failed to download SSR Management Script !" && exit 1
         fi
         chmod +x /etc/init.d/ssr
         chkconfig --add ssr
         chkconfig ssr on
     else
-        if ! wget --no-check-certificate https://raw.githubusercontent.com/carry0987/Linux-Script/master/SSR/service/ssr_debian -O /etc/init.d/ssr; then
+        if ! wget --no-check-certificate ${repo_url}/service/ssr_debian -O /etc/init.d/ssr; then
             echo -e "${Error} Failed to download SSR Management Script !" && exit 1
         fi
         chmod +x /etc/init.d/ssr
@@ -1292,13 +1293,13 @@ Set_config_connect_verbose_info(){
 
 #Update script
 Update_Shell(){
-    sh_new_ver=$(wget --no-check-certificate -qO- -t1 -T3 "https://raw.githubusercontent.com/carry0987/Linux-Script/master/SSR/ssr.sh"|grep 'sh_ver="'|awk -F "=" '{print $NF}'|sed 's/\"//g'|head -1) && sh_new_type='github'
+    sh_new_ver=$(wget --no-check-certificate -qO- -t1 -T3 "${repo_url}/ssr.sh"|grep 'sh_ver="'|awk -F "=" '{print $NF}'|sed 's/\"//g'|head -1) && sh_new_type='github'
     [[ -z ${sh_new_ver} ]] && echo -e "${Error} Cannot connect to Github !" && exit 0
     if [[ -e "/etc/init.d/ssr" ]]; then
         rm -rf /etc/init.d/ssr
         Service_SSR
     fi
-    wget -N --no-check-certificate "https://raw.githubusercontent.com/carry0987/Linux-Script/master/SSR/ssr.sh" && chmod +x ssr.sh
+    wget -N --no-check-certificate "${repo_url}/ssr.sh" && chmod +x ssr.sh
     echo -e "The script is up to date [ ${sh_new_ver} ] !(Note: Because the update method is to directly overwrite the currently running script, some errors may be prompted below, just ignore it)" && exit 0
 }
 

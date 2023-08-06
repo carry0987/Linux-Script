@@ -12,6 +12,7 @@ set -e
 
 #Set variable
 sh_ver='1.0.9'
+repo_url='https://raw.githubusercontent.com/carry0987/Linux-Script/master/book_resource/Tools/tools.sh'
 red='\033[0;31m'
 green='\033[0;32m'
 yellow='\033[0;33m'
@@ -26,9 +27,9 @@ Error="[${red}Error${plain}]"
 
 #Update script
 Update_Script(){
-    sh_new_ver=$(wget --no-check-certificate --no-cache --no-cookies -qO- -t1 -T3 "https://raw.githubusercontent.com/carry0987/Linux-Script/master/Tools/tools.sh"|grep 'sh_ver="'|awk -F "=" '{print $NF}'|sed 's/\"//g'|head -1) && sh_new_type='github'
+    sh_new_ver=$(wget --no-check-certificate --no-cache --no-cookies -qO- -t1 -T3 "${repo_url}"|grep 'sh_ver="'|awk -F "=" '{print $NF}'|sed 's/\"//g'|head -1) && sh_new_type='github'
     [[ -z ${sh_new_ver} ]] && echo -e "${Error} Cannot connect to Github !" && exit 0
-    wget -N --no-check-certificate --no-cache --no-cookies "https://raw.githubusercontent.com/carry0987/Linux-Script/master/Tools/tools.sh"
+    wget -N --no-check-certificate --no-cache --no-cookies "${repo_url}"
     [[ -s "tools.sh" ]] && chmod +x tools.sh && mv -v tools.sh /usr/local/bin/tools && echo -e "${Info} Update completed !"
     echo -e "The script is up to date [ ${sh_new_ver} ] !(Note: Because the update method is to directly overwrite the currently running script, some errors may be prompted below, just ignore it)" && exit 0
 }

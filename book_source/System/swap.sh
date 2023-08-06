@@ -11,6 +11,7 @@ export PATH
 #=================================================
 
 sh_ver='1.1.8'
+repo_url='https://raw.githubusercontent.com/carry0987/Linux-Script/master/book_resource/System/swap.sh'
 red='\033[0;31m'
 green='\033[0;32m'
 yellow='\033[0;33m'
@@ -29,9 +30,9 @@ current_swap=$(free -m | awk '/^Swap:/ { print $2 }')
 
 #Update script
 Update_Script(){
-    sh_new_ver=$(wget --no-check-certificate -qO- -t1 -T3 "https://raw.githubusercontent.com/carry0987/Linux-Script/master/Swap/swap.sh"|grep 'sh_ver="'|awk -F "=" '{print $NF}'|sed 's/\"//g'|head -1) && sh_new_type='github'
+    sh_new_ver=$(wget --no-check-certificate -qO- -t1 -T3 "${repo_url}"|grep 'sh_ver="'|awk -F "=" '{print $NF}'|sed 's/\"//g'|head -1) && sh_new_type='github'
     [[ -z ${sh_new_ver} ]] && echo -e "${Error} Cannot connect to Github !" && exit 0
-    wget -N --no-check-certificate "https://raw.githubusercontent.com/carry0987/Linux-Script/master/Swap/swap.sh"
+    wget -N --no-check-certificate "${repo_url}"
     echo -e "The script is up to date [ ${sh_new_ver} ] !(Note: Because the update method is to directly overwrite the currently running script, some errors may be prompted below, just ignore it)" && exit 0
 }
 

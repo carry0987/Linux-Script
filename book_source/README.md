@@ -1,10 +1,11 @@
 # Linux-Script
 Store Linux Script
 
-## Author : carry0987
-| Project | Link |
-| :--- | :--- |
-| Gitbook | [Linux-Script](https://carry0987.github.io/Linux-Script/) |
+## Info
+Please run the script with root user, to change to root user, use the below command
+```bash
+su root
+```
 
 ## Contact
 | Website | Link |
