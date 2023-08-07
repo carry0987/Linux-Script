@@ -5,11 +5,11 @@
 #### Installation:
 WGET
 ``` bash
-wget -N --no-cache --no-check-certificate https://raw.githubusercontent.com/carry0987/Linux-Script/master/book_resource/Vim/vim-setup.sh && chmod +x vim-setup.sh && bash vim-setup.sh
+wget -N --no-cache --no-check-certificate https://raw.githubusercontent.com/carry0987/Linux-Script/master/book_source/Vim/vim-setup.sh && chmod +x vim-setup.sh && bash vim-setup.sh
 ```
 CURL
 ```bash
-curl -H 'Cache-Control: no-cache' -O https://raw.githubusercontent.com/carry0987/Linux-Script/master/book_resource/Vim/vim-setup.sh && chmod +x vim-setup.sh && bash vim-setup.sh
+curl -H 'Cache-Control: no-cache' -O https://raw.githubusercontent.com/carry0987/Linux-Script/master/book_source/Vim/vim-setup.sh && chmod +x vim-setup.sh && bash vim-setup.sh
 ```
 
 ### .vimrc

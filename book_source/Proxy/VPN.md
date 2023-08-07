@@ -6,9 +6,9 @@
 #### Installation:
 WGET
 ``` bash
-wget -N --no-cache --no-check-certificate https://raw.githubusercontent.com/carry0987/Linux-Script/master/book_resource/Proxy/VPN/vpn.sh && chmod +x vpn.sh && bash vpn.sh
+wget -N --no-cache --no-check-certificate https://raw.githubusercontent.com/carry0987/Linux-Script/master/book_source/Proxy/VPN/vpn.sh && chmod +x vpn.sh && bash vpn.sh
 ```
 CURL
 ```bash
-curl -H 'Cache-Control: no-cache' -O https://raw.githubusercontent.com/carry0987/Linux-Script/master/book_resource/Proxy/VPN/vpn.sh && chmod +x vpn.sh && bash vpn.sh
+curl -H 'Cache-Control: no-cache' -O https://raw.githubusercontent.com/carry0987/Linux-Script/master/book_source/Proxy/VPN/vpn.sh && chmod +x vpn.sh && bash vpn.sh
 ```

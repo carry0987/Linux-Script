@@ -11,7 +11,7 @@ export PATH
 #=================================================
 
 sh_ver='1.1.8'
-repo_url='https://raw.githubusercontent.com/carry0987/Linux-Script/master/book_resource/System/swap.sh'
+repo_url='https://raw.githubusercontent.com/carry0987/Linux-Script/master/book_source/System/swap.sh'
 red='\033[0;31m'
 green='\033[0;32m'
 yellow='\033[0;33m'

@@ -11,7 +11,7 @@ export PATH
 #=================================================
 
 sh_ver='1.1.4'
-repo_url='https://raw.githubusercontent.com/carry0987/Linux-Script/master/book_resource/Proxy/SSR'
+repo_url='https://raw.githubusercontent.com/carry0987/Linux-Script/master/book_source/Proxy/SSR'
 ipinfo_token_config='/usr/local/shadowsocksr/ipinfo-token.conf'
 filepath=$(cd "$(dirname "$0")"; pwd)
 file=$(echo -e "${filepath}"|awk -F "$0" '{print $1}')
@@ -63,7 +63,7 @@ BBR_installation_status(){
     if [[ ! -e ${BBR_file} ]]; then
         echo -e "${Error} Cannot found BBR script, downloading..."
         cd "${file}"
-        if ! wget -N --no-check-certificate https://raw.githubusercontent.com/carry0987/Linux-Script/master/book_resource/Server/bbr.sh; then
+        if ! wget -N --no-check-certificate https://raw.githubusercontent.com/carry0987/Linux-Script/master/book_source/Server/bbr.sh; then
             echo -e "${Error} Failed to download BBR script !" && exit 1
         else
             echo -e "${Info} BBR script downloaded !"
