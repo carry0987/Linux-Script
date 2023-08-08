@@ -1,6 +1,7 @@
 # Summary
 
 * [Regular Command](./Common/README.md)
+    * [Command List](./Common/CommandList.md)
     * [Run SUDO without password](./Common/Sudo.md)
 * [Tools](./Tools/README.md)
 * [Setup](./Setup/README.md)
