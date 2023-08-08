@@ -123,3 +123,77 @@ docker compose up -d
 ```bash
 docker compose pull && docker compose stop && docker compose up -d
 ```
+
+## Reverse Proxy for N8N
+1. Create `n8n.conf` file
+```bash
+sudo vim /etc/nginx/sites-available/n8n.conf
+```
+
+2. Add the following code to `n8n.conf`
+```nginx
+server {
+    listen 80;
+    listen [::]:80;
+    listen 443 ssl http2;
+    listen [::]:443 ssl http2;
+
+    server_name n8n.example.com;
+    client_max_body_size 256M;
+
+    # SSL with Cloudflare
+    ssl_certificate /etc/ssl/certs/cf_example.com.pem;
+    ssl_certificate_key /etc/ssl/private/cf_key_example.com.pem;
+    ssl_client_certificate /etc/ssl/certs/origin-pull-ca.pem;
+    ssl_verify_client on;
+
+    location / {
+        proxy_pass http://127.0.0.1:5678;
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection "upgrade";
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+        proxy_set_header X-Frame-Options SAMEORIGIN;
+        proxy_buffers 256 16k;
+        proxy_buffer_size 16k;
+        client_max_body_size 50m;
+        client_body_buffer_size 1m;
+        proxy_read_timeout 600s;
+        proxy_buffering off;
+        proxy_cache off;
+    }
+
+    location ~ ^/(webhook|webhook-test) {
+        proxy_set_header Connection '';
+        chunked_transfer_encoding off;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection "upgrade";
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+        proxy_set_header X-Frame-Options SAMEORIGIN;
+        proxy_buffering off;
+        proxy_cache off;
+        proxy_pass http://127.0.0.1:5678;
+    }
+}
+```
+
+3. Create symbolic link
+```bash
+sudo ln -s /etc/nginx/sites-available/n8n.conf /etc/nginx/sites-enabled/n8n.conf
+```
+
+4. Test nginx configuration
+```bash
+sudo nginx -t
+```
+
+5. Restart nginx
+```bash
+sudo systemctl reload nginx
+```
