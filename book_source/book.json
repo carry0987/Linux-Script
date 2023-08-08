@@ -14,6 +14,8 @@
         "anchor-navigation-ex",
         "flexible-alerts",
         "code",
+        "prism",
+        "-highlight",
         "tbfed-pagefooter",
         "hide-element"
     ],
@@ -54,6 +56,17 @@
         },
         "code": {
             "copyButtons": true
+        },
+        "prism": {
+            "css": [
+                "prismjs/themes/prism-tomorrow.css"
+            ],
+            "lang": {
+                "flow": "typescript"
+            },
+            "ignore": [
+                "eval-js"
+            ]
         },
         "tbfed-pagefooter": {
             "copyright": "Copyright &copy carry0987",
