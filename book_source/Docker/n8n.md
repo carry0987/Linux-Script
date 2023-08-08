@@ -197,3 +197,31 @@ sudo nginx -t
 ```bash
 sudo systemctl reload nginx
 ```
+
+## Backup & Restore
+### Docker
+```bash
+docker exec -it -u node {CONTAINER_ID} sh
+```
+
+### Backup
+Backup `workflow`
+```bash
+n8n export:workflow --all --output=.n8n/workflow.json
+```
+
+Backup `credential`
+```bash
+n8n export:credentials --all --decrypted --output=.n8n/credential.json
+```
+
+### Restore
+Import `workflow`
+```bash
+n8n import:workflow --input=.n8n/workflow.json
+```
+
+Import `credential`
+```bash
+n8n import:credentials --input=.n8n/credential.json
+```
