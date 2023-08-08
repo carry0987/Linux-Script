@@ -9,6 +9,7 @@
     * [Docker Setup](./Docker/docker.md)
     * [Nginx Proxy Manager](./Docker/nginx-proxy-manager.md)
     * [Portainer](./Docker/portainer.md)
+    * [N8N](./Docker/n8n.md)
 * [Server](./Server/README.md)
 * [System](./System/README.md)
 * [Proxy]()
