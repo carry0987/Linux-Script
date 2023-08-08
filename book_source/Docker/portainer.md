@@ -41,8 +41,7 @@ sudo systemctl reload nginx
 ## Docker-compose
 1. Make folder for portainer
 ```bash
-mkdir portainer
-cd portainer
+mkdir portainer && cd portainer
 ```
 
 2. **`docker-compose.yml`**
