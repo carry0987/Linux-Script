@@ -1,6 +1,31 @@
 # Portainer
 Install protainer via `docker-compose`
 
+## Docker-compose
+1. Make folder for portainer
+```bash
+mkdir portainer && cd portainer
+```
+
+2. **`docker-compose.yml`**
+```yaml
+  version: '3.8'
+
+  services:
+    portainer:
+      image: portainer/portainer-ce:latest
+      container_name: portainer
+      restart: always
+      security_opt:
+        - no-new-privileges:true
+      volumes:
+        - /etc/localtime:/etc/localtime:ro
+        - /var/run/docker.sock:/var/run/docker.sock:ro
+        - ./portainer-data:/data
+      ports:
+        - 9443:9443
+```
+
 ## Nginx
 1. Create nginx config
 ```bash
@@ -36,29 +61,4 @@ sudo nginx -t
 5. Reload nginx config
 ```bash
 sudo systemctl reload nginx
-```
-
-## Docker-compose
-1. Make folder for portainer
-```bash
-mkdir portainer && cd portainer
-```
-
-2. **`docker-compose.yml`**
-```yaml
-  version: '3.1'
-
-  services:
-    portainer:
-      image: portainer/portainer-ce:latest
-      container_name: portainer
-      restart: always
-      security_opt:
-        - no-new-privileges:true
-      volumes:
-        - /etc/localtime:/etc/localtime:ro
-        - /var/run/docker.sock:/var/run/docker.sock:ro
-        - ./portainer-data:/data
-      ports:
-        - 9443:9443
 ```
