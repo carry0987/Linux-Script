@@ -10,7 +10,7 @@ docker network create scoobydoo
 ```yaml
   version: '3.8'
   services:
-    app:
+    npm:
       image: jc21/nginx-proxy-manager:latest
       restart: unless-stopped
       ports:
@@ -41,7 +41,16 @@ docker-compose up -d
 http://localhost:81
 ```
 
-5. Login with the default credentials and change the password
+5. If you are using headless server, you can use SSH tunneling
+```bash
+ssh -L 8181:localhost:81 user@server
+```
+Then open the web interface
+```ini
+http://localhost:8181
+```
+
+6. Login with the default credentials and change the password
 ```ini
 Email: admin@example.com
 Password: changeme
@@ -54,16 +63,16 @@ Password: changeme
 ```ini
 Domain Names: npm.example.com
 Scheme: http
-Forward Hostname / IP: 127.0.0.1
+Forward Hostname / IP: npm
 Forward Port: 81
 ```
-![](https://i.imgur.com/3JI8hfz.png)
+![](https://i.imgur.com/TBEKo18.png)
 
-3. Remove the default port 81 from docker-compose.yml
+3. Remove the default port **`81`** from docker-compose.yml
 ```yaml
   version: '3.8'
   services:
-    app:
+    npm:
       image: jc21/nginx-proxy-manager:latest
       restart: unless-stopped
       ports:
