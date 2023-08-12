@@ -17,6 +17,11 @@ sudo groupadd docker
 sudo usermod -aG docker $USER
 ```
 
+3. To avoid logout and login again, run the following command
+```bash
+newgrp docker
+```
+
 ## Docker-compose
 1. Download the corresponding Linux version of Docker-compose
 ```bash
