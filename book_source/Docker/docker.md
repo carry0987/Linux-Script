@@ -20,7 +20,7 @@ sudo usermod -aG docker $USER
 ## Docker-compose
 1. Download the corresponding Linux version of Docker-compose
 ```bash
-sudo curl -L "https://github.com/docker/compose/releases/download/v2.16.0/docker-compose-$(uname -s)-$(uname -m)" \
+sudo curl -L "https://github.com/docker/compose/releases/download/v2.20.3/docker-compose-$(uname -s)-$(uname -m)" \
           -o /usr/local/bin/docker-compose
 ```
 
