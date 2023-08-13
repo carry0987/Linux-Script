@@ -176,16 +176,16 @@ sudo certbot --nginx -d example.com -d www.example.com
 3. Verifying Certbot Auto-Renewal
 Let’s Encrypt’s certificates are only valid for ninety days. This is to encourage users to automate their certificate renewal process. The `certbot` package we installed takes care of this for us by adding a systemd timer that will run twice a day and automatically renew any certificate that’s within thirty days of expiration.
 
-You can query the status of the timer with `systemctl`:
-```bash
-sudo systemctl status certbot.timer
-```
+    You can query the status of the timer with `systemctl`:
+    ```bash
+    sudo systemctl status certbot.timer
+    ```
 
-To test the renewal process, you can do a dry run with `certbot`:
-```bash
-sudo certbot renew --dry-run
-```
-If you see no errors, you’re all set. When necessary, Certbot will renew your certificates and reload Nginx to pick up the changes. If the automated renewal process ever fails, Let’s Encrypt will send a message to the email you specified, warning you when your certificate is about to expire.
+    To test the renewal process, you can do a dry run with `certbot`:
+    ```bash
+    sudo certbot renew --dry-run
+    ```
+    If you see no errors, you’re all set. When necessary, Certbot will renew your certificates and reload Nginx to pick up the changes. If the automated renewal process ever fails, Let’s Encrypt will send a message to the email you specified, warning you when your certificate is about to expire.
 
 ### Nginx Reverse Proxy with Cloudflare
 #### Normal Secure
