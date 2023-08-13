@@ -1,28 +1,41 @@
-# Docker
+## Docker
 
-## Install
-Follow `Docker Installation Guide` via this **[link](https://docs.docker.com/engine/install/ubuntu/)**
+### Install
+Follow `Docker Installation Guide` via this **[LINK](https://docs.docker.com/engine/install/ubuntu/)**
 
-## Setup
+### Setup
 1. Start docker-client and set automatically start on boot
 ```bash
 sudo systemctl start docker && sudo systemctl enable docker
 ```
 
-2. Configure the current user to operate docker commands without sudo (Recommended)
+### Run Docker Without Sudo
+1. Add **`docker`** group
 ```bash
 sudo groupadd docker
 ```
+
+2. Add current user into **`docker`** group
 ```bash
-sudo usermod -aG docker $USER
+sudo usermod -G docker -a $USER
 ```
 
-3. To avoid logout and login again, run the following command
+3. Refresh group list
 ```bash
 newgrp docker
 ```
 
-## Docker-compose
+4. Check group
+```bash
+groups
+```
+
+5. Restart **`docker`** service
+```bash
+sudo systemctl restart docker
+```
+
+### Docker-compose
 1. Download the corresponding Linux version of Docker-compose
 ```bash
 sudo curl -L "https://github.com/docker/compose/releases/download/v2.20.3/docker-compose-$(uname -s)-$(uname -m)" \
