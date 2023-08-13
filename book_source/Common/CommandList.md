@@ -10,6 +10,17 @@ du -sch /path/to/folder/*type
 sudo timedatectl set-ntp yes
 ```
 
+## Use tee instead of echo to add lines into file
+The redirection is done by the shell before sudo is even started.  
+So either make sure the redirection happens in a shell with the right permissions  
+```bash
+sudo bash -c 'echo "hello" > f.txt'
+```
+Or use tee  
+```bash
+echo "hello" | sudo tee f.txt  # add -a for append (>>)
+```
+
 ## Scan WiFi
 ```bash
 sudo iwlist wlan0 scan
@@ -127,12 +138,6 @@ echo 'cd ~/Desktop/' >> ~/.zprofile
 ## Terminal
 - **Ctrl + Alt + F2 = Terminal**
 - **Alt + F7 = Exit Terminal**
-
-## Vim
-Paste content:
-**Shift + Ins**
-Or
-**Shift + right-mouse-click**
 
 ## Rclone
 Show process every 1 second when upload files:
