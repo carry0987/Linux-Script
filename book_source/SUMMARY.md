@@ -16,7 +16,7 @@
 * [Setup](./Setup/README.md)
 * [Vim](./Vim/README.md)
 * [Docker]()
-    * [Docker Setup](./Docker/docker.md)
+    * [Docker Setup](./Docker/setup.md)
     * [Nginx Proxy Manager](./Docker/nginx-proxy-manager.md)
     * [Portainer](./Docker/portainer.md)
     * [N8N](./Docker/n8n.md)
