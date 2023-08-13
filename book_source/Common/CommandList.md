@@ -31,6 +31,18 @@ sudo iwlist wlan0 scan
 sudo ln -fs /bin/bash /bin/sh
 ```
 
+
+## Search Depend packages of Application
+### Way 1
+```bash
+apt-cache depends build-essential
+```
+
+### Way 2
+```bash
+apt-cache showpkg build-essential
+```
+
 ## APT Error Fix
 If it shows
 ```
