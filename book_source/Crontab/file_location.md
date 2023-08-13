@@ -7,4 +7,3 @@ User crontab files are stored by the login names in different locations in diffe
 | BSD Unix | `/var/cron/tabs/` |
 | Solaris, HP-UX, Debian, Ubuntu | `/var/spool/cron/crontabs/` |
 | AIX, Red Hat Linux, CentOS, Ferdora | `/var/spool/cron/` |
-```
