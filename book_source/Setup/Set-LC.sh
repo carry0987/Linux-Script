@@ -20,7 +20,7 @@ fi
 #Reboot
 reboot_os() {
     echo
-    read -p "Do you want to restart system? [y/n]" is_reboot
+    read -p "Do you want to restart system? [y/n]>" is_reboot
     if [[ ${is_reboot} == "y" || ${is_reboot} == "Y" ]]; then
         secs=$((5))
         while [ $secs -gt 0 ]
