@@ -27,3 +27,8 @@ set t_Co=256
 set encoding=utf8
 syntax on
 ```
+
+### Paste content
+**Shift + Ins**
+Or
+**Shift + right-mouse-click**
