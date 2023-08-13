@@ -1,6 +1,6 @@
 ## zshrc
 
-```zsh
+```bash
 source ~/.zprofile
 PROMPT='%F{033}%n%F{reset}@%F{green}%m:%F{yellow}%B%~%b%F{reset}$ %F{reset}'
 #export JAVA_HOME=$(/usr/libexec/java_home -v 1.11)
