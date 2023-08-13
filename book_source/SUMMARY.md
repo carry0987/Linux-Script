@@ -16,3 +16,6 @@
 * [Proxy]()
     * [SSR](./Proxy/SSR.md)
     * [VPN](./Proxy/VPN.md)
+* [Python]()
+    * [Conda](./Python/Conda.md)
+    * [Jupyter](./Python/Jupyter.md)
