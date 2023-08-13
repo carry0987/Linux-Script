@@ -3,7 +3,7 @@
 - Description: ShadowsocksR Easy Setup Tool
 - Support OS: CentOS 6+ / Debian 6+ / Ubuntu 14+
 
-#### Feature:
+#### Feature
 - Support setting limit of user speed
 - Support setting limit of the number of port devices
 - Support displaying current connected IP
@@ -14,7 +14,7 @@
 #### Note
 If you want to get location of IP, you should get the token from [IP-Info](https://ipinfo.io/)
 
-#### Installation:
+#### Installation
 WGET
 ``` bash
 wget -N --no-cache --no-check-certificate https://raw.githubusercontent.com/carry0987/Linux-Script/master/book_source/Proxy/SSR/ssr.sh && chmod +x ssr.sh && bash ssr.sh
@@ -22,4 +22,12 @@ wget -N --no-cache --no-check-certificate https://raw.githubusercontent.com/carr
 CURL
 ```bash
 curl -H 'Cache-Control: no-cache' -O https://raw.githubusercontent.com/carry0987/Linux-Script/master/book_source/Proxy/SSR/ssr.sh && chmod +x ssr.sh && bash ssr.sh
+```
+
+#### Firewall
+Firewall-cmd command for **`SSR`**
+```bash
+firewall-cmd --permanent --add-port=7382/tcp
+firewall-cmd --permanent --add-port=7382/udp
+firewall-cmd --reload
 ```
