@@ -30,6 +30,13 @@ OpenSSH (v6)               ALLOW       Anywhere (v6)
 Nginx HTTP (v6)            ALLOW       Anywhere (v6)
 ```
 
+### If need `www-data` permission
+```bash
+sudo usermod -a -G www-data $USER
+sudo chown -R www-data:www-data /var/www/
+sudo chmod -R g+w /var/www/
+```
+
 ### Add a new site with **`PHP`** support
 1. Create a new directory for the site
 ```bash
