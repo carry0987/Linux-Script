@@ -160,7 +160,7 @@ echo '5) Remove Swap'
 echo '6) Exit'
 
 display_status
-echo && read -e -p 'Please enter the number [1-6]：' num
+echo && read -e -p 'Please enter the number [1-6] >' num
 
 case $num in
     1)
