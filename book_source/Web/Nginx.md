@@ -37,6 +37,25 @@ sudo chown -R www-data:www-data /var/www/
 sudo chmod -R g+w /var/www/
 ```
 
+### Anti-leech
+```nginx
+server {
+    ...
+    location ~* .(gif|jpe?g|png|webp|bmp)$ {
+        expires 30d;
+        access_log /dev/null;
+        valid_referers none blocked server_names  *.example.com ~.facebook. ~.google. ~.baidu. ~.bing. ~.yahoo.;
+        if ($invalid_referer) {
+            # Rewrite to the site advertising map
+            rewrite ^/ /refer.png redirect;
+            # return 403;
+        }
+    }
+    # Avoid redirect loop
+    location = /refer.png {}
+}
+```
+
 ### Add a new site with **`PHP`** support
 1. Create a new directory for the site
 ```bash
