@@ -33,4 +33,6 @@
     * [Conda](./Python/Conda.md)
     * [Jupyter](./Python/Jupyter.md)
 * [MacOS]()
+    * [zshrc](./MacOS/zshrc.md)
+    * [screenrc](./MacOS/screenrc.md)
     * [Config](./MacOS/Config.md)

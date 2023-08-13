@@ -1,0 +1,6 @@
+## screenrc
+
+```zsh
+startup_message off
+term screen-256color
+```
