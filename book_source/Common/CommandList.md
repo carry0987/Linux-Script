@@ -31,7 +31,6 @@ sudo iwlist wlan0 scan
 sudo ln -fs /bin/bash /bin/sh
 ```
 
-
 ## Search Depend packages of Application
 ### Way 1
 ```bash
@@ -74,52 +73,6 @@ sudo service ssh restart
 ## Regenerate SSH Key
 ```bash
 ssh-keygen -R "you server hostname or ip"
-```
-
-## Check crontab status
-```bash
-sudo /etc/init.d/cron status
-```
-
-## Set crontab
-Edit cron
-```bash
-crontab -e
-```
-
-Remove cron
-```bash
-crontab -r
-```
-
-List cron
-```bash
-crontab -l
-```
-
-Start cron
-```bash
-sudo service cron start
-```
-
-Stop cron
-```bash
-sudo service cron stop
-```
-
-Reload cron config
-```bash
-sudo service cron reload
-```
-
-Restart cron
-```bash
-sudo service cron restart
-```
-
-Check cron status
-```bash
-sudo service cron status
 ```
 
 ## Set default path of terminal
