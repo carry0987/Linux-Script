@@ -3,6 +3,7 @@
 * [Regular Command](./Common/README.md)
     * [Command List](./Common/CommandList.md)
     * [Run SUDO without password](./Common/Sudo.md)
+    * [Change Network Interface Name](./Common/ChangeNetworkInterfaceName.md)
 * [Crontab](./Crontab/README.md)
     * [What is cron](./Crontab/what_is_cron.md)
     * [Crontab Restrictions](./Crontab/restrictions.md)
