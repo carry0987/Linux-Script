@@ -37,6 +37,11 @@ sudo chown -R www-data:www-data /var/www/
 sudo chmod -R g+w /var/www/
 ```
 
+### Check Nginx config file syntax
+```bash
+nginx -t -c /etc/nginx/nginx.conf
+```
+
 ### Anti-leech
 ```nginx
 server {

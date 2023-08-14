@@ -123,11 +123,6 @@ Rclone Config File
 rclone -h | grep "Config file"
 ```
 
-## Check Nginx config file syntax
-```bash
-nginx -t -c /etc/nginx/nginx.conf
-```
-
 ## Screen
 Kill specific screen
 ```bash
