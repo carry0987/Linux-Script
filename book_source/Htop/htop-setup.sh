@@ -18,10 +18,10 @@ if [[ -z $username || $username == 'root' ]]; then
         exit $?
     fi
     set_user='root'
-    work_path='/'$set_user
+    work_path='/'$set_user'/.config/htop/'
 else
     set_user=$username
-    work_path='/home/'$set_user
+    work_path='/home/'$set_user'/.config/htop/'
 fi
 
 cd "$work_path"
