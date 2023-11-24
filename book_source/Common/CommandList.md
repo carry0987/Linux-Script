@@ -15,6 +15,42 @@ sudo timedatectl set-ntp yes
 sudo ln -fs /bin/bash /bin/sh
 ```
 
+## Add user
+```bash
+sudo adduser [username]
+```
+> P.S. Don't use `useradd` to add user, it will not create home directory for user.
+
+Add user to sudo group
+```bash
+sudo usermod -aG sudo [username]
+```
+
+Change user password
+```bash
+sudo passwd [username]
+```
+
+## Change default editor to `vim`
+```bash
+sudo update-alternatives --config editor
+```
+
+And then choose `vim.basic`:
+```bash
+There are 3 choices for the alternative editor (providing /usr/bin/editor).
+
+  Selection    Path                Priority   Status
+------------------------------------------------------------
+* 0            /bin/nano            40        auto mode
+  1            /bin/nano            40        manual mode
+  2            /usr/bin/vim.basic   30        manual mode
+  3            /usr/bin/vim.tiny    15        manual mode
+
+Press <enter> to keep the current choice[*], or type selection number: 2
+update-alternatives: using /usr/bin/vim.basic to provide /usr/bin/editor (editor) in manual mode
+```
+
 ## Use tee instead of echo to add lines into file
 The redirection is done by the shell before sudo is even started.  
 So either make sure the redirection happens in a shell with the right permissions  
