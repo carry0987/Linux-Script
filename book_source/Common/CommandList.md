@@ -10,6 +10,11 @@ du -sch /path/to/folder/*type
 sudo timedatectl set-ntp yes
 ```
 
+## Set default shell
+```bash
+sudo ln -fs /bin/bash /bin/sh
+```
+
 ## Use tee instead of echo to add lines into file
 The redirection is done by the shell before sudo is even started.  
 So either make sure the redirection happens in a shell with the right permissions  
@@ -24,11 +29,6 @@ echo "hello" | sudo tee f.txt  # add -a for append (>>)
 ## Scan WiFi
 ```bash
 sudo iwlist wlan0 scan
-```
-
-## Set default shell
-```bash
-sudo ln -fs /bin/bash /bin/sh
 ```
 
 ## Search Depend packages of Application
