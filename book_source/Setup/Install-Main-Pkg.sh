@@ -8,9 +8,11 @@ sudo apt-get clean
 # Start SSH
 sudo systemctl enable ssh --now
 sudo systemctl start ssh
-#Start haveged
+# Start haveged
 sudo systemctl enable haveged
 sudo systemctl start haveged
+# Change default editor to vim
+sudo update-alternatives --set editor /usr/bin/vim.basic
 
 echo 'Finish !'
 exit 0
