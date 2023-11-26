@@ -18,7 +18,7 @@
         "-highlight",
         "tbfed-pagefooter",
         "hide-element",
-        "favicon"
+        "favicon-absolute"
     ],
     "pluginsConfig": {
         "fontSettings": {
@@ -77,9 +77,8 @@
         "hide-element": {
             "elements": [".gitbook-link"]
         },
-        "favicon": {
-            "shortcut": "https://carry0987.github.io/favicon.png",
-            "bookmark": "https://carry0987.github.io/favicon.png"
+        "favicon-absolute": {
+            "favicon": "https://carry0987.github.io/favicon.png"
         }
     }
 }
