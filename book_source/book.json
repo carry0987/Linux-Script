@@ -17,8 +17,7 @@
         "prism",
         "-highlight",
         "tbfed-pagefooter",
-        "hide-element",
-        "favicon-absolute"
+        "hide-element"
     ],
     "pluginsConfig": {
         "fontSettings": {
@@ -76,9 +75,6 @@
         },
         "hide-element": {
             "elements": [".gitbook-link"]
-        },
-        "favicon-absolute": {
-            "favicon": "https://carry0987.github.io/favicon.png"
         }
     }
 }
