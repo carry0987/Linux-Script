@@ -121,6 +121,16 @@ If in MacOS, use
 echo 'cd ~/Desktop/' >> ~/.zprofile
 ```
 
+## Clear history
+```bash
+history -c
+```
+
+If in MacOS, and you're using `zsh` as default shell, use
+```bash
+history -p
+```
+
 ## Zip
 **zip**
 - `-h Show the help interface`
