@@ -24,6 +24,10 @@ else
     work_path='/home/'$set_user'/.config/htop/'
 fi
 
+# Check if the directory exist before accessing it
+if [[ ! -d "$work_path" ]]; then
+    mkdir -p "$work_path"
+fi
 cd "$work_path"
 make_htoprc "$work_path"'/'
 
