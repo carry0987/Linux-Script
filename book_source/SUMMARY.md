@@ -41,4 +41,5 @@
 * [MacOS]()
     * [zshrc](./MacOS/zshrc.md)
     * [screenrc](./MacOS/screenrc.md)
+    * [tftp](./MacOS/tftp.md)
     * [Config](./MacOS/Config.md)
