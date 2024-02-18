@@ -1,18 +1,28 @@
 #!/bin/bash
 
 set -e
-sudo apt-get update
-sudo apt-get -y dist-upgrade
-sudo apt-get -y install ssh zip unzip wget vim screen haveged htop ufw
-sudo apt-get clean
+
+# Function to wrap commands with sudo if not running as root
+execute() {
+    if [ "$(id -u)" != "0" ]; then
+        sudo "$@"
+    else
+        "$@"
+    fi
+}
+
+execute apt-get update
+execute apt-get -y dist-upgrade
+execute apt-get -y install ssh zip unzip wget vim screen haveged htop ufw
+execute apt-get clean
 # Start SSH
-sudo systemctl enable ssh --now
-sudo systemctl start ssh
+execute systemctl enable ssh --now
+execute systemctl start ssh
 # Start haveged
-sudo systemctl enable haveged
-sudo systemctl start haveged
+execute systemctl enable haveged
+execute systemctl start haveged
 # Change default editor to vim
-sudo update-alternatives --set editor /usr/bin/vim.basic
+execute update-alternatives --set editor /usr/bin/vim.basic
 
 echo 'Finish !'
 exit 0
