@@ -273,7 +273,7 @@ install_config() {
 reboot_os() {
     echo
     echo -e "[${green}Info${plain}] The system needs to reboot."
-    read -p "Do you want to restart system? [y/n]" is_reboot
+    read -p "Do you want to restart system? [y/n]>" -r is_reboot
     if [[ ${is_reboot} == "y" || ${is_reboot} == "Y" ]]; then
         secs=$((5))
         while [ $secs -gt 0 ]
