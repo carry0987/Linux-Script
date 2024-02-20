@@ -15,13 +15,13 @@ sudo timedatectl set-ntp yes
 sudo ln -fs /bin/bash /bin/sh
 ```
 
-## Add user
+## Add user & group
 ```bash
 sudo adduser [username]
 ```
 > P.S. Don't use `useradd` to add user, it will not create home directory for user.
 
-Add user to sudo group
+## Add user to sudo group
 ```bash
 sudo usermod -aG sudo [username]
 ```

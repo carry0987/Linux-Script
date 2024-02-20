@@ -55,7 +55,7 @@ The default username is `admin`, and the default password is `adminadmin`.
 
 Step 2: Create a User and Group for qbittorrent-nox on Ubuntu
 ```bash
-sudo adduser --group qbtuser
+sudo adduser qbtuser
 ```
 
 Step 3: Disable qbtuser account SSH login (optional)  
