@@ -9,7 +9,7 @@ sudo timedatectl set-ntp yes
 check_user=$EUID
 user_name=$USER
 if [ $check_user -eq 0 ]; then
-    read -e -p -r 'Where is your .bashrc file? /home/>' select_user
+    read -e -p 'Where is your .bashrc file? /home/>' -r select_user
     sed -i '/HISTCONTROL/s/.*/HISTCONTROL=ignoreboth:erasedups/' "/home/${select_user}/.bashrc"
     source "/home/${select_user}/.bashrc"
 else
@@ -20,7 +20,7 @@ fi
 #Reboot
 reboot_os() {
     echo
-    read -p -r "Do you want to restart system? [y/n]>" is_reboot
+    read -p "Do you want to restart system? [y/n]>" -r is_reboot
     if [[ ${is_reboot} == "y" || ${is_reboot} == "Y" ]]; then
         secs=$((5))
         while [[ $secs -gt 0 ]]
