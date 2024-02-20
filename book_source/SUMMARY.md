@@ -32,6 +32,7 @@
     * [Let's Encrypt](./Web/LetsEncrypt.md)
 * [qBittorrent]()
     * [qBittorrent Setup](./qBittorrent/Setup.md)
+    * [qBittorrent Uninstall](./qBittorrent/Uninstall.md)
 * [System](./System/README.md)
 * [Proxy]()
     * [SSR](./Proxy/SSR.md)
