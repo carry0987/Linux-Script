@@ -9,7 +9,7 @@ make_htoprc(){
 }
 
 # Setup htop colorscheme
-read -erp "Please enter the username, leave blank if you want to setup htop for root : " username
+read -ep "Please enter the username, leave blank if you want to setup htop for root : " -r username
 if [[ -z $username || $username == 'root' ]]; then
     if [[ $EUID != 0 ]]; then
         # Replaced 'su root' with 'exec sudo bash' to fix SC2117 and maintain the rest of the script flow
