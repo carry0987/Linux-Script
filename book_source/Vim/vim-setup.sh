@@ -20,7 +20,7 @@ make_vimrc(){
 }
 
 # Setup vim colorscheme
-read -e -p "Please enter the username, leave blank if you want to setup vim for root : " username
+read -e -p "Please enter the username, leave blank if you want to setup vim for root : " -r username
 if [[ -z $username || $username == 'root' ]]; then
     if [[ $EUID != 0 ]]; then
         su 'root'
