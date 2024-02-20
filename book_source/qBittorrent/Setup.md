@@ -92,7 +92,7 @@ PrivateTmp=false
 User=%i
 Group=%i
 UMask=007
-ExecStart=@EXPAND_BINDIR@/qbittorrent-nox -d --webui-port=8080
+ExecStart=/usr/bin/qbittorrent-nox -d --webui-port=8080
 TimeoutStopSec=1800
 Restart=on-failure
 
