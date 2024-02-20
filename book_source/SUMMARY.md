@@ -30,6 +30,8 @@
 * [Web]()
     * [Nginx](./Web/Nginx.md)
     * [Let's Encrypt](./Web/LetsEncrypt.md)
+* [qBittorrent]()
+    * [qBittorrent Setup](./qBittorrent/Setup.md)
 * [System](./System/README.md)
 * [Proxy]()
     * [SSR](./Proxy/SSR.md)
