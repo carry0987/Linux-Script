@@ -2,8 +2,17 @@
 
 set -e
 
-sudo ln -fs /bin/bash /bin/sh
-sudo timedatectl set-ntp yes
+# Function to wrap commands with sudo if not running as root
+execute() {
+    if [ "$(id -u)" != "0" ]; then
+        sudo "$@"
+    else
+        "$@"
+    fi
+}
+
+execute ln -fs /bin/bash /bin/sh
+execute timedatectl set-ntp yes
 
 #Check operating user
 check_user=$EUID
@@ -29,7 +38,7 @@ reboot_os() {
             sleep 1
             : $((secs--))
         done
-        sudo reboot
+        execute reboot
     else
         echo -e "[Info] Reboot has been canceled..."
         exit 0
@@ -38,17 +47,17 @@ reboot_os() {
 
 #Set up locale
 language='C.UTF-8'
-sudo rm /etc/default/locale
+execute rm /etc/default/locale
 echo "LANG=$language
 LANGUAGE=$language
 LC_ALL=$language
-LC_CTYPE=$language" | sudo tee /etc/default/locale > /dev/null
-sudo chmod 644 /etc/default/locale
+LC_CTYPE=$language" | execute tee /etc/default/locale > /dev/null
+execute chmod 644 /etc/default/locale
 export LANG="${language}"
 export LANGUAGE="${language}"
 export LC_ALL="${language}"
 export LC_CTYPE="${language}"
 echo '#####################'
-sudo cat /etc/default/locale
+execute cat /etc/default/locale
 echo '#####################'
 reboot_os
