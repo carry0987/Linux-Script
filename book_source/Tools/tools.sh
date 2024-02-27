@@ -11,7 +11,7 @@
 set -e
 
 #Set variable
-sh_ver='1.1.0'
+sh_ver='1.1.1'
 repo_url='https://raw.githubusercontent.com/carry0987/Linux-Script/master/book_source/Tools/tools.sh'
 red='\033[0;31m'
 green='\033[0;32m'
@@ -27,11 +27,23 @@ Error="[${red}Error${plain}]"
 
 #Update script
 Update_Script(){
-    sh_new_ver=$(wget --no-check-certificate --no-cache --no-cookies -qO- -t1 -T3 "${repo_url}"|grep 'sh_ver="'|awk -F "=" '{print $NF}'|sed 's/\"//g'|head -1) && sh_new_type='github'
+    sh_new_ver=$(wget --no-check-certificate --no-cache --no-cookies -qO- -t1 -T3 "${repo_url}"|grep 'sh_ver='|awk -F "=" '{print $NF}'|sed "s/[\'\"]//g"|head -1)
     [[ -z ${sh_new_ver} ]] && echo -e "${Error} Cannot connect to Github !" && exit 0
-    wget -N --no-check-certificate --no-cache --no-cookies "${repo_url}"
-    [[ -s "tools.sh" ]] && chmod +x tools.sh && mv -v tools.sh /usr/local/bin/tools && echo -e "${Info} Update completed !"
-    echo -e "The script is up to date [ ${sh_new_ver} ] !(Note: Because the update method is to directly overwrite the currently running script, some errors may be prompted below, just ignore it)" && exit 0
+    if [[ "${sh_ver}" != "${sh_new_ver}" ]]; then
+        echo -e "${Info} A new version is available: ${sh_new_ver}"
+        echo -e "${Info} Updating script..."
+        wget --no-check-certificate --no-cache --no-cookies "${repo_url}" -O tools_new.sh
+        if [[ -s "tools_new.sh" ]]; then
+            chmod +x tools_new.sh
+            mv -v tools_new.sh /usr/local/bin/tools
+            echo -e "${Info} Update completed! Restarting script..."
+            exec /usr/local/bin/tools
+        else
+            echo -e "${Error} Failed to download the new version!"
+        fi
+    else
+        echo -e "${Info} You are already running the latest version [${sh_ver}]."
+    fi
 }
 
 #Reboot
