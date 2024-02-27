@@ -3,7 +3,7 @@
 #=================================================
 #   System Required: CentOS 6+/Debian 6+/Ubuntu 14.04+
 #   Description: Regular Command
-#   Version: 1.1.0
+#   Version: 1.1.1
 #   Author: carry0987
 #   Web: https://github.com/carry0987
 #=================================================
