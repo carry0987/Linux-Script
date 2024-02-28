@@ -27,7 +27,11 @@ install_guest_agent() {
 create_nopasswd_sudoers() {
     echo "Checking for no-password sudo configuration..."
     read -p "Do you want to create no-password sudo configuration for the sudo group? (y/n) " -r create_nopasswd
-    if [ ! -f /etc/sudoers.d/nopasswd ] && [[ ${create_nopasswd} == "y" || ${create_nopasswd} == "Y" ]]; then
+    if [[ ${create_nopasswd} == "n" || ${create_nopasswd} == "N" ]]; then
+        echo -e "[Info] No-password sudo configuration has been canceled..."
+        return 0
+    fi
+    if [ ! -f /etc/sudoers.d/nopasswd ]; then
         echo "Creating no-password sudo configuration for the sudo group."
         echo "%sudo	ALL=(ALL:ALL) NOPASSWD:ALL" | execute tee /etc/sudoers.d/nopasswd > /dev/null
         # Ensure the file has the correct permissions
