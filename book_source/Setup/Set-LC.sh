@@ -18,12 +18,20 @@ execute timedatectl set-ntp yes
 check_user=$EUID
 user_name=$USER
 if [ $check_user -eq 0 ]; then
-    read -e -p 'Where is your .bashrc file? /home/>' -r select_user
-    sed -i '/HISTCONTROL/s/.*/HISTCONTROL=ignoreboth:erasedups/' "/home/${select_user}/.bashrc"
-    source "/home/${select_user}/.bashrc"
+    read -ep "Please enter the username, leave blank if you want to setup htop for root : " -r select_user
+    bashrc_path="/home/${select_user}/.bashrc"
+    if [[ -z $select_user || $select_user == 'root' ]]; then
+        bashrc_path="/root/.bashrc"
+        sed -i '/HISTCONTROL/s/.*/HISTCONTROL=ignoreboth:erasedups/' "${bashrc_path}"
+        source "${bashrc_path}"
+    else
+        sed -i '/HISTCONTROL/s/.*/HISTCONTROL=ignoreboth:erasedups/' "${bashrc_path}"
+        source "${bashrc_path}"
+    fi
 else
-    sed -i '/HISTCONTROL/s/.*/HISTCONTROL=ignoreboth:erasedups/' "/home/${user_name}/.bashrc"
-    source "/home/${user_name}/.bashrc"
+    bashrc_path="/home/${user_name}/.bashrc"
+    sed -i '/HISTCONTROL/s/.*/HISTCONTROL=ignoreboth:erasedups/' "${bashrc_path}"
+    source "${bashrc_path}"
 fi
 
 #Reboot
