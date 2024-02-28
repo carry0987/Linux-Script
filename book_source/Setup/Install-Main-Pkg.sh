@@ -26,9 +26,10 @@ install_guest_agent() {
 # Check if the custom sudoers file exists, and create/overwrite it
 create_nopasswd_sudoers() {
     echo "Checking for no-password sudo configuration..."
-    if [ ! -f /etc/sudoers.d/nopasswd ]; then
+    read -p "Do you want to create no-password sudo configuration for the sudo group? (y/n) " -r create_nopasswd
+    if [ ! -f /etc/sudoers.d/nopasswd ] && [[ ${create_nopasswd} == "y" || ${create_nopasswd} == "Y" ]]; then
         echo "Creating no-password sudo configuration for the sudo group."
-        echo "%sudo	ALL=(ALL:ALL) NOPASSWD:ALL" | sudo tee /etc/sudoers.d/nopasswd > /dev/null
+        echo "%sudo	ALL=(ALL:ALL) NOPASSWD:ALL" | execute tee /etc/sudoers.d/nopasswd > /dev/null
         # Ensure the file has the correct permissions
         execute chmod 0440 /etc/sudoers.d/nopasswd
         echo "The sudo group can now use sudo without a password."
