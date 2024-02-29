@@ -21,7 +21,7 @@ fi
 
 echo 'Adding docker group...'
 execute groupadd docker
-echo 'Adding user to docker group...'
+echo "Adding user \"${USER}\" to docker group..."
 execute usermod -aG docker "$USER"
 echo 'Refreshing group list...'
 newgrp docker
