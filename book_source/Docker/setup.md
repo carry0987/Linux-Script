@@ -10,6 +10,20 @@ sudo systemctl start docker && sudo systemctl enable docker
 ```
 
 ### Run Docker Without Sudo
+You can set up the Docker daemon to run without root privileges. This is a good way to avoid using `sudo` when you use the `docker` command.  
+Directly use the following script for a quick setup, or follow the steps below for manual operation.  
+
+#### Quick Setup
+WGET
+``` bash
+wget -N --no-cache --no-check-certificate https://raw.githubusercontent.com/carry0987/Linux-Script/master/book_source/Docker/docker-setup.sh && chmod +x docker-setup.sh && bash docker-setup.sh
+```
+CURL
+```bash
+curl -H 'Cache-Control: no-cache' -O https://raw.githubusercontent.com/carry0987/Linux-Script/master/book_source/Docker/docker-setup.sh && chmod +x docker-setup.sh && bash docker-setup.sh
+```
+
+#### Manual Setup
 1. Add **`docker`** group
 ```bash
 sudo groupadd docker
@@ -35,10 +49,10 @@ groups
 sudo systemctl restart docker
 ```
 
-### Docker-compose
+### Docker-compose (Optional)
 1. Download the corresponding Linux version of Docker-compose
 ```bash
-sudo curl -L "https://github.com/docker/compose/releases/download/v2.20.3/docker-compose-$(uname -s)-$(uname -m)" \
+sudo curl -L "https://github.com/docker/compose/releases/download/v2.24.6/docker-compose-$(uname -s)-$(uname -m)" \
           -o /usr/local/bin/docker-compose
 ```
 
