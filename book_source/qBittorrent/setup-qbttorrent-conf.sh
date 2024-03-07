@@ -26,7 +26,7 @@ Download_qBittorrent_conf(){
         if [[ -z $username || $username == 'qbtuser' ]]; then
             username='qbtuser'
         fi
-        unzip -o qBittorrent-conf.zip -d "/home/${username}/.config/qBittorrent"
+        unzip -o qBittorrent-conf.zip -d "/home/${username}/.config"
         chmod -R 755 "/home/${username}/.config/qBittorrent"
         chown -R "${username}":"${username}" "/home/${username}/.config/qBittorrent"
         echo -e "${Info} qBittorrent configuration files have been downloaded and unzipped successfully!"
