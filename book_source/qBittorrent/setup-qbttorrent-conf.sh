@@ -23,6 +23,9 @@ Download_qBittorrent_conf(){
     wget --no-check-certificate --no-cache --no-cookies -O qBittorrent-conf.zip "${repo_url}"
     if [[ -s "qBittorrent-conf.zip" ]]; then
         read -ep "Please enter the username, leave blank if you want to setup for qbtuser : " -r username
+        if [[ -z $username || $username == 'qbtuser' ]]; then
+            username='qbtuser'
+        fi
         unzip -o qBittorrent-conf.zip -d "/home/${username}/.config/qBittorrent"
         chmod -R 755 "/home/${username}/.config/qBittorrent"
         chown -R "${username}":"${username}" "/home/${username}/.config/qBittorrent"
