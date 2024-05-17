@@ -31,7 +31,7 @@ sudo groupadd docker
 
 2. Add current user into **`docker`** group
 ```bash
-sudo usermod -G docker -a $USER
+sudo usermod -aG docker $USER
 ```
 
 3. Refresh group list
@@ -41,7 +41,7 @@ newgrp docker
 
 4. Check group
 ```bash
-groups
+groups $USER
 ```
 
 5. Restart **`docker`** service
