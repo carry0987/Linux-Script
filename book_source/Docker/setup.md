@@ -49,6 +49,11 @@ groups
 sudo systemctl restart docker
 ```
 
+6. Test Docker without sudo
+```bash
+docker info
+```
+
 ### Docker-compose (Optional)
 1. Download the corresponding Linux version of Docker-compose
 ```bash
