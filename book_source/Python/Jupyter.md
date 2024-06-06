@@ -21,6 +21,6 @@ jupyter notebook --generate-config --notebook-dir="/Users/$USER/Documents/Projec
 Install the following packages for **`Apple Silicon`** core:
 ```bash
 conda install -c apple tensorflow-deps --upgrade
-pip install tensorflow-macos --upgrade
+pip install tensorflow --upgrade
 pip install tensorflow-metal --upgrade
 ```
