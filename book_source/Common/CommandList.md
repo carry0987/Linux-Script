@@ -15,6 +15,12 @@ sudo timedatectl set-ntp yes
 sudo ln -fs /bin/bash /bin/sh
 ```
 
+### Make `zstdmt` as `zstd`
+`zstdmt` is faster than `zstd`, since it uses multi-threading.
+```bash
+sudo ln -s /usr/bin/zstdmt /usr/bin/zstd
+```
+
 ## Add user & group
 ```bash
 sudo adduser [username]
