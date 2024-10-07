@@ -5,19 +5,20 @@
     "defaultDescription": "Store Linux Script",
     "language": "en",
     "plugins": [
-        "github",
+        "octocat",
+        "tooltips",
         "-lunr",
         "-search",
         "-sharing",
         "-page-toc-button",
         "search-plus",
-        "anchor-navigation-ex",
-        "flexible-alerts",
-        "code",
+        "-anchor-navigation-ex",
+        "-flexible-alerts",
+        "-code",
         "prism",
         "-highlight",
-        "tbfed-pagefooter",
-        "hide-element"
+        "-tbfed-pagefooter",
+        "-hide-element"
     ],
     "pluginsConfig": {
         "fontSettings": {
@@ -27,7 +28,7 @@
         "theme-default": {
             "showLevel": false
         },
-        "github": {
+        "octocat": {
             "url": "https://github.com/carry0987/Linux-Script"
         },
         "anchor-navigation-ex": {
