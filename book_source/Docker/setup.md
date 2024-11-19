@@ -4,9 +4,21 @@
 Follow `Docker Installation Guide` via this **[LINK](https://docs.docker.com/engine/install/ubuntu/)**
 
 ### Setup
-1. Start docker-client and set automatically start on boot
+Start docker-client and set automatically start on boot
+**Docker**
 ```bash
 sudo systemctl start docker && sudo systemctl enable docker
+```
+
+**Containerd**
+```bash
+sudo systemctl start containerd && sudo systemctl enable containerd
+```
+
+To stop this behavior, use `disable` instead.
+```bash
+sudo systemctl disable docker
+sudo systemctl disable containerd
 ```
 
 ### Run Docker Without Sudo
