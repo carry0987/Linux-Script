@@ -42,6 +42,11 @@ sudo passwd [username]
 sudo userdel -r -f [username]
 ```
 
+## Delete group
+```bash
+sudo groupdel -f [groupname]
+```
+
 ## Change default editor to `vim`
 ```bash
 sudo update-alternatives --config editor
