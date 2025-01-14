@@ -37,6 +37,11 @@ Change user password
 sudo passwd [username]
 ```
 
+## Delete user
+```bash
+sudo userdel -r -f [username]
+```
+
 ## Change default editor to `vim`
 ```bash
 sudo update-alternatives --config editor
