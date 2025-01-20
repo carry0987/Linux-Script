@@ -4,6 +4,7 @@
 * [Regular Command](./Common/README.md)
     * [Command List](./Common/CommandList.md)
     * [Run SUDO without password](./Common/Sudo.md)
+    * [Change Username](./Common/ChangeUsername.md)
     * [Change Network Interface Name](./Common/ChangeNetworkInterfaceName.md)
     * [Disable cloud-init](./Common/DisableCloudInit.md)
 * [Crontab](./Crontab/README.md)
