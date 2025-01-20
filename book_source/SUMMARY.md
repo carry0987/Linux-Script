@@ -29,6 +29,7 @@
 * GCP
     * [Connect GCP with SSH Key](./GCP/SSH.md)
 * Web
+    * [UFW](./Web/UFW.md)
     * [Nginx](./Web/Nginx.md)
     * [Let's Encrypt](./Web/LetsEncrypt.md)
 * qBittorrent
