@@ -25,6 +25,8 @@
     * [Nginx Proxy Manager](./Docker/nginx-proxy-manager.md)
     * [Portainer](./Docker/portainer.md)
     * [N8N](./Docker/n8n.md)
+* K3s
+    * [K3s Setup](./K3s/Setup.md)
 * [Server](./Server/README.md)
 * GCP
     * [Connect GCP with SSH Key](./GCP/SSH.md)
