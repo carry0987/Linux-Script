@@ -136,4 +136,38 @@ To add a new node to your existing K3s cluster, perform the following:
     curl -sfL https://get.k3s.io | K3S_URL=https://<server-ip>:6443 K3S_TOKEN=<node-token> sh -
     ```
 
+3. **Verify Node Joining:**
+
+    Check the status of the new node to ensure it has joined the cluster:
+
+    ```bash
+    kubectl get nodes -o wide
+    ```
+
+4. **Label the Node (Optional):**
+
+    If needed, you can label the new node for specific workloads:
+
+    ```bash
+    kubectl label node <node-name> <label-key>=<label-value>
+    ```
+
+    For example, to label a node as a worker:
+
+    ```bash
+    kubectl label node <node-name> node-role.kubernetes.io/worker=worker
+    ```
+
+    Remove the label with:
+
+    ```bash
+    kubectl label node <node-name> <label-key>-
+    ```
+
+    For example, to remove the worker label:
+
+    ```bash
+    kubectl label node <node-name> node-role.kubernetes.io/worker-
+    ```
+
 By following these commands and procedures, you can effectively manage your K3s cluster, ensuring smooth deployment and scaling of your applications. For further details on each command, consult the [Kubernetes kubectl Documentation](https://kubernetes.io/docs/reference/kubectl/).
