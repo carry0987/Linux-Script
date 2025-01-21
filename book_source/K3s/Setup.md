@@ -42,6 +42,13 @@ sudo systemctl status k3s
 
 If the service is running, you should see an output indicating that the service is active and running.
 
+### Check Pods
+You can also check the status of the pods in the `kube-system` namespace to ensure that the core components of K3s are running correctly:
+
+```bash
+kubectl get pods -n kube-system
+```
+
 ### Work with firewall
 
 #### Disable UFW (Uncomplicated Firewall)
