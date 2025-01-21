@@ -30,20 +30,30 @@ To specify an alternate version or additional options, you can customize the abo
 ### Use K3s Without Sudo
 Configuring your system to use `kubectl` commands without `sudo` involves setting up the `KUBECONFIG` environment variable.
 
-1. Change the permissions of the `k3s.yaml` file to allow your user to read it:
-```bash
-sudo chmod 644 /etc/rancher/k3s/k3s.yaml
-```
+1. **Set the `KUBECONFIG` Environment Variable:**
 
-2. Copy the `.kube` directory to your home directory:
-```bash
-sudo mv /root/.kube $HOME/.kube # this will write over any previous configuration
-```
+   First, set up the `KUBECONFIG` environment variable in your current shell session to point to your local configuration file:
+   ```bash
+   export KUBECONFIG=~/.kube/config
+   ```
 
-3. Update the permissions of the `.kube` directory:
-```bash
-sudo chown -R $USER $HOME/.kube
-sudo chgrp -R $USER $HOME/.kube
-```
+2. **Generate the Local Configuration File:**
 
-This guide sets up a basic K3s installation and ensures that you can run basic Kubernetes commands without needing `sudo`.
+   Create the `.kube` directory and generate the configuration file using the following command:
+   ```bash
+   mkdir -p ~/.kube
+   sudo k3s kubectl config view --raw > "$KUBECONFIG"
+   chmod 600 "$KUBECONFIG"
+   ```
+   This ensures that your Kubernetes configuration file is only readable by your user, maintaining security.
+
+3. **Persist Configuration Across Reboots:**
+
+   To ensure the `KUBECONFIG` environment variable is automatically set in every new terminal session, add it to your `~/.profile` or `~/.bashrc` file:
+   ```bash
+   echo 'export KUBECONFIG=~/.kube/config' >> ~/.bashrc
+   source ~/.bashrc
+   ```
+   If you use a different shell (e.g., zsh), make similar additions in your `~/.zshrc`.
+
+By setting it up this way, you can run `kubectl` without needing `sudo`, while maintaining proper security for your `k3s.yaml` file.
