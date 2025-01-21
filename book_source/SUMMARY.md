@@ -28,6 +28,8 @@
     * [N8N](./Docker/n8n.md)
 * K3s
     * [K3s Setup](./K3s/Setup.md)
+    * [K3s Uninstall](./K3s/Uninstall.md)
+    * [K3s Command List](./K3s/CommandList.md)
 * [Server](./Server/README.md)
 * GCP
     * [Connect GCP with SSH Key](./GCP/SSH.md)
