@@ -27,7 +27,7 @@ You can check the status of your nodes, pods, and services using the following `
     This command shows the list and status of all nodes in your cluster.
 
     ```bash
-    kubectl get nodes
+    kubectl get nodes -o wide
     ```
 
 - **View Pods:**
@@ -35,7 +35,7 @@ You can check the status of your nodes, pods, and services using the following `
     To list all pods in the default namespace or specify another namespace with `-n <namespace>`:
 
     ```bash
-    kubectl get pods
+    kubectl get pods -o wide
     ```
 
 - **View Services:**
@@ -43,7 +43,7 @@ You can check the status of your nodes, pods, and services using the following `
     Lists all services running in the default namespace, or specify another namespace.
 
     ```bash
-    kubectl get svc
+    kubectl get svc -o wide
     ```
 
 ### Deploy Applications
@@ -73,30 +73,10 @@ kubectl delete -f nginx-deployment.yml
 To check the status of a deployment, use the following command:
 
 ```bash
-kubectl get deployments
+kubectl get deployments -o wide
 ```
 
 This command will show the status of all deployments in the default namespace.
-
-### Check Pod Status
-
-To check the status of pods in a deployment, use:
-
-```bash
-kubectl get pods
-```
-
-This command will show the status of all pods in the default namespace.
-
-### Check Service Status
-
-To check the status of services in a deployment, use:
-
-```bash
-kubectl get svc
-```
-
-This command will show the status of all services in the default namespace.
 
 ### Scale Deployments
 
