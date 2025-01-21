@@ -58,6 +58,12 @@ Reset UFW to the default state; all rules will be deleted:
 sudo ufw reset
 ```
 
+### Disable UFW
+Disable UFW to allow all traffic:
+```bash
+sudo ufw disable
+```
+
 ### Additional Commands for Specific Scenarios
 1. **Set Named Services**: Some services register with UFW, such as 'Nginx Full', which can be used to allow both HTTP and HTTPS.
    ```bash
