@@ -31,6 +31,7 @@
     * [K3s Uninstall](./K3s/Uninstall.md)
     * [K3s Command List](./K3s/CommandList.md)
     * [Helm](./K3s/Helm.md)
+    * [MetalLB](./K3s/MetalLB.md)
     * [Istio](./K3s/Istio.md)
 * [Server](./Server/README.md)
 * GCP
