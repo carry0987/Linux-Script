@@ -27,7 +27,7 @@ This will install all the necessary MetalLB components into your K3s environment
 ### Configuration
 Once MetalLB is installed, you need to configure an IP address pool from which it can allocate addresses for LoadBalancer services.
 
-Create a configuration file `metallb-config.yaml` with an IP range that matches your network setup:
+Create a configuration file `metallb-config.yml` with an IP range that matches your network setup:
 
 ```yaml
 apiVersion: metallb.io/v1beta1
@@ -52,7 +52,7 @@ spec:
 Apply the configuration:
 
 ```bash
-kubectl apply -f metallb-config.yaml
+kubectl apply -f metallb-config.yml
 ```
 
 ### Verify Installation
@@ -84,7 +84,7 @@ kubectl apply -f metallb-config.yaml
    Apply and observe the `EXTERNAL-IP`:
 
    ```bash
-   kubectl apply -f test-loadbalancer.yaml
+   kubectl apply -f test-loadbalancer.yml
    kubectl get services
    ```
 
