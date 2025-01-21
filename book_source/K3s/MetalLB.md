@@ -1,17 +1,28 @@
 ## MetalLB
 
 ### Install
-To set up MetalLB in your K3s environment, start by creating a namespace for it:
+To set up MetalLB in your K3s environment, follow these steps:
+
+First, create a namespace for MetalLB:
 
 ```bash
 kubectl create namespace metallb-system
 ```
 
-Then, apply the MetalLB manifest to install the necessary components:
+Next, use the Helm chart to install MetalLB. Make sure you have added the MetalLB repository to Helm and updated it:
 
 ```bash
-kubectl apply -f https://raw.githubusercontent.com/metallb/metallb/v0.13.7/config/manifests.yaml
+helm repo add metallb https://metallb.github.io/metallb
+helm repo update
 ```
+
+Now, install MetalLB in the `metallb-system` namespace:
+
+```bash
+helm install metallb metallb/metallb --namespace metallb-system
+```
+
+This will install all the necessary MetalLB components into your K3s environment.
 
 ### Configuration
 Once MetalLB is installed, you need to configure an IP address pool from which it can allocate addresses for LoadBalancer services.
