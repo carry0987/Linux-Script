@@ -32,28 +32,28 @@ Configuring your system to use `kubectl` commands without `sudo` involves settin
 
 1. **Set the `KUBECONFIG` Environment Variable:**
 
-   First, set up the `KUBECONFIG` environment variable in your current shell session to point to your local configuration file:
-   ```bash
-   export KUBECONFIG=~/.kube/config
-   ```
+    First, set up the `KUBECONFIG` environment variable in your current shell session to point to your local configuration file:
+    ```bash
+    export KUBECONFIG=~/.kube/config
+    ```
 
 2. **Generate the Local Configuration File:**
 
-   Create the `.kube` directory and generate the configuration file using the following command:
-   ```bash
-   mkdir -p ~/.kube
-   sudo k3s kubectl config view --raw > "$KUBECONFIG"
-   chmod 600 "$KUBECONFIG"
-   ```
-   This ensures that your Kubernetes configuration file is only readable by your user, maintaining security.
+    Create the `.kube` directory and generate the configuration file using the following command:
+    ```bash
+    mkdir -p ~/.kube
+    sudo k3s kubectl config view --raw > "$KUBECONFIG"
+    chmod 600 "$KUBECONFIG"
+    ```
+    This ensures that your Kubernetes configuration file is only readable by your user, maintaining security.
 
 3. **Persist Configuration Across Reboots:**
 
-   To ensure the `KUBECONFIG` environment variable is automatically set in every new terminal session, add it to your `~/.profile` or `~/.bashrc` file:
-   ```bash
-   echo 'export KUBECONFIG=~/.kube/config' >> ~/.bashrc
-   source ~/.bashrc
-   ```
-   If you use a different shell (e.g., zsh), make similar additions in your `~/.zshrc`.
+    To ensure the `KUBECONFIG` environment variable is automatically set in every new terminal session, add it to your `~/.profile` or `~/.bashrc` file:
+    ```bash
+    echo 'export KUBECONFIG=~/.kube/config' >> ~/.bashrc
+    source ~/.bashrc
+    ```
+    If you use a different shell (e.g., zsh), make similar additions in your `~/.zshrc`.
 
 By setting it up this way, you can run `kubectl` without needing `sudo`, while maintaining proper security for your `k3s.yaml` file.
