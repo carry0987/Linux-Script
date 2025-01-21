@@ -44,7 +44,7 @@ create_nopasswd_sudoers() {
 
 execute apt-get update
 execute apt-get -y dist-upgrade
-execute apt-get -y install ssh zip unzip wget vim screen haveged htop ufw
+execute apt-get -y install ssh zip unzip wget vim screen haveged htop ufw tree
 # Install qemu-guest-agent
 install_guest_agent
 # Clean up
