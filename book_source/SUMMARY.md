@@ -31,6 +31,7 @@
     * [K3s Uninstall](./K3s/Uninstall.md)
     * [K3s Command List](./K3s/CommandList.md)
     * [Helm](./K3s/Helm.md)
+    * [Istio](./K3s/Istio.md)
 * [Server](./Server/README.md)
 * GCP
     * [Connect GCP with SSH Key](./GCP/SSH.md)
