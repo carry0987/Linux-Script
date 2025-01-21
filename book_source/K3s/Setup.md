@@ -27,6 +27,12 @@ curl -sfL https://get.k3s.io | sh -
 
 To specify an alternate version or additional options, you can customize the above command as needed.
 
+For example, to install K3s without the default `traefik` ingress controller, you can use the following command:
+
+```bash
+curl -sfL https://get.k3s.io | INSTALL_K3S_EXEC="--disable traefik" sh -
+```
+
 ### Verify Installation
 After the installation is complete, you can verify the status of the K3s service using the following command:
 
