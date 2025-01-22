@@ -133,7 +133,7 @@ To add a new node to your existing K3s cluster, perform the following:
     Run the K3s installation script with the server's IP address and token to join the cluster:
 
     ```bash
-    curl -sfL https://get.k3s.io | K3S_URL=https://<server-ip>:6443 K3S_TOKEN=<node-token> sh -
+    curl -sfL https://get.k3s.io | K3S_URL=https://<server-ip>:6443 K3S_TOKEN=<node-token> K3S_NODE_NAME=worker-1 sh -
     ```
 
 3. **Verify Node Joining:**
