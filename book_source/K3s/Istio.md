@@ -1,6 +1,5 @@
 ## Istio
-This guide provides step-by-step instructions for installing Gateway API CRDs and Istio on your Kubernetes cluster.  
-Please follow the instructions carefully to ensure a successful installation.
+This guide provides step-by-step instructions for installing the Gateway API CRDs and Istio on your Kubernetes cluster, leveraging the built-in support for Gateway API to manage ingress traffic.
 
 ## Prerequisites
 
@@ -71,16 +70,14 @@ Check `istiod` service installation:
 kubectl get deployments -n istio-system --output wide
 ```
 
-### (Optional) Install an Ingress Gateway
+### Configuring and Using Gateway API
 
-To install an ingress gateway, create a separate namespace and deploy the chart:
+With Gateway API CRDs installed, define your Gateway and HTTPRoute resources. This will automatically provision gateway deployments and services based on the Gateway configurations.
 
-```sh
-kubectl create namespace istio-ingress
-helm install istio-ingress istio/gateway -n istio-ingress --wait
-```
+Refer to the Gateway API documentation for defining:
 
-Ensure the namespace does not have an `istio-injection=disabled` label for the gateway to function properly.
+- **Gateway**: Resource defining how ingress traffic is handled.
+- **HTTPRoute**: Specifies routing rules to route traffic based on HTTP properties.
 
 ## Updates and Advanced Customization
 
