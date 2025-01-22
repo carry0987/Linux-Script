@@ -79,6 +79,19 @@ Refer to the Gateway API documentation for defining:
 - **Gateway**: Resource defining how ingress traffic is handled.
 - **HTTPRoute**: Specifies routing rules to route traffic based on HTTP properties.
 
+### When Using Gateway API CRDs, You Can Omit:
+
+- **Optional Step: Install an Ingress Gateway**
+
+To install an ingress gateway, create a separate namespace and deploy the chart:
+
+```sh
+kubectl create namespace istio-ingress
+helm install istio-ingress istio/gateway -n istio-ingress --wait
+```
+
+Ensure the namespace does not have an `istio-injection=disabled` label for the gateway to function properly.
+
 ## Updates and Advanced Customization
 
 To update Istio configurations or perform advanced customization, refer to the available configuration options using:
