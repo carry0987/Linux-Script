@@ -30,7 +30,9 @@ To specify an alternate version or additional options, you can customize the abo
 For example, to install K3s without the default `traefik` ingress controller, you can use the following command:
 
 ```bash
-curl -sfL https://get.k3s.io | INSTALL_K3S_EXEC="--disable traefik" sh -
+curl -sfL https://get.k3s.io | sh -s - server \
+  --disable traefik \
+  --cluster-init
 ```
 
 ### Verify Installation
