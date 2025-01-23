@@ -29,6 +29,13 @@ This command will deploy all necessary Longhorn components in your K3s environme
 
 After installing Longhorn, you can configure it to suit your specific storage needs. Longhorn automatically provides a storage class named `longhorn`, which you can use to create PersistentVolumeClaims (PVCs).
 
+**Replica Setting Warning:**
+
+- The UI's setting for replica is for UI created volume.
+- The default number of replicas when creating the volume from Longhorn UI. For Kubernetes, update the `numberOfReplicas` in the StorageClass.
+- Kubernetes doesn't allow modify the parameter of the storage class. So you can create another storage class with Longhorn as driver, and set replica count to 1 on that.
+- It's not recommended to modify the default storage class since it might cause issues during the upgrade.
+
 To define a PVC using Longhorn, create a YAML file:
 
 ```yaml
