@@ -1,6 +1,3 @@
-kubectl create secret tls cloudflare-tls --cert=cert.pem --key=privkey.pem -n istio-system
-
-kubectl get secrets -n istio-system
 ## Secrets in K3s
 
 > **Note**: In this guide, if the `-n` (namespace) option is omitted, the default namespace (`default`) will be used automatically.
