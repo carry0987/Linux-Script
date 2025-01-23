@@ -33,6 +33,7 @@
     * [Helm](./K3s/Helm.md)
     * [MetalLB](./K3s/MetalLB.md)
     * [Istio](./K3s/Istio.md)
+    * [Longhorn](./K3s/Longhorn.md)
     * [Secret](./K3s/Secret.md)
 * [Server](./Server/README.md)
 * GCP
