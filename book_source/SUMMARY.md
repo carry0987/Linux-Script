@@ -33,6 +33,7 @@
     * [Helm](./K3s/Helm.md)
     * [MetalLB](./K3s/MetalLB.md)
     * [Istio](./K3s/Istio.md)
+    * [Secret](./K3s/Secret.md)
 * [Server](./Server/README.md)
 * GCP
     * [Connect GCP with SSH Key](./GCP/SSH.md)
