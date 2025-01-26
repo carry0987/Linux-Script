@@ -35,6 +35,7 @@
     * [Istio](./K3s/Istio.md)
     * [Longhorn](./K3s/Longhorn.md)
     * [Secret](./K3s/Secret.md)
+    * [ExternalDNS](./K3s/ExternalDNS.md)
 * [Server](./Server/README.md)
 * GCP
     * [Connect GCP with SSH Key](./GCP/SSH.md)
