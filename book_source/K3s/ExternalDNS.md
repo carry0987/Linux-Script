@@ -18,13 +18,13 @@ To integrate ExternalDNS with your K3s cluster using Cloudflare, follow these st
 
     ```yaml
     provider:
-        name: cloudflare
+      name: cloudflare
     env:
-        - name: CF_API_TOKEN
-        valueFrom:
-            secretKeyRef:
-            name: cloudflare-api-key
-            key: apiKey
+      - name: CF_API_TOKEN
+      valueFrom:
+        secretKeyRef:
+        name: cloudflare-api-key
+        key: apiKey
     ```
 
 3. **Add and Install ExternalDNS with Helm:**
@@ -60,36 +60,39 @@ To integrate ExternalDNS with your K3s cluster using Cloudflare, follow these st
     apiVersion: apps/v1
     kind: Deployment
     metadata:
-        name: nginx
+      name: nginx
     spec:
-        selector:
+      selector:
         matchLabels:
-            app: nginx
-        template:
+          app: nginx
+      template:
         metadata:
-            labels:
+          labels:
             app: nginx
         spec:
-            containers:
-            - name: nginx
-            image: nginx
+          containers:
+          - image: nginx
+            name: nginx
             ports:
             - containerPort: 80
     ---
     apiVersion: v1
     kind: Service
     metadata:
-        name: nginx
-        annotations:
-        external-dns.alpha.kubernetes.io/hostname: "your.domain.com"
+      name: nginx
+      annotations:
+        external-dns.alpha.kubernetes.io/hostname: example.com
+        external-dns.alpha.kubernetes.io/ttl: "120" #optional
+        external-dns.alpha.kubernetes.io/target: "YOUR_PUBLIC_IP" #optional
+        external-dns.alpha.kubernetes.io/cloudflare-proxied: "true" #optional
     spec:
-        type: LoadBalancer
-        selector:
+      selector:
         app: nginx
-        ports:
+      type: LoadBalancer
+      ports:
         - protocol: TCP
-        port: 80
-        targetPort: 80
+          port: 80
+          targetPort: 80
     ```
 
     Apply the configuration and check for the assigned `EXTERNAL-IP`:
