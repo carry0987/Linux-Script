@@ -170,4 +170,12 @@ To add a new node to your existing K3s cluster, perform the following:
     kubectl label node <node-name> node-role.kubernetes.io/worker-
     ```
 
+### Generate base64 Encoded K3s Config File
+
+To generate a base64 encoded K3s config file for use with `kubectl`:
+
+```bash
+cat ~/.kube/config | base64 -w 0
+```
+
 By following these commands and procedures, you can effectively manage your K3s cluster, ensuring smooth deployment and scaling of your applications. For further details on each command, consult the [Kubernetes kubectl Documentation](https://kubernetes.io/docs/reference/kubectl/).
