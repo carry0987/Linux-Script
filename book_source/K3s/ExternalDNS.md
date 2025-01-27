@@ -172,3 +172,31 @@ This setup allows ExternalDNS to dynamically manage DNS records for services exp
   Confirm that DNS records are updated in Cloudflare by checking the domain's DNS settings. Ensure the ExternalDNS service has updated these records corresponding to the correct IP addresses exposed by your services.
 
 Setting ExternalDNS correctly, especially with the combination of MetalLB and internal K3s environments, demands careful handling of network configurations and service types. For production-grade setups, ensure robust IP management and DNS adjustments that reflect real-world accessibility needs.
+
+### BGP vs. NAT: Best Practices in Different Network Scenarios
+
+In on-prem or private data center environments, if you want services within a K8s cluster to have "true" public IPs, there are generally two approaches:
+
+1. **NAT / Forwarding (Single IP / Few IPs)**
+   - **Applicable Scenarios**: You have one or a few public IPs, the ISP has not provided you with an announcable IP block, or the equipment (such as FortiGate) has not enabled BGP.
+   - **Approach**: Use DNAT / Port Forwarding on the firewall or router (e.g., FortiGate) to forward external 80/443 traffic to the cluster's MetalLB IP or NodePort.
+   - **ExternalDNS Configuration**: You need to manually point the annotation to the public IP (external firewall IP). Otherwise, ExternalDNS might automatically read a private IP.
+   - **Pros and Cons**:
+     - Pros: Simple deployment, no need for ISP cooperation, or BGP environment.
+     - Cons: If multiple services share the same IP, multiple Port Forwards are needed on FortiGate or use the same IP protocol to achieve multiple virtual hosts.
+
+2. **BGP Exchange (Multiple / Announcable IP Block)**
+   - **Applicable Scenarios**: You have multiple public IPs (e.g., /29, /28 blocks) and can perform BGP Peering with the ISP or upstream equipment, with an ASN or route announcement permission.
+   - **Approach**: Install MetalLB and enable BGP mode, letting MetalLB be the BGP Speaker to announce the public IP assigned to a service directly to the router or upstream network.
+   - **ExternalDNS Configuration**: ExternalDNS can automatically write the public IP assigned by MetalLB into DNS. No manual override needed.
+   - **Pros and Cons**:
+     - Pros: Each service gets a truly independent public IP without NAT; a cleaner traffic path; scalable expansion.
+     - Cons: Requires network equipment to support BGP and ownership of announcable IP blocks; configuration and maintenance are relatively complex.
+
+> **Conclusion**:
+> - If you only have one public IP, or cannot use BGP, **NAT** with ExternalDNS manual override or Ingress/Gateway with internal IPs are common practices.
+> - If you have sufficient public IP blocks and network equipment/ISP supports BGP, then **BGP** is a more "standard" and efficient approach, avoiding cumbersome manual NAT and DNS overrides.
+
+---
+
+After setting up ExternalDNS correctly, especially when combined with MetalLB in on-prem environments, it's crucial to check external IPs, DNS records, and firewall / route forwarding. Using BGP on ISP or enterprise networks allows each service to obtain a real public IP; otherwise, in a single IP + NAT environment, manual annotations can direct ExternalDNS to the firewall's external IP, with the firewall forwarding the traffic. These adjustments must be tailored to actual network conditions.
