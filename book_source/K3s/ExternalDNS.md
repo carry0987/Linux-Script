@@ -178,20 +178,20 @@ Setting ExternalDNS correctly, especially with the combination of MetalLB and in
 In on-prem or private data center environments, if you want services within a K8s cluster to have "true" public IPs, there are generally two approaches:
 
 1. **NAT / Forwarding (Single IP / Few IPs)**
-   - **Applicable Scenarios**: You have one or a few public IPs, the ISP has not provided you with an announcable IP block, or the equipment (such as FortiGate) has not enabled BGP.
-   - **Approach**: Use DNAT / Port Forwarding on the firewall or router (e.g., FortiGate) to forward external 80/443 traffic to the cluster's MetalLB IP or NodePort.
-   - **ExternalDNS Configuration**: You need to manually point the annotation to the public IP (external firewall IP). Otherwise, ExternalDNS might automatically read a private IP.
-   - **Pros and Cons**:
-     - Pros: Simple deployment, no need for ISP cooperation, or BGP environment.
-     - Cons: If multiple services share the same IP, multiple Port Forwards are needed on FortiGate or use the same IP protocol to achieve multiple virtual hosts.
+    - **Applicable Scenarios**: You have one or a few public IPs, the ISP has not provided you with an announcable IP block, or the equipment (such as FortiGate) has not enabled BGP.
+    - **Approach**: Use DNAT / Port Forwarding on the firewall or router (e.g., FortiGate) to forward external 80/443 traffic to the cluster's MetalLB IP or NodePort.
+    - **ExternalDNS Configuration**: You need to manually point the annotation to the public IP (external firewall IP). Otherwise, ExternalDNS might automatically read a private IP.
+    - **Pros and Cons**:
+        - Pros: Simple deployment, no need for ISP cooperation, or BGP environment.
+        - Cons: If multiple services share the same IP, multiple Port Forwards are needed on FortiGate or use the same IP protocol to achieve multiple virtual hosts.
 
 2. **BGP Exchange (Multiple / Announcable IP Block)**
-   - **Applicable Scenarios**: You have multiple public IPs (e.g., /29, /28 blocks) and can perform BGP Peering with the ISP or upstream equipment, with an ASN or route announcement permission.
-   - **Approach**: Install MetalLB and enable BGP mode, letting MetalLB be the BGP Speaker to announce the public IP assigned to a service directly to the router or upstream network.
-   - **ExternalDNS Configuration**: ExternalDNS can automatically write the public IP assigned by MetalLB into DNS. No manual override needed.
-   - **Pros and Cons**:
-     - Pros: Each service gets a truly independent public IP without NAT; a cleaner traffic path; scalable expansion.
-     - Cons: Requires network equipment to support BGP and ownership of announcable IP blocks; configuration and maintenance are relatively complex.
+    - **Applicable Scenarios**: You have multiple public IPs (e.g., /29, /28 blocks) and can perform BGP Peering with the ISP or upstream equipment, with an ASN or route announcement permission.
+    - **Approach**: Install MetalLB and enable BGP mode, letting MetalLB be the BGP Speaker to announce the public IP assigned to a service directly to the router or upstream network.
+    - **ExternalDNS Configuration**: ExternalDNS can automatically write the public IP assigned by MetalLB into DNS. No manual override needed.
+    - **Pros and Cons**:
+        - Pros: Each service gets a truly independent public IP without NAT; a cleaner traffic path; scalable expansion.
+        - Cons: Requires network equipment to support BGP and ownership of announcable IP blocks; configuration and maintenance are relatively complex.
 
 > **Conclusion**:
 > - If you only have one public IP, or cannot use BGP, **NAT** with ExternalDNS manual override or Ingress/Gateway with internal IPs are common practices.
