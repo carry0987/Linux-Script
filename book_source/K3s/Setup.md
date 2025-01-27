@@ -31,6 +31,7 @@ For example, to install K3s without the default `traefik` ingress controller, yo
 
 ```bash
 curl -sfL https://get.k3s.io | sh -s - server \
+  --tls-san <YOUR_SERVER_IP> \
   --disable traefik \
   --cluster-init
 ```
