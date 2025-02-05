@@ -1,7 +1,9 @@
 # Linux-Script
 Store Linux Script
 
-> **⚠️ This repository has been archived and is no longer actively maintained. It has been moved to the [Linux-Note](https://github.com/carry0987/Linux-Note). Please refer to the new repository for the latest updates and contributions.**
+> [!WARNING]
+> This repository has been archived and is no longer actively maintained.  
+> It has been moved to the **[Linux-Note](https://github.com/carry0987/Linux-Note)**. Please refer to the new repository for the latest updates and contributions.
 
 ## Author : carry0987
 | Project | Link |
