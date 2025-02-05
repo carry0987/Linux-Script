@@ -1,0 +1,1353 @@
+
+<!DOCTYPE HTML>
+<html lang="en" >
+    <head>
+        <meta charset="UTF-8">
+        <title>N8N · Linux-Script</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="HonKit 6.0.2">
+        <meta name="author" content="carry0987">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/honkit-plugin-tooltips/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/honkit-plugin-search-plus/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/honkit-plugin-prism/prism-tomorrow.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/@honkit/honkit-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    
+    <link rel="prev" href="portainer.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book honkit-cloak">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../Common/">
+            
+                <a href="../Common/">
+            
+                    
+                    Regular Command
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../Common/CommandList.html">
+            
+                <a href="../Common/CommandList.html">
+            
+                    
+                    Command List
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../Common/Sudo.html">
+            
+                <a href="../Common/Sudo.html">
+            
+                    
+                    Run SUDO without password
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../Common/ChangeUsername.html">
+            
+                <a href="../Common/ChangeUsername.html">
+            
+                    
+                    Change Username
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="../Common/ChangeNetworkInterfaceName.html">
+            
+                <a href="../Common/ChangeNetworkInterfaceName.html">
+            
+                    
+                    Change Network Interface Name
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="../Common/DisableCloudInit.html">
+            
+                <a href="../Common/DisableCloudInit.html">
+            
+                    
+                    Disable cloud-init
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../Crontab/">
+            
+                <a href="../Crontab/">
+            
+                    
+                    Crontab
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../Crontab/what_is_cron.html">
+            
+                <a href="../Crontab/what_is_cron.html">
+            
+                    
+                    What is cron
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../Crontab/restrictions.html">
+            
+                <a href="../Crontab/restrictions.html">
+            
+                    
+                    Crontab Restrictions
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../Crontab/commands.html">
+            
+                <a href="../Crontab/commands.html">
+            
+                    
+                    Crontab Commands
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="../Crontab/syntax.html">
+            
+                <a href="../Crontab/syntax.html">
+            
+                    
+                    Crontab Syntax
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="../Crontab/example.html">
+            
+                <a href="../Crontab/example.html">
+            
+                    
+                    Crontab Example
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6" data-path="../Crontab/environment.html">
+            
+                <a href="../Crontab/environment.html">
+            
+                    
+                    Crontab Environment
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.7" data-path="../Crontab/log_file_and_disable_email.html">
+            
+                <a href="../Crontab/log_file_and_disable_email.html">
+            
+                    
+                    Log file & Disable Email
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.8" data-path="../Crontab/file_location.html">
+            
+                <a href="../Crontab/file_location.html">
+            
+                    
+                    Crontab file location
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../Tools/">
+            
+                <a href="../Tools/">
+            
+                    
+                    Tools
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../Setup/">
+            
+                <a href="../Setup/">
+            
+                    
+                    Setup
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../Vim/">
+            
+                <a href="../Vim/">
+            
+                    
+                    Vim
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../Htop/">
+            
+                <a href="../Htop/">
+            
+                    
+                    Htop
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" >
+            
+                <span>
+            
+                    
+                    Docker
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1" data-path="setup.html">
+            
+                <a href="setup.html">
+            
+                    
+                    Docker Setup
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.2" data-path="command.html">
+            
+                <a href="command.html">
+            
+                    
+                    Docker Command
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.3" data-path="nginx-proxy-manager.html">
+            
+                <a href="nginx-proxy-manager.html">
+            
+                    
+                    Nginx Proxy Manager
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.4" data-path="portainer.html">
+            
+                <a href="portainer.html">
+            
+                    
+                    Portainer
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.8.5" data-path="n8n.html">
+            
+                <a href="n8n.html">
+            
+                    
+                    N8N
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" >
+            
+                <span>
+            
+                    
+                    K3s
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.1" data-path="../K3s/Setup.html">
+            
+                <a href="../K3s/Setup.html">
+            
+                    
+                    K3s Setup
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.2" data-path="../K3s/Uninstall.html">
+            
+                <a href="../K3s/Uninstall.html">
+            
+                    
+                    K3s Uninstall
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.3" data-path="../K3s/CommandList.html">
+            
+                <a href="../K3s/CommandList.html">
+            
+                    
+                    K3s Command List
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.4" data-path="../K3s/Helm.html">
+            
+                <a href="../K3s/Helm.html">
+            
+                    
+                    Helm
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.5" data-path="../K3s/MetalLB.html">
+            
+                <a href="../K3s/MetalLB.html">
+            
+                    
+                    MetalLB
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.6" data-path="../K3s/Istio.html">
+            
+                <a href="../K3s/Istio.html">
+            
+                    
+                    Istio
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.7" data-path="../K3s/Longhorn.html">
+            
+                <a href="../K3s/Longhorn.html">
+            
+                    
+                    Longhorn
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.8" data-path="../K3s/Secret.html">
+            
+                <a href="../K3s/Secret.html">
+            
+                    
+                    Secret
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.9" data-path="../K3s/CertManager.html">
+            
+                <a href="../K3s/CertManager.html">
+            
+                    
+                    Cert-Manager
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.10" data-path="../K3s/ExternalDNS.html">
+            
+                <a href="../K3s/ExternalDNS.html">
+            
+                    
+                    ExternalDNS
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="../Server/">
+            
+                <a href="../Server/">
+            
+                    
+                    Server
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" >
+            
+                <span>
+            
+                    
+                    GCP
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.11.1" data-path="../GCP/SSH.html">
+            
+                <a href="../GCP/SSH.html">
+            
+                    
+                    Connect GCP with SSH Key
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" >
+            
+                <span>
+            
+                    
+                    Web
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.12.1" data-path="../Web/UFW.html">
+            
+                <a href="../Web/UFW.html">
+            
+                    
+                    UFW
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.2" data-path="../Web/Nginx.html">
+            
+                <a href="../Web/Nginx.html">
+            
+                    
+                    Nginx
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.3" data-path="../Web/LetsEncrypt.html">
+            
+                <a href="../Web/LetsEncrypt.html">
+            
+                    
+                    Let's Encrypt
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13" >
+            
+                <span>
+            
+                    
+                    qBittorrent
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.13.1" data-path="../qBittorrent/Setup.html">
+            
+                <a href="../qBittorrent/Setup.html">
+            
+                    
+                    qBittorrent Setup
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13.2" data-path="../qBittorrent/Uninstall.html">
+            
+                <a href="../qBittorrent/Uninstall.html">
+            
+                    
+                    qBittorrent Uninstall
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14" data-path="../System/">
+            
+                <a href="../System/">
+            
+                    
+                    System
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15" >
+            
+                <span>
+            
+                    
+                    Proxy
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.15.1" data-path="../Proxy/SSR.html">
+            
+                <a href="../Proxy/SSR.html">
+            
+                    
+                    SSR
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15.2" data-path="../Proxy/VPN.html">
+            
+                <a href="../Proxy/VPN.html">
+            
+                    
+                    VPN
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16" data-path="../Git/">
+            
+                <a href="../Git/">
+            
+                    
+                    Git
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17" >
+            
+                <span>
+            
+                    
+                    Python
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.17.1" data-path="../Python/Conda.html">
+            
+                <a href="../Python/Conda.html">
+            
+                    
+                    Conda
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17.2" data-path="../Python/Jupyter.html">
+            
+                <a href="../Python/Jupyter.html">
+            
+                    
+                    Jupyter
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.18" >
+            
+                <span>
+            
+                    
+                    MacOS
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.18.1" data-path="../MacOS/zshrc.html">
+            
+                <a href="../MacOS/zshrc.html">
+            
+                    
+                    zshrc
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.18.2" data-path="../MacOS/screenrc.html">
+            
+                <a href="../MacOS/screenrc.html">
+            
+                    
+                    screenrc
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.18.3" data-path="../MacOS/tftp.html">
+            
+                <a href="../MacOS/tftp.html">
+            
+                    
+                    tftp
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.18.4" data-path="../MacOS/Config.html">
+            
+                <a href="../MacOS/Config.html">
+            
+                    
+                    Config
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://github.com/honkit/honkit" target="blank" class="gitbook-link">
+            Published with HonKit
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >N8N</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div class="search-plus" id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <html><head></head><body><h1 id="n8n">N8N</h1>
+<h2 id="setup">Setup</h2>
+<ol>
+<li><p>Create folder for n8n</p>
+<pre class="language-"><code class="lang-bash"><span class="token function">mkdir</span> n8n <span class="token operator">&amp;&amp;</span> <span class="token builtin class-name">cd</span> n8n
+</code></pre>
+</li>
+<li><p>Create <code>.env</code> file and set the following variables</p>
+<pre class="language-"><code class="lang-ini"><span class="token comment"># Database</span>
+<span class="token key attr-name">POSTGRES_USER</span><span class="token punctuation">=</span><span class="token value attr-value">admin</span>
+<span class="token key attr-name">POSTGRES_PASSWORD</span><span class="token punctuation">=</span><span class="token value attr-value">changeme</span>
+<span class="token key attr-name">POSTGRES_DB</span><span class="token punctuation">=</span><span class="token value attr-value">n8n</span>
+
+<span class="token key attr-name">POSTGRES_NON_ROOT_USER</span><span class="token punctuation">=</span><span class="token value attr-value">n8n</span>
+<span class="token key attr-name">POSTGRES_NON_ROOT_PASSWORD</span><span class="token punctuation">=</span><span class="token value attr-value">changeme</span>
+
+<span class="token comment"># Configure</span>
+<span class="token key attr-name">EXECUTIONS_DATA_PRUNE</span><span class="token punctuation">=</span><span class="token value attr-value">true</span>
+<span class="token key attr-name">EXECUTIONS_DATA_MAX_AGE</span><span class="token punctuation">=</span><span class="token value attr-value">168</span>
+<span class="token key attr-name">GENERIC_TIMEZONE</span><span class="token punctuation">=</span><span class="token value attr-value">Asia/Taipei</span>
+<span class="token key attr-name">WEBHOOK_URL</span><span class="token punctuation">=</span><span class="token value attr-value">https://n8n.example.com</span>
+<span class="token key attr-name">N8N_HOST</span><span class="token punctuation">=</span><span class="token value attr-value">n8n.example.com</span>
+<span class="token key attr-name">N8N_PROTOCOL</span><span class="token punctuation">=</span><span class="token value attr-value">https</span>
+<span class="token key attr-name">N8N_EMAIL_MODE</span><span class="token punctuation">=</span><span class="token value attr-value">smtp</span>
+<span class="token key attr-name">N8N_SMTP_HOST</span><span class="token punctuation">=</span><span class="token value attr-value">smtp.gmail.com</span>
+<span class="token key attr-name">N8N_SMTP_PORT</span><span class="token punctuation">=</span><span class="token value attr-value">465</span>
+<span class="token key attr-name">N8N_SMTP_USER</span><span class="token punctuation">=</span><span class="token value attr-value">example@gmail.com</span>
+<span class="token key attr-name">N8N_SMTP_PASS</span><span class="token punctuation">=</span><span class="token value attr-value">PASSWORD</span>
+<span class="token key attr-name">N8N_SMTP_SENDER</span><span class="token punctuation">=</span><span class="token value attr-value">example@gmail.com</span>
+<span class="token comment"># N8N_HOST=${SUBDOMAIN}.${DOMAIN_NAME}</span>
+</code></pre>
+</li>
+<li><p>Create <code>init-data.sh</code> file</p>
+<pre class="language-"><code class="lang-bash"><span class="token shebang important">#!/bin/bash</span>
+<span class="token builtin class-name">set</span> -e<span class="token punctuation">;</span>
+
+<span class="token keyword">if</span> <span class="token punctuation">[</span> <span class="token parameter variable">-n</span> <span class="token string">"<span class="token variable">${POSTGRES_NON_ROOT_USER<span class="token operator">:-</span>}</span>"</span> <span class="token punctuation">]</span> <span class="token operator">&amp;&amp;</span> <span class="token punctuation">[</span> <span class="token parameter variable">-n</span> <span class="token string">"<span class="token variable">${POSTGRES_NON_ROOT_PASSWORD<span class="token operator">:-</span>}</span>"</span> <span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token keyword">then</span>
+ psql <span class="token parameter variable">-v</span> <span class="token assign-left variable">ON_ERROR_STOP</span><span class="token operator">=</span><span class="token number">1</span> <span class="token parameter variable">--username</span> <span class="token string">"<span class="token variable">$POSTGRES_USER</span>"</span> <span class="token parameter variable">--dbname</span> <span class="token string">"<span class="token variable">$POSTGRES_DB</span>"</span> <span class="token operator">&lt;&lt;-</span>EOSQL
+   CREATE <span class="token environment constant">USER</span> <span class="token variable">${POSTGRES_NON_ROOT_USER}</span> WITH PASSWORD <span class="token string">'${POSTGRES_NON_ROOT_PASSWORD}'</span><span class="token punctuation">;</span>
+   GRANT ALL PRIVILEGES ON DATABASE <span class="token variable">${POSTGRES_DB}</span> TO <span class="token variable">${POSTGRES_NON_ROOT_USER}</span><span class="token punctuation">;</span>
+ EOSQL
+<span class="token keyword">else</span>
+ <span class="token builtin class-name">echo</span> <span class="token string">"SETUP INFO: No Environment variables given!"</span>
+<span class="token keyword">fi</span>
+</code></pre>
+</li>
+<li><p>Make <code>init-data.sh</code> executable</p>
+<pre class="language-"><code class="lang-bash"><span class="token function">sudo</span> <span class="token function">chmod</span> +x init-data.sh
+</code></pre>
+</li>
+<li><p>Create <code>docker-compose.yml</code> file</p>
+<pre class="language-"><code class="lang-yml"><span class="token key atrule">version</span><span class="token punctuation">:</span> <span class="token string">'3.8'</span>
+
+<span class="token key atrule">services</span><span class="token punctuation">:</span>
+ <span class="token key atrule">postgres</span><span class="token punctuation">:</span>
+   <span class="token key atrule">image</span><span class="token punctuation">:</span> postgres<span class="token punctuation">:</span>11<span class="token punctuation">-</span>alpine
+   <span class="token key atrule">restart</span><span class="token punctuation">:</span> always
+   <span class="token key atrule">environment</span><span class="token punctuation">:</span>
+     <span class="token punctuation">-</span> POSTGRES_USER
+     <span class="token punctuation">-</span> POSTGRES_PASSWORD
+     <span class="token punctuation">-</span> POSTGRES_DB
+     <span class="token punctuation">-</span> POSTGRES_NON_ROOT_USER
+     <span class="token punctuation">-</span> POSTGRES_NON_ROOT_PASSWORD
+   <span class="token key atrule">volumes</span><span class="token punctuation">:</span>
+     <span class="token punctuation">-</span> ./n8n<span class="token punctuation">-</span>db<span class="token punctuation">:</span>/var/lib/postgresql/data
+     <span class="token punctuation">-</span> ./init<span class="token punctuation">-</span>data.sh<span class="token punctuation">:</span>/docker<span class="token punctuation">-</span>entrypoint<span class="token punctuation">-</span>initdb.d/init<span class="token punctuation">-</span>data.sh
+   <span class="token key atrule">healthcheck</span><span class="token punctuation">:</span> 
+     <span class="token key atrule">test</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">'CMD-SHELL'</span><span class="token punctuation">,</span> <span class="token string">'pg_isready -h localhost -U ${POSTGRES_USER} -d ${POSTGRES_DB}'</span><span class="token punctuation">]</span>
+     <span class="token key atrule">interval</span><span class="token punctuation">:</span> 5s
+     <span class="token key atrule">timeout</span><span class="token punctuation">:</span> 5s
+     <span class="token key atrule">retries</span><span class="token punctuation">:</span> <span class="token number">10</span>
+
+ <span class="token key atrule">n8n</span><span class="token punctuation">:</span>
+   <span class="token key atrule">image</span><span class="token punctuation">:</span> n8nio/n8n<span class="token punctuation">:</span>latest
+   <span class="token key atrule">restart</span><span class="token punctuation">:</span> unless<span class="token punctuation">-</span>stopped
+   <span class="token key atrule">environment</span><span class="token punctuation">:</span>
+     <span class="token punctuation">-</span> DB_TYPE=postgresdb
+     <span class="token punctuation">-</span> DB_POSTGRESDB_HOST=postgres
+     <span class="token punctuation">-</span> DB_POSTGRESDB_PORT=5432
+     <span class="token punctuation">-</span> DB_POSTGRESDB_DATABASE=$<span class="token punctuation">{</span>POSTGRES_DB<span class="token punctuation">}</span>
+     <span class="token punctuation">-</span> DB_POSTGRESDB_USER=$<span class="token punctuation">{</span>POSTGRES_NON_ROOT_USER<span class="token punctuation">}</span>
+     <span class="token punctuation">-</span> DB_POSTGRESDB_PASSWORD=$<span class="token punctuation">{</span>POSTGRES_NON_ROOT_PASSWORD<span class="token punctuation">}</span>
+     <span class="token punctuation">-</span> EXECUTIONS_DATA_PRUNE=$<span class="token punctuation">{</span>EXECUTIONS_DATA_PRUNE<span class="token punctuation">}</span>
+     <span class="token punctuation">-</span> EXECUTIONS_DATA_MAX_AGE=$<span class="token punctuation">{</span>EXECUTIONS_DATA_MAX_AGE<span class="token punctuation">}</span>
+     <span class="token punctuation">-</span> GENERIC_TIMEZONE=$<span class="token punctuation">{</span>GENERIC_TIMEZONE<span class="token punctuation">}</span>
+     <span class="token punctuation">-</span> WEBHOOK_URL=$<span class="token punctuation">{</span>WEBHOOK_URL<span class="token punctuation">}</span>
+     <span class="token punctuation">-</span> N8N_HOST=$<span class="token punctuation">{</span>N8N_HOST<span class="token punctuation">}</span>
+     <span class="token punctuation">-</span> N8N_PROTOCOL=$<span class="token punctuation">{</span>N8N_PROTOCOL<span class="token punctuation">}</span>
+     <span class="token punctuation">-</span> N8N_EMAIL_MODE=$<span class="token punctuation">{</span>N8N_EMAIL_MODE<span class="token punctuation">}</span>
+     <span class="token punctuation">-</span> N8N_SMTP_HOST=$<span class="token punctuation">{</span>N8N_SMTP_HOST<span class="token punctuation">}</span>
+     <span class="token punctuation">-</span> N8N_SMTP_PORT=$<span class="token punctuation">{</span>N8N_SMTP_PORT<span class="token punctuation">}</span>
+     <span class="token punctuation">-</span> N8N_SMTP_USER=$<span class="token punctuation">{</span>N8N_SMTP_USER<span class="token punctuation">}</span>
+     <span class="token punctuation">-</span> N8N_SMTP_PASS=$<span class="token punctuation">{</span>N8N_SMTP_PASS<span class="token punctuation">}</span>
+     <span class="token punctuation">-</span> N8N_SMTP_SENDER=$<span class="token punctuation">{</span>N8N_SMTP_SENDER<span class="token punctuation">}</span>
+   <span class="token key atrule">expose</span><span class="token punctuation">:</span>
+     <span class="token punctuation">-</span> <span class="token number">5678</span>
+   <span class="token key atrule">volumes</span><span class="token punctuation">:</span>
+     <span class="token punctuation">-</span> ./n8n<span class="token punctuation">-</span>data<span class="token punctuation">:</span>/home/node/.n8n
+   <span class="token key atrule">depends_on</span><span class="token punctuation">:</span>
+     <span class="token key atrule">postgres</span><span class="token punctuation">:</span>
+       <span class="token key atrule">condition</span><span class="token punctuation">:</span> service_healthy
+</code></pre>
+</li>
+<li><p>If you want to make <strong><code>N8N</code></strong> run under same network with <strong><code>NginxProxyManager</code></strong>, you can use the following code to <code>docker-compose.yml</code></p>
+<pre class="language-"><code class="lang-yml"><span class="token key atrule">version</span><span class="token punctuation">:</span> <span class="token string">'3.8'</span>
+
+<span class="token key atrule">services</span><span class="token punctuation">:</span>
+ <span class="token key atrule">postgres</span><span class="token punctuation">:</span>
+   <span class="token key atrule">image</span><span class="token punctuation">:</span> postgres<span class="token punctuation">:</span>11<span class="token punctuation">-</span>alpine
+   <span class="token key atrule">restart</span><span class="token punctuation">:</span> always
+   <span class="token key atrule">environment</span><span class="token punctuation">:</span>
+     <span class="token punctuation">-</span> POSTGRES_USER
+     <span class="token punctuation">-</span> POSTGRES_PASSWORD
+     <span class="token punctuation">-</span> POSTGRES_DB
+     <span class="token punctuation">-</span> POSTGRES_NON_ROOT_USER
+     <span class="token punctuation">-</span> POSTGRES_NON_ROOT_PASSWORD
+   <span class="token key atrule">volumes</span><span class="token punctuation">:</span>
+     <span class="token punctuation">-</span> ./n8n<span class="token punctuation">-</span>db<span class="token punctuation">:</span>/var/lib/postgresql/data
+     <span class="token punctuation">-</span> ./init<span class="token punctuation">-</span>data.sh<span class="token punctuation">:</span>/docker<span class="token punctuation">-</span>entrypoint<span class="token punctuation">-</span>initdb.d/init<span class="token punctuation">-</span>data.sh
+   <span class="token key atrule">healthcheck</span><span class="token punctuation">:</span> 
+     <span class="token key atrule">test</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">'CMD-SHELL'</span><span class="token punctuation">,</span> <span class="token string">'pg_isready -h localhost -U ${POSTGRES_USER} -d ${POSTGRES_DB}'</span><span class="token punctuation">]</span>
+     <span class="token key atrule">interval</span><span class="token punctuation">:</span> 5s
+     <span class="token key atrule">timeout</span><span class="token punctuation">:</span> 5s
+     <span class="token key atrule">retries</span><span class="token punctuation">:</span> <span class="token number">10</span>
+   <span class="token key atrule">networks</span><span class="token punctuation">:</span>
+     <span class="token punctuation">-</span> app<span class="token punctuation">-</span>tier
+
+ <span class="token key atrule">n8n</span><span class="token punctuation">:</span>
+   <span class="token key atrule">image</span><span class="token punctuation">:</span> n8nio/n8n<span class="token punctuation">:</span>latest
+   <span class="token key atrule">restart</span><span class="token punctuation">:</span> unless<span class="token punctuation">-</span>stopped
+   <span class="token key atrule">environment</span><span class="token punctuation">:</span>
+     <span class="token punctuation">-</span> DB_TYPE=postgresdb
+     <span class="token punctuation">-</span> DB_POSTGRESDB_HOST=postgres
+     <span class="token punctuation">-</span> DB_POSTGRESDB_PORT=5432
+     <span class="token punctuation">-</span> DB_POSTGRESDB_DATABASE=$<span class="token punctuation">{</span>POSTGRES_DB<span class="token punctuation">}</span>
+     <span class="token punctuation">-</span> DB_POSTGRESDB_USER=$<span class="token punctuation">{</span>POSTGRES_NON_ROOT_USER<span class="token punctuation">}</span>
+     <span class="token punctuation">-</span> DB_POSTGRESDB_PASSWORD=$<span class="token punctuation">{</span>POSTGRES_NON_ROOT_PASSWORD<span class="token punctuation">}</span>
+     <span class="token punctuation">-</span> EXECUTIONS_DATA_PRUNE=$<span class="token punctuation">{</span>EXECUTIONS_DATA_PRUNE<span class="token punctuation">}</span>
+     <span class="token punctuation">-</span> EXECUTIONS_DATA_MAX_AGE=$<span class="token punctuation">{</span>EXECUTIONS_DATA_MAX_AGE<span class="token punctuation">}</span>
+     <span class="token punctuation">-</span> GENERIC_TIMEZONE=$<span class="token punctuation">{</span>GENERIC_TIMEZONE<span class="token punctuation">}</span>
+     <span class="token punctuation">-</span> WEBHOOK_URL=$<span class="token punctuation">{</span>WEBHOOK_URL<span class="token punctuation">}</span>
+     <span class="token punctuation">-</span> N8N_HOST=$<span class="token punctuation">{</span>N8N_HOST<span class="token punctuation">}</span>
+     <span class="token punctuation">-</span> N8N_PROTOCOL=$<span class="token punctuation">{</span>N8N_PROTOCOL<span class="token punctuation">}</span>
+     <span class="token punctuation">-</span> N8N_EMAIL_MODE=$<span class="token punctuation">{</span>N8N_EMAIL_MODE<span class="token punctuation">}</span>
+     <span class="token punctuation">-</span> N8N_SMTP_HOST=$<span class="token punctuation">{</span>N8N_SMTP_HOST<span class="token punctuation">}</span>
+     <span class="token punctuation">-</span> N8N_SMTP_PORT=$<span class="token punctuation">{</span>N8N_SMTP_PORT<span class="token punctuation">}</span>
+     <span class="token punctuation">-</span> N8N_SMTP_USER=$<span class="token punctuation">{</span>N8N_SMTP_USER<span class="token punctuation">}</span>
+     <span class="token punctuation">-</span> N8N_SMTP_PASS=$<span class="token punctuation">{</span>N8N_SMTP_PASS<span class="token punctuation">}</span>
+     <span class="token punctuation">-</span> N8N_SMTP_SENDER=$<span class="token punctuation">{</span>N8N_SMTP_SENDER<span class="token punctuation">}</span>
+   <span class="token key atrule">expose</span><span class="token punctuation">:</span>
+     <span class="token punctuation">-</span> <span class="token number">5678</span>
+   <span class="token key atrule">volumes</span><span class="token punctuation">:</span>
+     <span class="token punctuation">-</span> ./n8n<span class="token punctuation">-</span>data<span class="token punctuation">:</span>/home/node/.n8n
+   <span class="token key atrule">depends_on</span><span class="token punctuation">:</span>
+     <span class="token key atrule">postgres</span><span class="token punctuation">:</span>
+       <span class="token key atrule">condition</span><span class="token punctuation">:</span> service_healthy
+   <span class="token key atrule">networks</span><span class="token punctuation">:</span>
+     <span class="token punctuation">-</span> app<span class="token punctuation">-</span>tier
+     <span class="token punctuation">-</span> scoobydoo
+
+<span class="token key atrule">networks</span><span class="token punctuation">:</span>
+ <span class="token key atrule">app-tier</span><span class="token punctuation">:</span>
+   <span class="token key atrule">driver</span><span class="token punctuation">:</span> bridge
+ <span class="token key atrule">scoobydoo</span><span class="token punctuation">:</span>
+   <span class="token key atrule">external</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+</code></pre>
+</li>
+<li><p>Start the container</p>
+<pre class="language-"><code class="lang-bash"><span class="token function">docker</span> compose up <span class="token parameter variable">-d</span>
+</code></pre>
+</li>
+</ol>
+<h2 id="update-n8n">Update N8N</h2>
+<pre class="language-"><code class="lang-bash"><span class="token function">docker</span> compose pull <span class="token operator">&amp;&amp;</span> <span class="token function">docker</span> compose stop <span class="token operator">&amp;&amp;</span> <span class="token function">docker</span> compose up <span class="token parameter variable">-d</span>
+</code></pre>
+<h2 id="reverse-proxy-for-n8n">Reverse Proxy for N8N</h2>
+<ol>
+<li><p>Create <code>n8n.conf</code> file</p>
+<pre class="language-"><code class="lang-bash"><span class="token function">sudo</span> <span class="token function">vim</span> /etc/nginx/sites-available/n8n.conf
+</code></pre>
+</li>
+<li><p>Add the following code to <code>n8n.conf</code></p>
+<pre class="language-"><code class="lang-nginx"><span class="token directive"><span class="token keyword">server</span></span> <span class="token punctuation">{</span>
+ <span class="token directive"><span class="token keyword">listen</span> <span class="token number">80</span></span><span class="token punctuation">;</span>
+ <span class="token directive"><span class="token keyword">listen</span> [::]:80</span><span class="token punctuation">;</span>
+ <span class="token directive"><span class="token keyword">listen</span> <span class="token number">443</span> ssl http2</span><span class="token punctuation">;</span>
+ <span class="token directive"><span class="token keyword">listen</span> [::]:443 ssl http2</span><span class="token punctuation">;</span>
+
+ <span class="token directive"><span class="token keyword">server_name</span> n8n.example.com</span><span class="token punctuation">;</span>
+ <span class="token directive"><span class="token keyword">client_max_body_size</span> <span class="token number">256M</span></span><span class="token punctuation">;</span>
+
+ <span class="token comment"># SSL with Cloudflare</span>
+ <span class="token directive"><span class="token keyword">ssl_certificate</span> /etc/ssl/certs/cf_example.com.pem</span><span class="token punctuation">;</span>
+ <span class="token directive"><span class="token keyword">ssl_certificate_key</span> /etc/ssl/private/cf_key_example.com.pem</span><span class="token punctuation">;</span>
+ <span class="token directive"><span class="token keyword">ssl_client_certificate</span> /etc/ssl/certs/origin-pull-ca.pem</span><span class="token punctuation">;</span>
+ <span class="token directive"><span class="token keyword">ssl_verify_client</span> <span class="token boolean">on</span></span><span class="token punctuation">;</span>
+
+ <span class="token directive"><span class="token keyword">location</span> /</span> <span class="token punctuation">{</span>
+     <span class="token directive"><span class="token keyword">proxy_pass</span> http://127.0.0.1:5678</span><span class="token punctuation">;</span>
+     <span class="token directive"><span class="token keyword">proxy_http_version</span> 1.1</span><span class="token punctuation">;</span>
+     <span class="token directive"><span class="token keyword">proxy_set_header</span> Upgrade <span class="token variable">$http_upgrade</span></span><span class="token punctuation">;</span>
+     <span class="token directive"><span class="token keyword">proxy_set_header</span> Connection <span class="token string">"upgrade"</span></span><span class="token punctuation">;</span>
+     <span class="token directive"><span class="token keyword">proxy_set_header</span> Host <span class="token variable">$host</span></span><span class="token punctuation">;</span>
+     <span class="token directive"><span class="token keyword">proxy_set_header</span> X-Real-IP <span class="token variable">$remote_addr</span></span><span class="token punctuation">;</span>
+     <span class="token directive"><span class="token keyword">proxy_set_header</span> X-Forwarded-For <span class="token variable">$proxy_add_x_forwarded_for</span></span><span class="token punctuation">;</span>
+     <span class="token directive"><span class="token keyword">proxy_set_header</span> X-Forwarded-Proto <span class="token variable">$scheme</span></span><span class="token punctuation">;</span>
+     <span class="token directive"><span class="token keyword">proxy_set_header</span> X-Frame-Options SAMEORIGIN</span><span class="token punctuation">;</span>
+     <span class="token directive"><span class="token keyword">proxy_buffers</span> <span class="token number">256</span> <span class="token number">16k</span></span><span class="token punctuation">;</span>
+     <span class="token directive"><span class="token keyword">proxy_buffer_size</span> <span class="token number">16k</span></span><span class="token punctuation">;</span>
+     <span class="token directive"><span class="token keyword">client_max_body_size</span> <span class="token number">50m</span></span><span class="token punctuation">;</span>
+     <span class="token directive"><span class="token keyword">client_body_buffer_size</span> <span class="token number">1m</span></span><span class="token punctuation">;</span>
+     <span class="token directive"><span class="token keyword">proxy_read_timeout</span> <span class="token number">600s</span></span><span class="token punctuation">;</span>
+     <span class="token directive"><span class="token keyword">proxy_buffering</span> <span class="token boolean">off</span></span><span class="token punctuation">;</span>
+     <span class="token directive"><span class="token keyword">proxy_cache</span> <span class="token boolean">off</span></span><span class="token punctuation">;</span>
+ <span class="token punctuation">}</span>
+
+ <span class="token directive"><span class="token keyword">location</span> ~ ^/(webhook|webhook-test)</span> <span class="token punctuation">{</span>
+     <span class="token directive"><span class="token keyword">proxy_set_header</span> Connection <span class="token string">''</span></span><span class="token punctuation">;</span>
+     <span class="token directive"><span class="token keyword">chunked_transfer_encoding</span> <span class="token boolean">off</span></span><span class="token punctuation">;</span>
+     <span class="token directive"><span class="token keyword">proxy_set_header</span> Upgrade <span class="token variable">$http_upgrade</span></span><span class="token punctuation">;</span>
+     <span class="token directive"><span class="token keyword">proxy_set_header</span> Connection <span class="token string">"upgrade"</span></span><span class="token punctuation">;</span>
+     <span class="token directive"><span class="token keyword">proxy_set_header</span> Host <span class="token variable">$host</span></span><span class="token punctuation">;</span>
+     <span class="token directive"><span class="token keyword">proxy_set_header</span> X-Real-IP <span class="token variable">$remote_addr</span></span><span class="token punctuation">;</span>
+     <span class="token directive"><span class="token keyword">proxy_set_header</span> X-Forwarded-For <span class="token variable">$proxy_add_x_forwarded_for</span></span><span class="token punctuation">;</span>
+     <span class="token directive"><span class="token keyword">proxy_set_header</span> X-Forwarded-Proto <span class="token variable">$scheme</span></span><span class="token punctuation">;</span>
+     <span class="token directive"><span class="token keyword">proxy_set_header</span> X-Frame-Options SAMEORIGIN</span><span class="token punctuation">;</span>
+     <span class="token directive"><span class="token keyword">proxy_buffering</span> <span class="token boolean">off</span></span><span class="token punctuation">;</span>
+     <span class="token directive"><span class="token keyword">proxy_cache</span> <span class="token boolean">off</span></span><span class="token punctuation">;</span>
+     <span class="token directive"><span class="token keyword">proxy_pass</span> http://127.0.0.1:5678</span><span class="token punctuation">;</span>
+ <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+</li>
+<li><p>Create symbolic link</p>
+<pre class="language-"><code class="lang-bash"><span class="token function">sudo</span> <span class="token function">ln</span> <span class="token parameter variable">-s</span> /etc/nginx/sites-available/n8n.conf /etc/nginx/sites-enabled/n8n.conf
+</code></pre>
+</li>
+<li><p>Test nginx configuration</p>
+<pre class="language-"><code class="lang-bash"><span class="token function">sudo</span> nginx <span class="token parameter variable">-t</span>
+</code></pre>
+</li>
+<li><p>Restart nginx</p>
+<pre class="language-"><code class="lang-bash"><span class="token function">sudo</span> systemctl reload nginx
+</code></pre>
+</li>
+</ol>
+<h2 id="backup--restore">Backup &amp; Restore</h2>
+<h3 id="docker">Docker</h3>
+<pre class="language-"><code class="lang-bash"><span class="token function">docker</span> <span class="token builtin class-name">exec</span> <span class="token parameter variable">-it</span> <span class="token parameter variable">-u</span> <span class="token function">node</span> <span class="token punctuation">{</span>CONTAINER_ID<span class="token punctuation">}</span> <span class="token function">sh</span>
+</code></pre>
+<h3 id="backup">Backup</h3>
+<p>Backup <code>workflow</code></p>
+<pre class="language-"><code class="lang-bash">n8n export:workflow <span class="token parameter variable">--all</span> <span class="token parameter variable">--output</span><span class="token operator">=</span>.n8n/workflow.json
+</code></pre>
+<p>Backup <code>credential</code></p>
+<pre class="language-"><code class="lang-bash">n8n export:credentials <span class="token parameter variable">--all</span> <span class="token parameter variable">--decrypted</span> <span class="token parameter variable">--output</span><span class="token operator">=</span>.n8n/credential.json
+</code></pre>
+<h3 id="restore">Restore</h3>
+<p>Import <code>workflow</code></p>
+<pre class="language-"><code class="lang-bash">n8n import:workflow <span class="token parameter variable">--input</span><span class="token operator">=</span>.n8n/workflow.json
+</code></pre>
+<p>Import <code>credential</code></p>
+<pre class="language-"><code class="lang-bash">n8n import:credentials <span class="token parameter variable">--input</span><span class="token operator">=</span>.n8n/credential.json
+</code></pre>
+</body></html>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="portainer.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: Portainer">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"N8N","level":"1.8.5","depth":2,"next":{"title":"K3s","level":"1.9","depth":1,"ref":"","articles":[{"title":"K3s Setup","level":"1.9.1","depth":2,"path":"K3s/Setup.md","ref":"./K3s/Setup.md","articles":[]},{"title":"K3s Uninstall","level":"1.9.2","depth":2,"path":"K3s/Uninstall.md","ref":"./K3s/Uninstall.md","articles":[]},{"title":"K3s Command List","level":"1.9.3","depth":2,"path":"K3s/CommandList.md","ref":"./K3s/CommandList.md","articles":[]},{"title":"Helm","level":"1.9.4","depth":2,"path":"K3s/Helm.md","ref":"./K3s/Helm.md","articles":[]},{"title":"MetalLB","level":"1.9.5","depth":2,"path":"K3s/MetalLB.md","ref":"./K3s/MetalLB.md","articles":[]},{"title":"Istio","level":"1.9.6","depth":2,"path":"K3s/Istio.md","ref":"./K3s/Istio.md","articles":[]},{"title":"Longhorn","level":"1.9.7","depth":2,"path":"K3s/Longhorn.md","ref":"./K3s/Longhorn.md","articles":[]},{"title":"Secret","level":"1.9.8","depth":2,"path":"K3s/Secret.md","ref":"./K3s/Secret.md","articles":[]},{"title":"Cert-Manager","level":"1.9.9","depth":2,"path":"K3s/CertManager.md","ref":"./K3s/CertManager.md","articles":[]},{"title":"ExternalDNS","level":"1.9.10","depth":2,"path":"K3s/ExternalDNS.md","ref":"./K3s/ExternalDNS.md","articles":[]}]},"previous":{"title":"Portainer","level":"1.8.4","depth":2,"path":"Docker/portainer.md","ref":"./Docker/portainer.md","articles":[]},"dir":"ltr"},"config":{"plugins":["octocat","tooltips","-lunr","-search","-sharing","-page-toc-button","search-plus","-anchor-navigation-ex","-flexible-alerts","-code","prism","-highlight","-tbfed-pagefooter","-hide-element"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright &copy carry0987","modify_label":"Last Modified : ","modify_format":"YYYY-MM-DD HH:mm:ss"},"prism":{"css":["prismjs/themes/prism-tomorrow.css"],"lang":{"flow":"typescript"},"ignore":["eval-js"]},"octocat":{"url":"https://github.com/carry0987/Linux-Script"},"code":{"copyButtons":true},"tooltips":{},"hide-element":{"elements":[".gitbook-link"]},"fontsettings":{"theme":"white","family":"sans","size":2},"fontSettings":{"theme":"night","family":"sans"},"anchor-navigation-ex":{"showLevel":false,"associatedWithSummary":true,"printLog":false,"multipleH1":false,"mode":"float","showGoTop":true,"float":{"floatIcon":"fa fa-navicon","showLevelIcon":false,"level1Icon":"fa fa-hand-o-right","level2Icon":"fa fa-hand-o-right","level3Icon":"fa fa-hand-o-right"},"pageTop":{"showLevelIcon":false,"level1Icon":"fa fa-hand-o-right","level2Icon":"fa fa-hand-o-right","level3Icon":"fa fa-hand-o-right"}},"flexible-alerts":{"style":"flat"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"search-plus":{}},"theme":"default","author":"carry0987","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Linux-Script","language":"en","gitbook":"*","defaultDescription":"Store Linux Script","description":"Store Linux Script"},"file":{"path":"Docker/n8n.md","mtime":"2025-02-05T08:08:12.144Z","type":"markdown"},"gitbook":{"version":"6.0.2","time":"2025-02-05T08:08:17.723Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <noscript>
+        <style>
+            .honkit-cloak {
+                display: block !important;
+            }
+        </style>
+    </noscript>
+    <script>
+        // Restore sidebar state as critical path for prevent layout shift
+        function __init__getSidebarState(defaultValue){
+            var baseKey = "";
+            var key = baseKey + ":sidebar";
+            try {
+                var value = localStorage[key];
+                if (value === undefined) {
+                    return defaultValue;
+                }
+                var parsed = JSON.parse(value);
+                return parsed == null ? defaultValue : parsed;
+            } catch (e) {
+                return defaultValue;
+            }
+        }
+        function __init__restoreLastSidebarState() {
+            var isMobile = window.matchMedia("(max-width: 600px)").matches;
+            if (isMobile) {
+                // Init last state if not mobile
+                return;
+            }
+            var sidebarState = __init__getSidebarState(true);
+            var book = document.querySelector(".book");
+            // Show sidebar if it enabled
+            if (sidebarState && book) {
+                book.classList.add("without-animation", "with-summary");
+            }
+        }
+
+        try {
+            __init__restoreLastSidebarState();
+        } finally {
+            var book = document.querySelector(".book");
+            book.classList.remove("honkit-cloak");
+        }
+    </script>
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-octocat/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/honkit-plugin-search-plus/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/honkit-plugin-search-plus/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/@honkit/honkit-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

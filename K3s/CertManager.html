@@ -1,0 +1,1370 @@
+
+<!DOCTYPE HTML>
+<html lang="en" >
+    <head>
+        <meta charset="UTF-8">
+        <title>Cert-Manager · Linux-Script</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="HonKit 6.0.2">
+        <meta name="author" content="carry0987">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/honkit-plugin-tooltips/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/honkit-plugin-search-plus/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/honkit-plugin-prism/prism-tomorrow.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/@honkit/honkit-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="ExternalDNS.html" />
+    
+    
+    <link rel="prev" href="Secret.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book honkit-cloak">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../Common/">
+            
+                <a href="../Common/">
+            
+                    
+                    Regular Command
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../Common/CommandList.html">
+            
+                <a href="../Common/CommandList.html">
+            
+                    
+                    Command List
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../Common/Sudo.html">
+            
+                <a href="../Common/Sudo.html">
+            
+                    
+                    Run SUDO without password
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../Common/ChangeUsername.html">
+            
+                <a href="../Common/ChangeUsername.html">
+            
+                    
+                    Change Username
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="../Common/ChangeNetworkInterfaceName.html">
+            
+                <a href="../Common/ChangeNetworkInterfaceName.html">
+            
+                    
+                    Change Network Interface Name
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="../Common/DisableCloudInit.html">
+            
+                <a href="../Common/DisableCloudInit.html">
+            
+                    
+                    Disable cloud-init
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../Crontab/">
+            
+                <a href="../Crontab/">
+            
+                    
+                    Crontab
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../Crontab/what_is_cron.html">
+            
+                <a href="../Crontab/what_is_cron.html">
+            
+                    
+                    What is cron
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../Crontab/restrictions.html">
+            
+                <a href="../Crontab/restrictions.html">
+            
+                    
+                    Crontab Restrictions
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../Crontab/commands.html">
+            
+                <a href="../Crontab/commands.html">
+            
+                    
+                    Crontab Commands
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="../Crontab/syntax.html">
+            
+                <a href="../Crontab/syntax.html">
+            
+                    
+                    Crontab Syntax
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="../Crontab/example.html">
+            
+                <a href="../Crontab/example.html">
+            
+                    
+                    Crontab Example
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6" data-path="../Crontab/environment.html">
+            
+                <a href="../Crontab/environment.html">
+            
+                    
+                    Crontab Environment
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.7" data-path="../Crontab/log_file_and_disable_email.html">
+            
+                <a href="../Crontab/log_file_and_disable_email.html">
+            
+                    
+                    Log file & Disable Email
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.8" data-path="../Crontab/file_location.html">
+            
+                <a href="../Crontab/file_location.html">
+            
+                    
+                    Crontab file location
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../Tools/">
+            
+                <a href="../Tools/">
+            
+                    
+                    Tools
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../Setup/">
+            
+                <a href="../Setup/">
+            
+                    
+                    Setup
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../Vim/">
+            
+                <a href="../Vim/">
+            
+                    
+                    Vim
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../Htop/">
+            
+                <a href="../Htop/">
+            
+                    
+                    Htop
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" >
+            
+                <span>
+            
+                    
+                    Docker
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1" data-path="../Docker/setup.html">
+            
+                <a href="../Docker/setup.html">
+            
+                    
+                    Docker Setup
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.2" data-path="../Docker/command.html">
+            
+                <a href="../Docker/command.html">
+            
+                    
+                    Docker Command
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.3" data-path="../Docker/nginx-proxy-manager.html">
+            
+                <a href="../Docker/nginx-proxy-manager.html">
+            
+                    
+                    Nginx Proxy Manager
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.4" data-path="../Docker/portainer.html">
+            
+                <a href="../Docker/portainer.html">
+            
+                    
+                    Portainer
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.5" data-path="../Docker/n8n.html">
+            
+                <a href="../Docker/n8n.html">
+            
+                    
+                    N8N
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" >
+            
+                <span>
+            
+                    
+                    K3s
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.1" data-path="Setup.html">
+            
+                <a href="Setup.html">
+            
+                    
+                    K3s Setup
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.2" data-path="Uninstall.html">
+            
+                <a href="Uninstall.html">
+            
+                    
+                    K3s Uninstall
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.3" data-path="CommandList.html">
+            
+                <a href="CommandList.html">
+            
+                    
+                    K3s Command List
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.4" data-path="Helm.html">
+            
+                <a href="Helm.html">
+            
+                    
+                    Helm
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.5" data-path="MetalLB.html">
+            
+                <a href="MetalLB.html">
+            
+                    
+                    MetalLB
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.6" data-path="Istio.html">
+            
+                <a href="Istio.html">
+            
+                    
+                    Istio
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.7" data-path="Longhorn.html">
+            
+                <a href="Longhorn.html">
+            
+                    
+                    Longhorn
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.8" data-path="Secret.html">
+            
+                <a href="Secret.html">
+            
+                    
+                    Secret
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.9.9" data-path="CertManager.html">
+            
+                <a href="CertManager.html">
+            
+                    
+                    Cert-Manager
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.10" data-path="ExternalDNS.html">
+            
+                <a href="ExternalDNS.html">
+            
+                    
+                    ExternalDNS
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="../Server/">
+            
+                <a href="../Server/">
+            
+                    
+                    Server
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" >
+            
+                <span>
+            
+                    
+                    GCP
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.11.1" data-path="../GCP/SSH.html">
+            
+                <a href="../GCP/SSH.html">
+            
+                    
+                    Connect GCP with SSH Key
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" >
+            
+                <span>
+            
+                    
+                    Web
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.12.1" data-path="../Web/UFW.html">
+            
+                <a href="../Web/UFW.html">
+            
+                    
+                    UFW
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.2" data-path="../Web/Nginx.html">
+            
+                <a href="../Web/Nginx.html">
+            
+                    
+                    Nginx
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.3" data-path="../Web/LetsEncrypt.html">
+            
+                <a href="../Web/LetsEncrypt.html">
+            
+                    
+                    Let's Encrypt
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13" >
+            
+                <span>
+            
+                    
+                    qBittorrent
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.13.1" data-path="../qBittorrent/Setup.html">
+            
+                <a href="../qBittorrent/Setup.html">
+            
+                    
+                    qBittorrent Setup
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13.2" data-path="../qBittorrent/Uninstall.html">
+            
+                <a href="../qBittorrent/Uninstall.html">
+            
+                    
+                    qBittorrent Uninstall
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14" data-path="../System/">
+            
+                <a href="../System/">
+            
+                    
+                    System
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15" >
+            
+                <span>
+            
+                    
+                    Proxy
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.15.1" data-path="../Proxy/SSR.html">
+            
+                <a href="../Proxy/SSR.html">
+            
+                    
+                    SSR
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15.2" data-path="../Proxy/VPN.html">
+            
+                <a href="../Proxy/VPN.html">
+            
+                    
+                    VPN
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16" data-path="../Git/">
+            
+                <a href="../Git/">
+            
+                    
+                    Git
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17" >
+            
+                <span>
+            
+                    
+                    Python
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.17.1" data-path="../Python/Conda.html">
+            
+                <a href="../Python/Conda.html">
+            
+                    
+                    Conda
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17.2" data-path="../Python/Jupyter.html">
+            
+                <a href="../Python/Jupyter.html">
+            
+                    
+                    Jupyter
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.18" >
+            
+                <span>
+            
+                    
+                    MacOS
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.18.1" data-path="../MacOS/zshrc.html">
+            
+                <a href="../MacOS/zshrc.html">
+            
+                    
+                    zshrc
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.18.2" data-path="../MacOS/screenrc.html">
+            
+                <a href="../MacOS/screenrc.html">
+            
+                    
+                    screenrc
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.18.3" data-path="../MacOS/tftp.html">
+            
+                <a href="../MacOS/tftp.html">
+            
+                    
+                    tftp
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.18.4" data-path="../MacOS/Config.html">
+            
+                <a href="../MacOS/Config.html">
+            
+                    
+                    Config
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://github.com/honkit/honkit" target="blank" class="gitbook-link">
+            Published with HonKit
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >Cert-Manager</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div class="search-plus" id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <html><head></head><body><h2 id="cert-manager">Cert-Manager</h2>
+<h3 id="install-cert-manager">Install Cert-Manager</h3>
+<p>To install Cert-Manager using Helm in your K3s cluster, follow these steps:</p>
+<ol>
+<li><p><strong>Add the Jetstack Helm Repository:</strong></p>
+<p> You'll need to add the Jetstack Helm repository to get the Cert-Manager charts.</p>
+<pre class="language-"><code class="lang-bash"> helm repo <span class="token function">add</span> jetstack https://charts.jetstack.io
+ helm repo update
+</code></pre>
+</li>
+<li><p><strong>Create a Namespace for Cert-Manager:</strong></p>
+<p> It is recommended to install Cert-Manager in its own namespace, <code>cert-manager</code>.</p>
+<pre class="language-"><code class="lang-bash"> kubectl create namespace cert-manager
+</code></pre>
+</li>
+<li><p><strong>Install Cert-Manager with Helm:</strong></p>
+<p> Use Helm to install Cert-Manager into the <code>cert-manager</code> namespace.</p>
+<pre class="language-"><code class="lang-bash"> helm <span class="token function">install</span> <span class="token punctuation">\</span>
+ cert-manager jetstack/cert-manager <span class="token punctuation">\</span>
+ <span class="token parameter variable">--namespace</span> cert-manager <span class="token punctuation">\</span>
+ <span class="token parameter variable">--set</span> <span class="token assign-left variable">crds.enabled</span><span class="token operator">=</span>true
+</code></pre>
+</li>
+<li><p><strong>Verify Installation:</strong></p>
+<p> Ensure that all Cert-Manager pods are up and running:</p>
+<pre class="language-"><code class="lang-bash"> kubectl get pods <span class="token parameter variable">-n</span> cert-manager
+</code></pre>
+</li>
+</ol>
+<h3 id="verify-installation">Verify Installation</h3>
+<p>To fully verify the Cert-Manager installation, the best approach is to issue a test certificate. This involves creating a self-signed issuer and a certificate resource in a test namespace. Follow these steps:</p>
+<ol>
+<li><p><strong>Create Test Resources:</strong></p>
+<p>Create a YAML file called <code>test-resources.yaml</code> with the following content:</p>
+<pre class="language-"><code class="lang-yaml"><span class="token key atrule">apiVersion</span><span class="token punctuation">:</span> v1
+<span class="token key atrule">kind</span><span class="token punctuation">:</span> Namespace
+<span class="token key atrule">metadata</span><span class="token punctuation">:</span>
+  <span class="token key atrule">name</span><span class="token punctuation">:</span> cert<span class="token punctuation">-</span>manager<span class="token punctuation">-</span>test
+<span class="token punctuation">---</span>
+<span class="token key atrule">apiVersion</span><span class="token punctuation">:</span> cert<span class="token punctuation">-</span>manager.io/v1
+<span class="token key atrule">kind</span><span class="token punctuation">:</span> Issuer
+<span class="token key atrule">metadata</span><span class="token punctuation">:</span>
+  <span class="token key atrule">name</span><span class="token punctuation">:</span> test<span class="token punctuation">-</span>selfsigned
+  <span class="token key atrule">namespace</span><span class="token punctuation">:</span> cert<span class="token punctuation">-</span>manager<span class="token punctuation">-</span>test
+<span class="token key atrule">spec</span><span class="token punctuation">:</span>
+  <span class="token key atrule">selfSigned</span><span class="token punctuation">:</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+<span class="token punctuation">---</span>
+<span class="token key atrule">apiVersion</span><span class="token punctuation">:</span> cert<span class="token punctuation">-</span>manager.io/v1
+<span class="token key atrule">kind</span><span class="token punctuation">:</span> Certificate
+<span class="token key atrule">metadata</span><span class="token punctuation">:</span>
+  <span class="token key atrule">name</span><span class="token punctuation">:</span> selfsigned<span class="token punctuation">-</span>cert
+  <span class="token key atrule">namespace</span><span class="token punctuation">:</span> cert<span class="token punctuation">-</span>manager<span class="token punctuation">-</span>test
+<span class="token key atrule">spec</span><span class="token punctuation">:</span>
+  <span class="token key atrule">dnsNames</span><span class="token punctuation">:</span>
+  <span class="token punctuation">-</span> example.com
+  <span class="token key atrule">secretName</span><span class="token punctuation">:</span> selfsigned<span class="token punctuation">-</span>cert<span class="token punctuation">-</span>tls
+  <span class="token key atrule">issuerRef</span><span class="token punctuation">:</span>
+    <span class="token key atrule">name</span><span class="token punctuation">:</span> test<span class="token punctuation">-</span>selfsigned
+</code></pre>
+</li>
+<li><p><strong>Apply the Test Resources:</strong></p>
+<p>Apply the configuration to create the namespace, issuer, and certificate:</p>
+<pre class="language-"><code class="lang-bash">kubectl apply <span class="token parameter variable">-f</span> test-resources.yaml
+</code></pre>
+</li>
+<li><p><strong>Check the Certificate Status:</strong></p>
+<p>After applying, check the status of the newly created certificate. You might need to wait a few seconds for cert-manager to process the certificate request.</p>
+<pre class="language-"><code class="lang-bash">kubectl describe certificate selfsigned-cert <span class="token parameter variable">-n</span> cert-manager-test
+</code></pre>
+<p>You should see something like this in the output:</p>
+<pre class="language-"><code>Spec:
+  Common Name: example.com
+  Issuer Ref:
+    Name: test-selfsigned
+  Secret Name: selfsigned-cert-tls
+Status:
+  Conditions:
+    Last Transition Time: YYYY-MM-DDTHH:MM:SSZ
+    Message: Certificate is up to date and has not expired
+    Reason: Ready
+    Status: True
+    Type: Ready
+  Not After: YYYY-MM-DDTHH:MM:SSZ
+Events:
+  Type    Reason     Age   From          Message
+  ----    ------     ----  ----          -------
+  Normal  CertIssued  4s    cert-manager  Certificate issued successfully
+</code></pre></li>
+<li><p><strong>Clean Up the Test Resources:</strong></p>
+<p>Once you've verified that the certificate is issued successfully, you can clean up the resources:</p>
+<pre class="language-"><code class="lang-bash">kubectl delete <span class="token parameter variable">-f</span> test-resources.yaml
+</code></pre>
+</li>
+</ol>
+<p>If all the above steps complete without any errors, your Cert-Manager installation is functioning properly!</p>
+<h3 id="create-a-certificate-issuer-with-lets-encrypt">Create a Certificate Issuer with Let's Encrypt</h3>
+<ol>
+<li><p><strong>Set Up an Issuer or ClusterIssuer:</strong></p>
+<p> You'll need to create an Issuer or ClusterIssuer for your cluster to get certificates. Here's an example configuration for a ClusterIssuer using Let's Encrypt:</p>
+<pre class="language-"><code class="lang-yaml"> <span class="token key atrule">apiVersion</span><span class="token punctuation">:</span> cert<span class="token punctuation">-</span>manager.io/v1
+ <span class="token key atrule">kind</span><span class="token punctuation">:</span> ClusterIssuer
+ <span class="token key atrule">metadata</span><span class="token punctuation">:</span>
+   <span class="token key atrule">name</span><span class="token punctuation">:</span> letsencrypt<span class="token punctuation">-</span>staging
+ <span class="token key atrule">spec</span><span class="token punctuation">:</span>
+   <span class="token key atrule">acme</span><span class="token punctuation">:</span>
+     <span class="token key atrule">server</span><span class="token punctuation">:</span> https<span class="token punctuation">:</span>//acme<span class="token punctuation">-</span>staging<span class="token punctuation">-</span>v02.api.letsencrypt.org/directory
+     <span class="token key atrule">email</span><span class="token punctuation">:</span> your<span class="token punctuation">-</span>email@example.com
+     <span class="token key atrule">privateKeySecretRef</span><span class="token punctuation">:</span>
+       <span class="token key atrule">name</span><span class="token punctuation">:</span> letsencrypt<span class="token punctuation">-</span>staging
+     <span class="token key atrule">solvers</span><span class="token punctuation">:</span>
+     <span class="token punctuation">-</span> <span class="token key atrule">http01</span><span class="token punctuation">:</span>
+         <span class="token key atrule">ingress</span><span class="token punctuation">:</span>
+           <span class="token key atrule">class</span><span class="token punctuation">:</span> nginx
+</code></pre>
+<p> Apply the issuer configuration:</p>
+<pre class="language-"><code class="lang-bash"> kubectl apply <span class="token parameter variable">-f</span> issuer.yml
+</code></pre>
+</li>
+<li><p><strong>Request a Certificate:</strong></p>
+<p> Deploy a test application with a certificate request to confirm Cert-Manager is functioning correctly. You may create a <code>Certificate</code> resource and check if it gets issued.</p>
+</li>
+<li><p><strong>Debugging and Logs:</strong></p>
+<p> Utilize logs for troubleshooting issues with Cert-Manager:</p>
+<pre class="language-"><code class="lang-bash"> kubectl logs <span class="token parameter variable">-l</span> <span class="token assign-left variable">app</span><span class="token operator">=</span>cert-manager <span class="token parameter variable">-n</span> cert-manager
+</code></pre>
+</li>
+<li><p><strong>Verify Certificates:</strong></p>
+<p> Inspect the <code>Certificate</code> resources and verify <code>Secrets</code> issued:</p>
+<pre class="language-"><code class="lang-bash"> kubectl get certificates <span class="token parameter variable">-A</span>
+ kubectl get secrets <span class="token parameter variable">-A</span> <span class="token operator">|</span> <span class="token function">grep</span> your-certificate-name
+</code></pre>
+</li>
+</ol>
+<h3 id="create-a-certificate-issuer-with-cloudflare">Create a Certificate Issuer with Cloudflare</h3>
+<p>This guide will walk you through setting up a <strong>Cloudflare-based issuer</strong> with Cert-Manager on your K3s cluster. It builds upon the same structure shown in the previous example but replaces the issuer configuration with Cloudflare-specific settings. We assume that you have already:</p>
+<ul>
+<li><strong>Installed Cert-Manager</strong> using Helm.</li>
+<li>Configured your K3s cluster properly.</li>
+</ul>
+<p>Below are the steps to create a secret for your Cloudflare API token and a ClusterIssuer that uses DNS-01 validation.</p>
+<hr></hr>
+<h4 id="1-create-a-cloudflare-api-token">1. Create a Cloudflare API Token</h4>
+<ol>
+<li><p><strong>Log into Cloudflare</strong>:<br></br>Go to the <a href="https://dash.cloudflare.com/" target="_blank">Cloudflare Dashboard</a> and navigate to <strong>My Profile</strong> → <strong>API Tokens</strong>.</p>
+</li>
+<li><p><strong>Generate a Token</strong>:<br></br>Create an API token with <code>DNS:Edit</code>, <code>Zone:Read</code> (or broader) permission for the specific zone you will be validating.</p>
+</li>
+<li><p><strong>Copy the Token</strong>:<br></br>After creating the token, copy it somewhere safe (e.g., <code>abc123xyz...</code>). You will need it in the next step.</p>
+</li>
+</ol>
+<hr></hr>
+<h4 id="2-create-a-kubernetes-secret-for-the-cloudflare-token">2. Create a Kubernetes Secret for the Cloudflare Token</h4>
+<p>You need to store your Cloudflare API token as a secret in your cluster. If Cert-Manager is installed in the <code>cert-manager</code> namespace, you can place the secret there as well:</p>
+<pre class="language-"><code class="lang-bash">kubectl create secret generic cloudflare-api-token-secret <span class="token punctuation">\</span>
+  --from-literal<span class="token operator">=</span>api-token<span class="token operator">=</span><span class="token string">'abc123xyz...'</span> <span class="token punctuation">\</span>
+  <span class="token parameter variable">-n</span> cert-manager
+</code></pre>
+<ul>
+<li><strong>Secret Name</strong>: <code>cloudflare-api-token-secret</code>  </li>
+<li><strong>Key</strong>: <code>api-token</code></li>
+</ul>
+<p>Alternatively, you can create this secret via a YAML manifest:</p>
+<pre class="language-"><code class="lang-yaml"><span class="token key atrule">apiVersion</span><span class="token punctuation">:</span> v1
+<span class="token key atrule">kind</span><span class="token punctuation">:</span> Secret
+<span class="token key atrule">metadata</span><span class="token punctuation">:</span>
+  <span class="token key atrule">name</span><span class="token punctuation">:</span> cloudflare<span class="token punctuation">-</span>api<span class="token punctuation">-</span>token<span class="token punctuation">-</span>secret
+  <span class="token key atrule">namespace</span><span class="token punctuation">:</span> cert<span class="token punctuation">-</span>manager
+<span class="token key atrule">type</span><span class="token punctuation">:</span> Opaque
+<span class="token key atrule">data</span><span class="token punctuation">:</span>
+  <span class="token comment"># Base64-encoded token string</span>
+  <span class="token key atrule">api-token</span><span class="token punctuation">:</span> &lt;BASE64_ENCODED_CLOUDFLARE_TOKEN<span class="token punctuation">&gt;</span>
+</code></pre>
+<blockquote>
+<p><strong>Note</strong>: Make sure your API token is base64-encoded if you choose the YAML approach. For example:</p>
+<pre class="language-"><code class="lang-bash"><span class="token builtin class-name">echo</span> <span class="token parameter variable">-n</span> <span class="token string">"abc123xyz..."</span> <span class="token operator">|</span> base64
+</code></pre>
+</blockquote>
+<hr></hr>
+<h4 id="3-create-a-clusterissuer-for-cloudflare">3. Create a ClusterIssuer for Cloudflare</h4>
+<p>Cert-Manager uses a ClusterIssuer (or Issuer) to obtain certificates. Below is an example <strong>ClusterIssuer</strong> that uses Let’s Encrypt <strong>production</strong> endpoint (you can also switch to the staging endpoint for testing).</p>
+<pre class="language-"><code class="lang-yaml"><span class="token key atrule">apiVersion</span><span class="token punctuation">:</span> cert<span class="token punctuation">-</span>manager.io/v1
+<span class="token key atrule">kind</span><span class="token punctuation">:</span> ClusterIssuer
+<span class="token key atrule">metadata</span><span class="token punctuation">:</span>
+  <span class="token key atrule">name</span><span class="token punctuation">:</span> cloudflare<span class="token punctuation">-</span>issuer
+<span class="token key atrule">spec</span><span class="token punctuation">:</span>
+  <span class="token key atrule">acme</span><span class="token punctuation">:</span>
+    <span class="token key atrule">server</span><span class="token punctuation">:</span> https<span class="token punctuation">:</span>//acme<span class="token punctuation">-</span>v02.api.letsencrypt.org/directory
+    <span class="token key atrule">email</span><span class="token punctuation">:</span> your<span class="token punctuation">-</span>email@example.com
+    <span class="token key atrule">privateKeySecretRef</span><span class="token punctuation">:</span>
+      <span class="token key atrule">name</span><span class="token punctuation">:</span> cloudflare<span class="token punctuation">-</span>issuer<span class="token punctuation">-</span>account<span class="token punctuation">-</span>key
+    <span class="token key atrule">solvers</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> <span class="token key atrule">dns01</span><span class="token punctuation">:</span>
+          <span class="token key atrule">cloudflare</span><span class="token punctuation">:</span>
+            <span class="token comment"># Reference your secret and the key where the token is stored</span>
+            <span class="token key atrule">apiTokenSecretRef</span><span class="token punctuation">:</span>
+              <span class="token key atrule">name</span><span class="token punctuation">:</span> cloudflare<span class="token punctuation">-</span>api<span class="token punctuation">-</span>token<span class="token punctuation">-</span>secret
+              <span class="token key atrule">key</span><span class="token punctuation">:</span> api<span class="token punctuation">-</span>token
+</code></pre>
+<ol>
+<li><p><strong><code>server</code></strong>: Points to the Let’s Encrypt ACME URL.  </p>
+<ul>
+<li>Production: <code>https://acme-v02.api.letsencrypt.org/directory</code>  </li>
+<li>Staging: <code>https://acme-staging-v02.api.letsencrypt.org/directory</code></li>
+</ul>
+</li>
+<li><p><strong><code>email</code></strong>: The email address associated with your Let’s Encrypt account.</p>
+</li>
+<li><p><strong><code>privateKeySecretRef.name</code></strong>: The Secret where Cert-Manager will store your ACME account’s private key. You can name this Secret as you like (e.g., <code>cloudflare-issuer-account-key</code>).</p>
+</li>
+<li><p><strong><code>apiTokenSecretRef.name</code></strong>: The name of the secret you created in the previous step (<code>cloudflare-api-token-secret</code>).</p>
+</li>
+<li><p><strong><code>apiTokenSecretRef.key</code></strong>: The key in that secret where the token is stored (default: <code>api-token</code>).</p>
+</li>
+</ol>
+<p>Once you’ve created the YAML file (e.g., <code>cloudflare-issuer.yaml</code>), apply it:</p>
+<pre class="language-"><code class="lang-bash">kubectl apply <span class="token parameter variable">-f</span> cloudflare-issuer.yaml
+</code></pre>
+<hr></hr>
+<h4 id="4-verify-your-cloudflare-issuer">4. Verify Your Cloudflare Issuer</h4>
+<p>Check the status of your <strong>ClusterIssuer</strong>:</p>
+<pre class="language-"><code class="lang-bash">kubectl describe clusterissuer cloudflare-issuer
+</code></pre>
+<p>Look for <code>Status: True</code> or any events indicating whether your issuer is ready. If you see error messages, consult the Cert-Manager controller logs:</p>
+<pre class="language-"><code class="lang-bash">kubectl logs <span class="token parameter variable">-l</span> <span class="token assign-left variable">app</span><span class="token operator">=</span>cert-manager <span class="token parameter variable">-n</span> cert-manager
+</code></pre>
+<hr></hr>
+<h4 id="5-request-a-certificate">5. Request a Certificate</h4>
+<p>Once the issuer is ready, you can request a certificate for a specific domain. For example, to get a certificate for <code>example.adakrei.com</code>, create a <code>Certificate</code> manifest like the following:</p>
+<pre class="language-"><code class="lang-yaml"><span class="token key atrule">apiVersion</span><span class="token punctuation">:</span> cert<span class="token punctuation">-</span>manager.io/v1
+<span class="token key atrule">kind</span><span class="token punctuation">:</span> Certificate
+<span class="token key atrule">metadata</span><span class="token punctuation">:</span>
+  <span class="token key atrule">name</span><span class="token punctuation">:</span> example<span class="token punctuation">-</span>adakrei<span class="token punctuation">-</span>com<span class="token punctuation">-</span>cert
+  <span class="token key atrule">namespace</span><span class="token punctuation">:</span> default
+<span class="token key atrule">spec</span><span class="token punctuation">:</span>
+  <span class="token key atrule">secretName</span><span class="token punctuation">:</span> example<span class="token punctuation">-</span>adakrei<span class="token punctuation">-</span>com<span class="token punctuation">-</span>tls
+  <span class="token key atrule">issuerRef</span><span class="token punctuation">:</span>
+    <span class="token key atrule">name</span><span class="token punctuation">:</span> cloudflare<span class="token punctuation">-</span>issuer
+    <span class="token key atrule">kind</span><span class="token punctuation">:</span> ClusterIssuer
+  <span class="token key atrule">dnsNames</span><span class="token punctuation">:</span>
+    <span class="token punctuation">-</span> example.adakrei.com
+</code></pre>
+<p>Apply this file:</p>
+<pre class="language-"><code class="lang-bash">kubectl apply <span class="token parameter variable">-f</span> certificate.yaml
+</code></pre>
+<p>Cert-Manager will perform a DNS-01 challenge using your Cloudflare API token to create a <code>_acme-challenge.example.adakrei.com</code> TXT record. After successful validation, a TLS certificate will be issued and stored in the <code>example-adakrei-com-tls</code> secret.</p>
+<p>Use the following commands to verify:</p>
+<pre class="language-"><code class="lang-bash">kubectl describe certificate example-adakrei-com-cert
+kubectl get secret example-adakrei-com-tls
+</code></pre>
+<p>You should see the secret containing <code>tls.crt</code> and <code>tls.key</code> if everything is working properly.</p>
+<hr></hr>
+<h4 id="summary">Summary</h4>
+<ol>
+<li><strong>Install Cert-Manager</strong> (already completed).  </li>
+<li><strong>Create a Secret</strong> for your Cloudflare API token (<code>cloudflare-api-token-secret</code>).  </li>
+<li><strong>Create a ClusterIssuer</strong> referencing the Cloudflare token (<code>cloudflare-issuer</code>).  </li>
+<li><strong>Request a Certificate</strong> to confirm correct DNS-01 validation.  </li>
+<li><strong>Use the TLS Secret</strong> in your Ingress, Gateway, or HTTPRoute to enable HTTPS.</li>
+</ol>
+<p>With these steps, you should have a fully functioning <strong>Cloudflare-based issuer</strong> in your K3s cluster, enabling Cert-Manager to automatically issue and renew certificates via Let’s Encrypt. If you encounter issues, check the Cert-Manager logs and ensure your Cloudflare API token has the necessary DNS edit permissions for the relevant zone.</p>
+<h3 id="uninstall-cert-manager">Uninstall Cert-Manager</h3>
+<p>To uninstall Cert-Manager from your K3s cluster, follow these steps:</p>
+<ol>
+<li><p><strong>Delete the Cert-Manager Release:</strong></p>
+<p> Use Helm to delete the Cert-Manager release:</p>
+<pre class="language-"><code class="lang-bash"> helm delete cert-manager <span class="token parameter variable">-n</span> cert-manager
+</code></pre>
+</li>
+<li><p><strong>Delete the Cert-Manager Namespace:</strong></p>
+<p> Remove the <code>cert-manager</code> namespace:</p>
+<pre class="language-"><code class="lang-bash"> kubectl delete namespace cert-manager
+</code></pre>
+</li>
+</ol>
+<p>By following these steps, you can install Cert-Manager in your K3s cluster using Helm. Ensure your Kubernetes environment is properly prepared and configured for Cert-Manager to issue and manage certificates.</p>
+</body></html>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="Secret.html" class="navigation navigation-prev " aria-label="Previous page: Secret">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="ExternalDNS.html" class="navigation navigation-next " aria-label="Next page: ExternalDNS">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Cert-Manager","level":"1.9.9","depth":2,"next":{"title":"ExternalDNS","level":"1.9.10","depth":2,"path":"K3s/ExternalDNS.md","ref":"./K3s/ExternalDNS.md","articles":[]},"previous":{"title":"Secret","level":"1.9.8","depth":2,"path":"K3s/Secret.md","ref":"./K3s/Secret.md","articles":[]},"dir":"ltr"},"config":{"plugins":["octocat","tooltips","-lunr","-search","-sharing","-page-toc-button","search-plus","-anchor-navigation-ex","-flexible-alerts","-code","prism","-highlight","-tbfed-pagefooter","-hide-element"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright &copy carry0987","modify_label":"Last Modified : ","modify_format":"YYYY-MM-DD HH:mm:ss"},"prism":{"css":["prismjs/themes/prism-tomorrow.css"],"lang":{"flow":"typescript"},"ignore":["eval-js"]},"octocat":{"url":"https://github.com/carry0987/Linux-Script"},"code":{"copyButtons":true},"tooltips":{},"hide-element":{"elements":[".gitbook-link"]},"fontsettings":{"theme":"white","family":"sans","size":2},"fontSettings":{"theme":"night","family":"sans"},"anchor-navigation-ex":{"showLevel":false,"associatedWithSummary":true,"printLog":false,"multipleH1":false,"mode":"float","showGoTop":true,"float":{"floatIcon":"fa fa-navicon","showLevelIcon":false,"level1Icon":"fa fa-hand-o-right","level2Icon":"fa fa-hand-o-right","level3Icon":"fa fa-hand-o-right"},"pageTop":{"showLevelIcon":false,"level1Icon":"fa fa-hand-o-right","level2Icon":"fa fa-hand-o-right","level3Icon":"fa fa-hand-o-right"}},"flexible-alerts":{"style":"flat"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"search-plus":{}},"theme":"default","author":"carry0987","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Linux-Script","language":"en","gitbook":"*","defaultDescription":"Store Linux Script","description":"Store Linux Script"},"file":{"path":"K3s/CertManager.md","mtime":"2025-02-05T08:08:12.145Z","type":"markdown"},"gitbook":{"version":"6.0.2","time":"2025-02-05T08:08:17.723Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <noscript>
+        <style>
+            .honkit-cloak {
+                display: block !important;
+            }
+        </style>
+    </noscript>
+    <script>
+        // Restore sidebar state as critical path for prevent layout shift
+        function __init__getSidebarState(defaultValue){
+            var baseKey = "";
+            var key = baseKey + ":sidebar";
+            try {
+                var value = localStorage[key];
+                if (value === undefined) {
+                    return defaultValue;
+                }
+                var parsed = JSON.parse(value);
+                return parsed == null ? defaultValue : parsed;
+            } catch (e) {
+                return defaultValue;
+            }
+        }
+        function __init__restoreLastSidebarState() {
+            var isMobile = window.matchMedia("(max-width: 600px)").matches;
+            if (isMobile) {
+                // Init last state if not mobile
+                return;
+            }
+            var sidebarState = __init__getSidebarState(true);
+            var book = document.querySelector(".book");
+            // Show sidebar if it enabled
+            if (sidebarState && book) {
+                book.classList.add("without-animation", "with-summary");
+            }
+        }
+
+        try {
+            __init__restoreLastSidebarState();
+        } finally {
+            var book = document.querySelector(".book");
+            book.classList.remove("honkit-cloak");
+        }
+    </script>
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-octocat/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/honkit-plugin-search-plus/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/honkit-plugin-search-plus/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/@honkit/honkit-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

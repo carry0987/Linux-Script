@@ -1,9 +1,0 @@
-{
-	"dependencies": {
-		"gitbook-plugin": "^0.0.2",
-		"gitbook-plugin-octocat": "^1.0.2",
-		"honkit-plugin-prism": "^2.5.3",
-		"honkit-plugin-search-plus": "^1.0.0",
-		"honkit-plugin-tooltips": "^0.0.5"
-	}
-}

@@ -1,0 +1,99 @@
+/* Tooltip container */
+.tooltips {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltips .tooltipstext-bottom {
+  visibility: hidden;
+  background-color: black;
+  color: #fff;
+  text-align: left;
+  border-radius: 4px;  /* 调整圆角，让边缘更自然 */
+  padding: 8px;  /* 增加 padding 让内容更舒适 */
+  font-size: 14px;  /* 控制字体大小，保证文本易读 */
+  line-height: 1.4;  /* 增加行间距，提升可读性 */
+
+  /* Position the tooltip text */
+  position: absolute;
+  z-index: 1;
+
+  top: 100%;
+  left: 0;  /* 左边对齐 */
+  margin-top: 8px;  /* 增加与触发元素的距离 */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);  /* 添加阴影，提升视觉层次 */
+
+  /* Fade in tooltip - takes 0.5 second to go from 0% to 100% opac: */
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;  /* 增加渐变效果，使显示更平滑 */
+}
+
+
+.tooltips .tooltipstext-bottom::after {
+  content: " ";
+  position: absolute;
+  bottom: 100%;  /* At the top of the tooltip */
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent transparent black transparent;
+}
+
+.tooltips:hover .tooltipstext-bottom {
+  visibility: visible;  /* 鼠标悬停时显示 */
+  opacity: 1;
+  pointer-events: auto;  /* 鼠标悬停时允许交互 */
+}
+
+
+.tooltips .tooltipstext-top {
+  visibility: hidden;
+  background-color: black;
+  color: #fff;
+  text-align: left;
+  border-radius: 4px;  /* 调整圆角，让边缘更自然 */
+  padding: 8px;  /* 增加 padding 让内容更舒适 */
+  font-size: 14px;  /* 控制字体大小，保证文本易读 */
+  line-height: 1.4;  /* 增加行间距，提升可读性 */
+
+  /* Position the tooltip text */
+  position: absolute;
+  z-index: 1;
+
+  bottom: 100%;
+  left: 0;  /* 左边对齐 */
+  margin-top: 8px;  /* 增加与触发元素的距离 */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);  /* 添加阴影，提升视觉层次 */
+
+  /* Fade in tooltip - takes 0.5 second to go from 0% to 100% opac: */
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;  /* 增加渐变效果，使显示更平滑 */
+}
+
+.tooltips .tooltipstext-top::after {
+  content: " ";
+  position: absolute;
+  top: 100%;  /* At the bottom of the tooltip */
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: black transparent transparent transparent;
+}
+
+.tooltips:hover .tooltipstext-top {
+  visibility: visible;  /* 鼠标悬停时显示 */
+  opacity: 1;
+  pointer-events: auto;  /* 鼠标悬停时允许交互 */
+}
+
+.tooltips .hints-icon {
+  display: table-cell;
+  padding-right: 15px;
+  padding-left: 5px;
+}
+
+.tooltips .hints-container {
+  display: table-cell;
+}

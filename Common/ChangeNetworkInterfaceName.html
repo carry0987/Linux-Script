@@ -1,0 +1,1157 @@
+
+<!DOCTYPE HTML>
+<html lang="en" >
+    <head>
+        <meta charset="UTF-8">
+        <title>Change Network Interface Name · Linux-Script</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="HonKit 6.0.2">
+        <meta name="author" content="carry0987">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/honkit-plugin-tooltips/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/honkit-plugin-search-plus/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/honkit-plugin-prism/prism-tomorrow.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/@honkit/honkit-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="DisableCloudInit.html" />
+    
+    
+    <link rel="prev" href="ChangeUsername.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book honkit-cloak">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Regular Command
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="CommandList.html">
+            
+                <a href="CommandList.html">
+            
+                    
+                    Command List
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="Sudo.html">
+            
+                <a href="Sudo.html">
+            
+                    
+                    Run SUDO without password
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="ChangeUsername.html">
+            
+                <a href="ChangeUsername.html">
+            
+                    
+                    Change Username
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.2.4" data-path="ChangeNetworkInterfaceName.html">
+            
+                <a href="ChangeNetworkInterfaceName.html">
+            
+                    
+                    Change Network Interface Name
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="DisableCloudInit.html">
+            
+                <a href="DisableCloudInit.html">
+            
+                    
+                    Disable cloud-init
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../Crontab/">
+            
+                <a href="../Crontab/">
+            
+                    
+                    Crontab
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../Crontab/what_is_cron.html">
+            
+                <a href="../Crontab/what_is_cron.html">
+            
+                    
+                    What is cron
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../Crontab/restrictions.html">
+            
+                <a href="../Crontab/restrictions.html">
+            
+                    
+                    Crontab Restrictions
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../Crontab/commands.html">
+            
+                <a href="../Crontab/commands.html">
+            
+                    
+                    Crontab Commands
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="../Crontab/syntax.html">
+            
+                <a href="../Crontab/syntax.html">
+            
+                    
+                    Crontab Syntax
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="../Crontab/example.html">
+            
+                <a href="../Crontab/example.html">
+            
+                    
+                    Crontab Example
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6" data-path="../Crontab/environment.html">
+            
+                <a href="../Crontab/environment.html">
+            
+                    
+                    Crontab Environment
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.7" data-path="../Crontab/log_file_and_disable_email.html">
+            
+                <a href="../Crontab/log_file_and_disable_email.html">
+            
+                    
+                    Log file & Disable Email
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.8" data-path="../Crontab/file_location.html">
+            
+                <a href="../Crontab/file_location.html">
+            
+                    
+                    Crontab file location
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../Tools/">
+            
+                <a href="../Tools/">
+            
+                    
+                    Tools
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../Setup/">
+            
+                <a href="../Setup/">
+            
+                    
+                    Setup
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../Vim/">
+            
+                <a href="../Vim/">
+            
+                    
+                    Vim
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../Htop/">
+            
+                <a href="../Htop/">
+            
+                    
+                    Htop
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" >
+            
+                <span>
+            
+                    
+                    Docker
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1" data-path="../Docker/setup.html">
+            
+                <a href="../Docker/setup.html">
+            
+                    
+                    Docker Setup
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.2" data-path="../Docker/command.html">
+            
+                <a href="../Docker/command.html">
+            
+                    
+                    Docker Command
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.3" data-path="../Docker/nginx-proxy-manager.html">
+            
+                <a href="../Docker/nginx-proxy-manager.html">
+            
+                    
+                    Nginx Proxy Manager
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.4" data-path="../Docker/portainer.html">
+            
+                <a href="../Docker/portainer.html">
+            
+                    
+                    Portainer
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.5" data-path="../Docker/n8n.html">
+            
+                <a href="../Docker/n8n.html">
+            
+                    
+                    N8N
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" >
+            
+                <span>
+            
+                    
+                    K3s
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.1" data-path="../K3s/Setup.html">
+            
+                <a href="../K3s/Setup.html">
+            
+                    
+                    K3s Setup
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.2" data-path="../K3s/Uninstall.html">
+            
+                <a href="../K3s/Uninstall.html">
+            
+                    
+                    K3s Uninstall
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.3" data-path="../K3s/CommandList.html">
+            
+                <a href="../K3s/CommandList.html">
+            
+                    
+                    K3s Command List
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.4" data-path="../K3s/Helm.html">
+            
+                <a href="../K3s/Helm.html">
+            
+                    
+                    Helm
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.5" data-path="../K3s/MetalLB.html">
+            
+                <a href="../K3s/MetalLB.html">
+            
+                    
+                    MetalLB
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.6" data-path="../K3s/Istio.html">
+            
+                <a href="../K3s/Istio.html">
+            
+                    
+                    Istio
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.7" data-path="../K3s/Longhorn.html">
+            
+                <a href="../K3s/Longhorn.html">
+            
+                    
+                    Longhorn
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.8" data-path="../K3s/Secret.html">
+            
+                <a href="../K3s/Secret.html">
+            
+                    
+                    Secret
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.9" data-path="../K3s/CertManager.html">
+            
+                <a href="../K3s/CertManager.html">
+            
+                    
+                    Cert-Manager
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.10" data-path="../K3s/ExternalDNS.html">
+            
+                <a href="../K3s/ExternalDNS.html">
+            
+                    
+                    ExternalDNS
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="../Server/">
+            
+                <a href="../Server/">
+            
+                    
+                    Server
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" >
+            
+                <span>
+            
+                    
+                    GCP
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.11.1" data-path="../GCP/SSH.html">
+            
+                <a href="../GCP/SSH.html">
+            
+                    
+                    Connect GCP with SSH Key
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" >
+            
+                <span>
+            
+                    
+                    Web
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.12.1" data-path="../Web/UFW.html">
+            
+                <a href="../Web/UFW.html">
+            
+                    
+                    UFW
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.2" data-path="../Web/Nginx.html">
+            
+                <a href="../Web/Nginx.html">
+            
+                    
+                    Nginx
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.3" data-path="../Web/LetsEncrypt.html">
+            
+                <a href="../Web/LetsEncrypt.html">
+            
+                    
+                    Let's Encrypt
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13" >
+            
+                <span>
+            
+                    
+                    qBittorrent
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.13.1" data-path="../qBittorrent/Setup.html">
+            
+                <a href="../qBittorrent/Setup.html">
+            
+                    
+                    qBittorrent Setup
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13.2" data-path="../qBittorrent/Uninstall.html">
+            
+                <a href="../qBittorrent/Uninstall.html">
+            
+                    
+                    qBittorrent Uninstall
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14" data-path="../System/">
+            
+                <a href="../System/">
+            
+                    
+                    System
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15" >
+            
+                <span>
+            
+                    
+                    Proxy
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.15.1" data-path="../Proxy/SSR.html">
+            
+                <a href="../Proxy/SSR.html">
+            
+                    
+                    SSR
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15.2" data-path="../Proxy/VPN.html">
+            
+                <a href="../Proxy/VPN.html">
+            
+                    
+                    VPN
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16" data-path="../Git/">
+            
+                <a href="../Git/">
+            
+                    
+                    Git
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17" >
+            
+                <span>
+            
+                    
+                    Python
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.17.1" data-path="../Python/Conda.html">
+            
+                <a href="../Python/Conda.html">
+            
+                    
+                    Conda
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17.2" data-path="../Python/Jupyter.html">
+            
+                <a href="../Python/Jupyter.html">
+            
+                    
+                    Jupyter
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.18" >
+            
+                <span>
+            
+                    
+                    MacOS
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.18.1" data-path="../MacOS/zshrc.html">
+            
+                <a href="../MacOS/zshrc.html">
+            
+                    
+                    zshrc
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.18.2" data-path="../MacOS/screenrc.html">
+            
+                <a href="../MacOS/screenrc.html">
+            
+                    
+                    screenrc
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.18.3" data-path="../MacOS/tftp.html">
+            
+                <a href="../MacOS/tftp.html">
+            
+                    
+                    tftp
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.18.4" data-path="../MacOS/Config.html">
+            
+                <a href="../MacOS/Config.html">
+            
+                    
+                    Config
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://github.com/honkit/honkit" target="blank" class="gitbook-link">
+            Published with HonKit
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >Change Network Interface Name</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div class="search-plus" id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <html><head></head><body><h2 id="change-default-network-interface-name-on-ubuntu">Change default network interface name on Ubuntu</h2>
+<p>If you ever interested in changing interface names to old type <code>ethX</code>, here is the tutorial for you.
+As you can see in the following command, my system is having a network adapter called <code>ens33</code>.  </p>
+<p>This is just the case of <strong>VMware</strong> environment, it may vary depends on the hardware but the steps to get back <code>ethX</code> will be the same.  </p>
+<pre class="language-"><code class="lang-log"><span class="token operator">$</span> ip a
+<span class="token number">1</span><span class="token operator">:</span> lo<span class="token operator">:</span> <span class="token operator">&lt;</span>loopback<span class="token punctuation">,</span>up<span class="token punctuation">,</span>lower_up<span class="token operator">&gt;</span> mtu <span class="token number">65536</span> qdisc noqueue state UNKNOWN group default qlen <span class="token number">1</span>
+    link<span class="token operator">/</span>loopback <span class="token mac-address constant">00:00:00:00:00:00</span> brd <span class="token mac-address constant">00:00:00:00:00:00</span>
+    inet <span class="token ip-address constant">127.0.0.1</span><span class="token operator">/</span><span class="token number">8</span> scope host lo
+       valid_lft forever preferred_lft forever
+    inet6 <span class="token operator">:</span><span class="token operator">:</span><span class="token number">1</span><span class="token operator">/</span><span class="token number">128</span> scope host
+       valid_lft forever preferred_lft forever
+<span class="token number">2</span><span class="token operator">:</span> <span class="token operator">&lt;</span><span class="token operator">/</span>loopback<span class="token punctuation">,</span>up<span class="token punctuation">,</span>lower_up<span class="token operator">&gt;</span>ens33<span class="token operator">:</span> <span class="token operator">&lt;</span>broadcast<span class="token punctuation">,</span>multicast<span class="token punctuation">,</span>up<span class="token punctuation">,</span>lower_up<span class="token operator">&gt;</span> mtu <span class="token number">1500</span> qdisc pfifo_fast state UP group default qlen <span class="token number">1000</span>
+    link<span class="token operator">/</span>ether <span class="token mac-address constant">00:0c:29:05:a3:e2</span> brd <span class="token mac-address constant">ff:ff:ff:ff:ff:ff</span>
+    <span class="token operator">&lt;</span><span class="token operator">/</span>broadcast<span class="token punctuation">,</span>multicast<span class="token punctuation">,</span>up<span class="token punctuation">,</span>lower_up<span class="token operator">&gt;</span>inet <span class="token ip-address constant">192.168.12.12</span><span class="token operator">/</span><span class="token number">24</span> brd <span class="token ip-address constant">192.168.12.255</span> scope global dynamic ens33
+       valid_lft <span class="token number">1683sec</span> preferred_lft <span class="token number">1683sec</span>
+    inet6 fe80<span class="token operator">:</span><span class="token operator">:</span><span class="token number">20c</span><span class="token operator">:</span><span class="token number">29ff</span><span class="token operator">:</span>fe05<span class="token operator">:</span>a3e2<span class="token operator">/</span><span class="token number">64</span> scope link
+       valid_lft forever preferred_lft forever
+</code></pre>
+<p>From the <code>dmesg</code> command, you can see that the device got renamed during the system boot.</p>
+<pre class="language-"><code class="lang-log"><span class="token operator">$</span> dmesg <span class="token operator">|</span> grep <span class="token operator">-</span>i eth
+<span class="token punctuation">[</span>    <span class="token number">3.050064</span><span class="token punctuation">]</span> e1000 <span class="token number">0000</span><span class="token operator">:</span><span class="token number">02</span><span class="token operator">:</span><span class="token number">01.0</span> eth0<span class="token operator">:</span> <span class="token operator">(</span>PCI<span class="token operator">:</span><span class="token number">66MHz</span><span class="token operator">:</span><span class="token number">32</span><span class="token operator">-</span>bit<span class="token operator">)</span> <span class="token mac-address constant">00:0c:29:05:a3:e2</span>
+<span class="token punctuation">[</span>    <span class="token number">3.050074</span><span class="token punctuation">]</span> e1000 <span class="token number">0000</span><span class="token operator">:</span><span class="token number">02</span><span class="token operator">:</span><span class="token number">01.0</span> eth0<span class="token operator">:</span> Intel<span class="token operator">(</span>R<span class="token operator">)</span> PRO<span class="token operator">/</span><span class="token number">1000</span> Network Connection
+<span class="token punctuation">[</span>    <span class="token number">3.057410</span><span class="token punctuation">]</span> e1000 <span class="token number">0000</span><span class="token operator">:</span><span class="token number">02</span><span class="token operator">:</span><span class="token number">01.0</span> ens33<span class="token operator">:</span> renamed from eth0
+</code></pre>
+<p>To get an <code>ethX</code> back, edit the <code>grub</code> file.</p>
+<pre class="language-"><code class="lang-bash"><span class="token function">sudo</span> <span class="token function">vim</span> /etc/default/grub
+</code></pre>
+<p>Look for <strong><code>GRUB_CMDLINE_LINUX</code></strong> and add the following <code>net.ifnames=0 biosdevname=0</code>.</p>
+<p>From:</p>
+<pre class="language-"><code class="lang-ini"><span class="token key attr-name">GRUB_CMDLINE_LINUX</span><span class="token punctuation">=</span><span class="token value attr-value">""</span>
+</code></pre>
+<p>To:</p>
+<pre class="language-"><code class="lang-ini"><span class="token key attr-name">GRUB_CMDLINE_LINUX</span><span class="token punctuation">=</span><span class="token value attr-value">"<span class="token inner-value">net.ifnames=0 biosdevname=0</span>"</span>
+</code></pre>
+<p>Generate a new grub file using the following command.</p>
+<pre class="language-"><code class="lang-bash">$ <span class="token function">sudo</span> <span class="token function">grub-mkconfig</span> <span class="token parameter variable">-o</span> /boot/grub/grub.cfg
+Generating grub configuration <span class="token function">file</span> <span class="token punctuation">..</span>.
+Warning: Setting GRUB_TIMEOUT to a non-zero value when GRUB_HIDDEN_TIMEOUT is <span class="token builtin class-name">set</span> is no longer supported.
+Found linux image: /boot/vmlinuz-4.4.0-15-generic
+Found initrd image: /boot/initrd.img-4.4.0-15-generic
+Found memtest86+ image: /memtest86+.elf
+Found memtest86+ image: /memtest86+.bin
+<span class="token keyword">done</span>
+</code></pre>
+<p>Reboot your system.</p>
+<pre class="language-"><code class="lang-bash"><span class="token function">sudo</span> <span class="token function">reboot</span>
+</code></pre>
+<p>After the system reboot, just check whether you have an <code>ethX</code> back.</p>
+<pre class="language-"><code class="lang-log"><span class="token operator">$</span> ip a
+<span class="token number">1</span><span class="token operator">:</span> lo<span class="token operator">:</span> <span class="token operator">&lt;</span>loopback<span class="token punctuation">,</span>up<span class="token punctuation">,</span>lower_up<span class="token operator">&gt;</span> mtu <span class="token number">65536</span> qdisc noqueue state UNKNOWN group default qlen <span class="token number">1</span>
+    link<span class="token operator">/</span>loopback <span class="token mac-address constant">00:00:00:00:00:00</span> brd <span class="token mac-address constant">00:00:00:00:00:00</span>
+    inet <span class="token ip-address constant">127.0.0.1</span><span class="token operator">/</span><span class="token number">8</span> scope host lo
+       valid_lft forever preferred_lft forever
+    inet6 <span class="token operator">:</span><span class="token operator">:</span><span class="token number">1</span><span class="token operator">/</span><span class="token number">128</span> scope host
+       valid_lft forever preferred_lft forever
+<span class="token number">2</span><span class="token operator">:</span> <span class="token operator">&lt;</span><span class="token operator">/</span>loopback<span class="token punctuation">,</span>up<span class="token punctuation">,</span>lower_up<span class="token operator">&gt;</span>eth0<span class="token operator">:</span> <span class="token operator">&lt;</span>broadcast<span class="token punctuation">,</span>multicast<span class="token punctuation">,</span>up<span class="token punctuation">,</span>lower_up<span class="token operator">&gt;</span> mtu <span class="token number">1500</span> qdisc pfifo_fast state UP group default qlen <span class="token number">1000</span>
+    link<span class="token operator">/</span>ether <span class="token mac-address constant">00:0c:29:05:a3:e2</span> brd <span class="token mac-address constant">ff:ff:ff:ff:ff:ff</span>
+    <span class="token operator">&lt;</span><span class="token operator">/</span>broadcast<span class="token punctuation">,</span>multicast<span class="token punctuation">,</span>up<span class="token punctuation">,</span>lower_up<span class="token operator">&gt;</span>inet <span class="token ip-address constant">192.168.12.12</span><span class="token operator">/</span><span class="token number">24</span> brd <span class="token ip-address constant">192.168.12.255</span> scope global eth0
+       valid_lft forever preferred_lft forever
+    inet6 fe80<span class="token operator">:</span><span class="token operator">:</span><span class="token number">20c</span><span class="token operator">:</span><span class="token number">29ff</span><span class="token operator">:</span>fe05<span class="token operator">:</span>a3e2<span class="token operator">/</span><span class="token number">64</span> scope link
+       valid_lft forever preferred_lft forever
+</code></pre>
+</body></html>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="ChangeUsername.html" class="navigation navigation-prev " aria-label="Previous page: Change Username">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="DisableCloudInit.html" class="navigation navigation-next " aria-label="Next page: Disable cloud-init">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Change Network Interface Name","level":"1.2.4","depth":2,"next":{"title":"Disable cloud-init","level":"1.2.5","depth":2,"path":"Common/DisableCloudInit.md","ref":"./Common/DisableCloudInit.md","articles":[]},"previous":{"title":"Change Username","level":"1.2.3","depth":2,"path":"Common/ChangeUsername.md","ref":"./Common/ChangeUsername.md","articles":[]},"dir":"ltr"},"config":{"plugins":["octocat","tooltips","-lunr","-search","-sharing","-page-toc-button","search-plus","-anchor-navigation-ex","-flexible-alerts","-code","prism","-highlight","-tbfed-pagefooter","-hide-element"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright &copy carry0987","modify_label":"Last Modified : ","modify_format":"YYYY-MM-DD HH:mm:ss"},"prism":{"css":["prismjs/themes/prism-tomorrow.css"],"lang":{"flow":"typescript"},"ignore":["eval-js"]},"octocat":{"url":"https://github.com/carry0987/Linux-Script"},"code":{"copyButtons":true},"tooltips":{},"hide-element":{"elements":[".gitbook-link"]},"fontsettings":{"theme":"white","family":"sans","size":2},"fontSettings":{"theme":"night","family":"sans"},"anchor-navigation-ex":{"showLevel":false,"associatedWithSummary":true,"printLog":false,"multipleH1":false,"mode":"float","showGoTop":true,"float":{"floatIcon":"fa fa-navicon","showLevelIcon":false,"level1Icon":"fa fa-hand-o-right","level2Icon":"fa fa-hand-o-right","level3Icon":"fa fa-hand-o-right"},"pageTop":{"showLevelIcon":false,"level1Icon":"fa fa-hand-o-right","level2Icon":"fa fa-hand-o-right","level3Icon":"fa fa-hand-o-right"}},"flexible-alerts":{"style":"flat"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"search-plus":{}},"theme":"default","author":"carry0987","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Linux-Script","language":"en","gitbook":"*","defaultDescription":"Store Linux Script","description":"Store Linux Script"},"file":{"path":"Common/ChangeNetworkInterfaceName.md","mtime":"2025-02-05T08:08:12.143Z","type":"markdown"},"gitbook":{"version":"6.0.2","time":"2025-02-05T08:08:17.723Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <noscript>
+        <style>
+            .honkit-cloak {
+                display: block !important;
+            }
+        </style>
+    </noscript>
+    <script>
+        // Restore sidebar state as critical path for prevent layout shift
+        function __init__getSidebarState(defaultValue){
+            var baseKey = "";
+            var key = baseKey + ":sidebar";
+            try {
+                var value = localStorage[key];
+                if (value === undefined) {
+                    return defaultValue;
+                }
+                var parsed = JSON.parse(value);
+                return parsed == null ? defaultValue : parsed;
+            } catch (e) {
+                return defaultValue;
+            }
+        }
+        function __init__restoreLastSidebarState() {
+            var isMobile = window.matchMedia("(max-width: 600px)").matches;
+            if (isMobile) {
+                // Init last state if not mobile
+                return;
+            }
+            var sidebarState = __init__getSidebarState(true);
+            var book = document.querySelector(".book");
+            // Show sidebar if it enabled
+            if (sidebarState && book) {
+                book.classList.add("without-animation", "with-summary");
+            }
+        }
+
+        try {
+            __init__restoreLastSidebarState();
+        } finally {
+            var book = document.querySelector(".book");
+            book.classList.remove("honkit-cloak");
+        }
+    </script>
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-octocat/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/honkit-plugin-search-plus/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/honkit-plugin-search-plus/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/@honkit/honkit-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

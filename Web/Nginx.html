@@ -1,0 +1,1330 @@
+
+<!DOCTYPE HTML>
+<html lang="en" >
+    <head>
+        <meta charset="UTF-8">
+        <title>Nginx · Linux-Script</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="HonKit 6.0.2">
+        <meta name="author" content="carry0987">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/honkit-plugin-tooltips/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/honkit-plugin-search-plus/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/honkit-plugin-prism/prism-tomorrow.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/@honkit/honkit-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="LetsEncrypt.html" />
+    
+    
+    <link rel="prev" href="UFW.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book honkit-cloak">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../Common/">
+            
+                <a href="../Common/">
+            
+                    
+                    Regular Command
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../Common/CommandList.html">
+            
+                <a href="../Common/CommandList.html">
+            
+                    
+                    Command List
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../Common/Sudo.html">
+            
+                <a href="../Common/Sudo.html">
+            
+                    
+                    Run SUDO without password
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../Common/ChangeUsername.html">
+            
+                <a href="../Common/ChangeUsername.html">
+            
+                    
+                    Change Username
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="../Common/ChangeNetworkInterfaceName.html">
+            
+                <a href="../Common/ChangeNetworkInterfaceName.html">
+            
+                    
+                    Change Network Interface Name
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="../Common/DisableCloudInit.html">
+            
+                <a href="../Common/DisableCloudInit.html">
+            
+                    
+                    Disable cloud-init
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../Crontab/">
+            
+                <a href="../Crontab/">
+            
+                    
+                    Crontab
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../Crontab/what_is_cron.html">
+            
+                <a href="../Crontab/what_is_cron.html">
+            
+                    
+                    What is cron
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../Crontab/restrictions.html">
+            
+                <a href="../Crontab/restrictions.html">
+            
+                    
+                    Crontab Restrictions
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../Crontab/commands.html">
+            
+                <a href="../Crontab/commands.html">
+            
+                    
+                    Crontab Commands
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="../Crontab/syntax.html">
+            
+                <a href="../Crontab/syntax.html">
+            
+                    
+                    Crontab Syntax
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="../Crontab/example.html">
+            
+                <a href="../Crontab/example.html">
+            
+                    
+                    Crontab Example
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6" data-path="../Crontab/environment.html">
+            
+                <a href="../Crontab/environment.html">
+            
+                    
+                    Crontab Environment
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.7" data-path="../Crontab/log_file_and_disable_email.html">
+            
+                <a href="../Crontab/log_file_and_disable_email.html">
+            
+                    
+                    Log file & Disable Email
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.8" data-path="../Crontab/file_location.html">
+            
+                <a href="../Crontab/file_location.html">
+            
+                    
+                    Crontab file location
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../Tools/">
+            
+                <a href="../Tools/">
+            
+                    
+                    Tools
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../Setup/">
+            
+                <a href="../Setup/">
+            
+                    
+                    Setup
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../Vim/">
+            
+                <a href="../Vim/">
+            
+                    
+                    Vim
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../Htop/">
+            
+                <a href="../Htop/">
+            
+                    
+                    Htop
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" >
+            
+                <span>
+            
+                    
+                    Docker
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1" data-path="../Docker/setup.html">
+            
+                <a href="../Docker/setup.html">
+            
+                    
+                    Docker Setup
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.2" data-path="../Docker/command.html">
+            
+                <a href="../Docker/command.html">
+            
+                    
+                    Docker Command
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.3" data-path="../Docker/nginx-proxy-manager.html">
+            
+                <a href="../Docker/nginx-proxy-manager.html">
+            
+                    
+                    Nginx Proxy Manager
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.4" data-path="../Docker/portainer.html">
+            
+                <a href="../Docker/portainer.html">
+            
+                    
+                    Portainer
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.5" data-path="../Docker/n8n.html">
+            
+                <a href="../Docker/n8n.html">
+            
+                    
+                    N8N
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" >
+            
+                <span>
+            
+                    
+                    K3s
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.1" data-path="../K3s/Setup.html">
+            
+                <a href="../K3s/Setup.html">
+            
+                    
+                    K3s Setup
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.2" data-path="../K3s/Uninstall.html">
+            
+                <a href="../K3s/Uninstall.html">
+            
+                    
+                    K3s Uninstall
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.3" data-path="../K3s/CommandList.html">
+            
+                <a href="../K3s/CommandList.html">
+            
+                    
+                    K3s Command List
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.4" data-path="../K3s/Helm.html">
+            
+                <a href="../K3s/Helm.html">
+            
+                    
+                    Helm
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.5" data-path="../K3s/MetalLB.html">
+            
+                <a href="../K3s/MetalLB.html">
+            
+                    
+                    MetalLB
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.6" data-path="../K3s/Istio.html">
+            
+                <a href="../K3s/Istio.html">
+            
+                    
+                    Istio
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.7" data-path="../K3s/Longhorn.html">
+            
+                <a href="../K3s/Longhorn.html">
+            
+                    
+                    Longhorn
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.8" data-path="../K3s/Secret.html">
+            
+                <a href="../K3s/Secret.html">
+            
+                    
+                    Secret
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.9" data-path="../K3s/CertManager.html">
+            
+                <a href="../K3s/CertManager.html">
+            
+                    
+                    Cert-Manager
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.10" data-path="../K3s/ExternalDNS.html">
+            
+                <a href="../K3s/ExternalDNS.html">
+            
+                    
+                    ExternalDNS
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="../Server/">
+            
+                <a href="../Server/">
+            
+                    
+                    Server
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" >
+            
+                <span>
+            
+                    
+                    GCP
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.11.1" data-path="../GCP/SSH.html">
+            
+                <a href="../GCP/SSH.html">
+            
+                    
+                    Connect GCP with SSH Key
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" >
+            
+                <span>
+            
+                    
+                    Web
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.12.1" data-path="UFW.html">
+            
+                <a href="UFW.html">
+            
+                    
+                    UFW
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.12.2" data-path="Nginx.html">
+            
+                <a href="Nginx.html">
+            
+                    
+                    Nginx
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.3" data-path="LetsEncrypt.html">
+            
+                <a href="LetsEncrypt.html">
+            
+                    
+                    Let's Encrypt
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13" >
+            
+                <span>
+            
+                    
+                    qBittorrent
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.13.1" data-path="../qBittorrent/Setup.html">
+            
+                <a href="../qBittorrent/Setup.html">
+            
+                    
+                    qBittorrent Setup
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13.2" data-path="../qBittorrent/Uninstall.html">
+            
+                <a href="../qBittorrent/Uninstall.html">
+            
+                    
+                    qBittorrent Uninstall
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14" data-path="../System/">
+            
+                <a href="../System/">
+            
+                    
+                    System
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15" >
+            
+                <span>
+            
+                    
+                    Proxy
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.15.1" data-path="../Proxy/SSR.html">
+            
+                <a href="../Proxy/SSR.html">
+            
+                    
+                    SSR
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15.2" data-path="../Proxy/VPN.html">
+            
+                <a href="../Proxy/VPN.html">
+            
+                    
+                    VPN
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16" data-path="../Git/">
+            
+                <a href="../Git/">
+            
+                    
+                    Git
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17" >
+            
+                <span>
+            
+                    
+                    Python
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.17.1" data-path="../Python/Conda.html">
+            
+                <a href="../Python/Conda.html">
+            
+                    
+                    Conda
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17.2" data-path="../Python/Jupyter.html">
+            
+                <a href="../Python/Jupyter.html">
+            
+                    
+                    Jupyter
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.18" >
+            
+                <span>
+            
+                    
+                    MacOS
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.18.1" data-path="../MacOS/zshrc.html">
+            
+                <a href="../MacOS/zshrc.html">
+            
+                    
+                    zshrc
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.18.2" data-path="../MacOS/screenrc.html">
+            
+                <a href="../MacOS/screenrc.html">
+            
+                    
+                    screenrc
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.18.3" data-path="../MacOS/tftp.html">
+            
+                <a href="../MacOS/tftp.html">
+            
+                    
+                    tftp
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.18.4" data-path="../MacOS/Config.html">
+            
+                <a href="../MacOS/Config.html">
+            
+                    
+                    Config
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://github.com/honkit/honkit" target="blank" class="gitbook-link">
+            Published with HonKit
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >Nginx</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div class="search-plus" id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <html><head></head><body><h2 id="nginx">Nginx</h2>
+<h3 id="installation">Installation</h3>
+<pre class="language-"><code class="lang-bash"><span class="token function">sudo</span> <span class="token function">apt</span> <span class="token function">install</span> nginx
+</code></pre>
+<p>If you have the <code>ufw</code> firewall running, you will need to allow connections to Nginx. You should enable the most restrictive profile that will still allow the traffic you want. Since you haven’t configured SSL for your server yet, for now you only need to allow HTTP traffic on port <code>80</code>.</p>
+<p>You can enable this by typing:</p>
+<pre class="language-"><code class="lang-bash"><span class="token function">sudo</span> ufw allow <span class="token string">'Nginx HTTP'</span>
+</code></pre>
+<p>You can verify the change by typing:</p>
+<pre class="language-"><code class="lang-bash"><span class="token function">sudo</span> ufw status
+</code></pre>
+<p>You should see HTTP traffic allowed in the displayed output:</p>
+<pre class="language-"><code class="lang-log">Output
+<span class="token property">Status:</span> active
+
+To                         Action      From
+<span class="token operator">-</span><span class="token operator">-</span>                         <span class="token separator comment">------</span>      <span class="token separator comment">----</span>
+OpenSSH                    ALLOW       Anywhere
+Nginx HTTP                 ALLOW       Anywhere
+OpenSSH <span class="token operator">(</span><span class="token number">v6</span><span class="token operator">)</span>               ALLOW       Anywhere <span class="token operator">(</span><span class="token number">v6</span><span class="token operator">)</span>
+Nginx HTTP <span class="token operator">(</span><span class="token number">v6</span><span class="token operator">)</span>            ALLOW       Anywhere <span class="token operator">(</span><span class="token number">v6</span><span class="token operator">)</span>
+</code></pre>
+<h3 id="if-need-www-data-permission">If need <code>www-data</code> permission</h3>
+<pre class="language-"><code class="lang-bash"><span class="token function">sudo</span> <span class="token function">usermod</span> <span class="token parameter variable">-a</span> <span class="token parameter variable">-G</span> www-data <span class="token environment constant">$USER</span>
+<span class="token function">sudo</span> <span class="token function">chown</span> <span class="token parameter variable">-R</span> www-data:www-data /var/www/
+<span class="token function">sudo</span> <span class="token function">chmod</span> <span class="token parameter variable">-R</span> g+w /var/www/
+</code></pre>
+<h3 id="check-nginx-config-file-syntax">Check Nginx config file syntax</h3>
+<pre class="language-"><code class="lang-bash">nginx <span class="token parameter variable">-t</span> <span class="token parameter variable">-c</span> /etc/nginx/nginx.conf
+</code></pre>
+<h3 id="anti-leech">Anti-leech</h3>
+<pre class="language-"><code class="lang-nginx"><span class="token directive"><span class="token keyword">server</span></span> <span class="token punctuation">{</span>
+    ...
+    <span class="token directive"><span class="token keyword">location</span> ~* .(gif|jpe?g|png|webp|bmp)$</span> <span class="token punctuation">{</span>
+        <span class="token directive"><span class="token keyword">expires</span> <span class="token number">30d</span></span><span class="token punctuation">;</span>
+        <span class="token directive"><span class="token keyword">access_log</span> /dev/null</span><span class="token punctuation">;</span>
+        <span class="token directive"><span class="token keyword">valid_referers</span> none blocked server_names  *.example.com ~.facebook. ~.google. ~.baidu. ~.bing. ~.yahoo.</span><span class="token punctuation">;</span>
+        <span class="token directive"><span class="token keyword">if</span> (<span class="token variable">$invalid_referer</span>)</span> <span class="token punctuation">{</span>
+            <span class="token comment"># Rewrite to the site advertising map</span>
+            <span class="token directive"><span class="token keyword">rewrite</span> ^/ /refer.png redirect</span><span class="token punctuation">;</span>
+            <span class="token comment"># return 403;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+    <span class="token comment"># Avoid redirect loop</span>
+    <span class="token directive"><span class="token keyword">location</span> = /refer.png</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h3 id="add-a-new-site-with-php-support">Add a new site with <strong><code>PHP</code></strong> support</h3>
+<ol>
+<li><p>Create a new directory for the site</p>
+<pre class="language-"><code class="lang-bash"><span class="token function">sudo</span> <span class="token function">mkdir</span> /var/www/example.com
+</code></pre>
+</li>
+<li><p>Change the owner of the directory to the current user</p>
+<pre class="language-"><code class="lang-bash"><span class="token function">sudo</span> <span class="token function">chown</span> <span class="token parameter variable">-R</span> <span class="token environment constant">$USER</span><span class="token builtin class-name">:</span><span class="token environment constant">$USER</span> /var/www/example.com
+</code></pre>
+</li>
+<li><p>Create a new configuration file for the site</p>
+<pre class="language-"><code class="lang-bash"><span class="token function">sudo</span> <span class="token function">vim</span> /etc/nginx/sites-available/example.com
+</code></pre>
+<p>Add the following content to the file</p>
+<pre class="language-"><code class="lang-nginx"><span class="token directive"><span class="token keyword">server</span></span> <span class="token punctuation">{</span>
+ <span class="token directive"><span class="token keyword">listen</span> <span class="token number">80</span></span><span class="token punctuation">;</span>
+ <span class="token directive"><span class="token keyword">listen</span> [::]:80</span><span class="token punctuation">;</span>
+
+ <span class="token comment">#Increase file upload maximum size</span>
+ <span class="token directive"><span class="token keyword">client_max_body_size</span> <span class="token number">256M</span></span><span class="token punctuation">;</span>
+
+ <span class="token comment"># Site root directory</span>
+ <span class="token directive"><span class="token keyword">root</span> /var/www/example.com</span><span class="token punctuation">;</span>
+ <span class="token directive"><span class="token keyword">index</span> index.php index.html index.htm</span><span class="token punctuation">;</span>
+
+ <span class="token comment"># Domain name</span>
+ <span class="token directive"><span class="token keyword">server_name</span> example.com www.example.com</span><span class="token punctuation">;</span>
+
+ <span class="token directive"><span class="token keyword">location</span> /</span> <span class="token punctuation">{</span>
+     <span class="token directive"><span class="token keyword">try_files</span> <span class="token variable">$uri</span> <span class="token variable">$uri</span>/ =404</span><span class="token punctuation">;</span>
+ <span class="token punctuation">}</span>
+
+ <span class="token directive"><span class="token keyword">location</span> ~ \.php$</span> <span class="token punctuation">{</span>
+     <span class="token directive"><span class="token keyword">include</span> snippets/fastcgi-php.conf</span><span class="token punctuation">;</span>
+     <span class="token directive"><span class="token keyword">fastcgi_pass</span> unix:/var/run/php/php8.2-fpm.sock</span><span class="token punctuation">;</span>
+ <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+</li>
+<li><p>Create a symbolic link to the configuration file</p>
+<pre class="language-"><code class="lang-bash"><span class="token function">sudo</span> <span class="token function">ln</span> <span class="token parameter variable">-s</span> /etc/nginx/sites-available/example.com /etc/nginx/sites-enabled/
+</code></pre>
+</li>
+<li><p>Test the configuration file</p>
+<pre class="language-"><code class="lang-bash"><span class="token function">sudo</span> nginx <span class="token parameter variable">-t</span>
+</code></pre>
+</li>
+<li><p>Reload the <code>Nginx</code> service</p>
+<pre class="language-"><code class="lang-bash"><span class="token function">sudo</span> systemctl reload nginx
+</code></pre>
+</li>
+<li><p>If you want to maintain the directory of the site easily, you can create a symbolic link to the directory</p>
+<pre class="language-"><code class="lang-bash"><span class="token function">sudo</span> <span class="token function">ln</span> <span class="token parameter variable">-s</span> /var/www/example.com /home/<span class="token environment constant">$USER</span>/example.com
+</code></pre>
+</li>
+</ol>
+<h4 id="allowing-https-through-the-firewall">Allowing HTTPS Through the Firewall</h4>
+<p>If you have the <code>ufw</code> firewall enabled, as recommended by the prerequisite guides, you’ll need to adjust the settings to allow for HTTPS traffic. Luckily, Nginx registers a few profiles with <code>ufw</code> upon installation.</p>
+<p>You can see the current setting by typing:</p>
+<pre class="language-"><code class="lang-bash"><span class="token function">sudo</span> ufw status
+</code></pre>
+<p>It will probably look like this, meaning that only HTTP traffic is allowed to the web server:</p>
+<pre class="language-"><code class="lang-log">Output
+<span class="token property">Status:</span> active
+
+To                         Action      From
+<span class="token operator">-</span><span class="token operator">-</span>                         <span class="token separator comment">------</span>      <span class="token separator comment">----</span>
+OpenSSH                    ALLOW       Anywhere                  
+Nginx HTTP                 ALLOW       Anywhere                  
+OpenSSH <span class="token operator">(</span><span class="token number">v6</span><span class="token operator">)</span>               ALLOW       Anywhere <span class="token operator">(</span><span class="token number">v6</span><span class="token operator">)</span>             
+Nginx HTTP <span class="token operator">(</span><span class="token number">v6</span><span class="token operator">)</span>            ALLOW       Anywhere <span class="token operator">(</span><span class="token number">v6</span><span class="token operator">)</span>
+</code></pre>
+<p>To additionally let in HTTPS traffic, allow the Nginx Full profile and delete the redundant Nginx HTTP profile allowance:</p>
+<pre class="language-"><code class="lang-bash"><span class="token function">sudo</span> ufw allow <span class="token string">'Nginx Full'</span>
+<span class="token function">sudo</span> ufw delete allow <span class="token string">'Nginx HTTP'</span>
+</code></pre>
+<p>Your status should now look like this:</p>
+<pre class="language-"><code class="lang-bash"><span class="token function">sudo</span> ufw status
+</code></pre>
+<pre class="language-"><code class="lang-log">Output
+<span class="token property">Status:</span> active
+
+To                         Action      From
+<span class="token operator">-</span><span class="token operator">-</span>                         <span class="token separator comment">------</span>      <span class="token separator comment">----</span>
+OpenSSH                    ALLOW       Anywhere
+Nginx Full                 ALLOW       Anywhere
+OpenSSH <span class="token operator">(</span><span class="token number">v6</span><span class="token operator">)</span>               ALLOW       Anywhere <span class="token operator">(</span><span class="token number">v6</span><span class="token operator">)</span>
+Nginx Full <span class="token operator">(</span><span class="token number">v6</span><span class="token operator">)</span>            ALLOW       Anywhere <span class="token operator">(</span><span class="token number">v6</span><span class="token operator">)</span>
+</code></pre>
+<h4 id="set-letsencrypt">Set <code>LetsEncrypt</code>:</h4>
+<ol>
+<li><p>Install <code>certbot</code></p>
+<pre class="language-"><code class="lang-bash"><span class="token function">sudo</span> <span class="token function">apt</span> <span class="token function">install</span> certbot python3-certbot-nginx
+</code></pre>
+</li>
+<li><p>Obtaining an SSL Certificate</p>
+<pre class="language-"><code class="lang-bash"><span class="token function">sudo</span> certbot <span class="token parameter variable">--nginx</span> <span class="token parameter variable">-d</span> example.com <span class="token parameter variable">-d</span> www.example.com
+</code></pre>
+</li>
+<li><p>Verifying Certbot Auto-Renewal
+Let’s Encrypt’s certificates are only valid for ninety days. This is to encourage users to automate their certificate renewal process. The <code>certbot</code> package we installed takes care of this for us by adding a systemd timer that will run twice a day and automatically renew any certificate that’s within thirty days of expiration.</p>
+<p> You can query the status of the timer with <code>systemctl</code>:</p>
+<pre class="language-"><code class="lang-bash"> <span class="token function">sudo</span> systemctl status certbot.timer
+</code></pre>
+<p> To test the renewal process, you can do a dry run with <code>certbot</code>:</p>
+<pre class="language-"><code class="lang-bash"> <span class="token function">sudo</span> certbot renew --dry-run
+</code></pre>
+<p> If you see no errors, you’re all set. When necessary, Certbot will renew your certificates and reload Nginx to pick up the changes. If the automated renewal process ever fails, Let’s Encrypt will send a message to the email you specified, warning you when your certificate is about to expire.</p>
+</li>
+</ol>
+<h3 id="nginx-reverse-proxy-with-cloudflare">Nginx Reverse Proxy with Cloudflare</h3>
+<h4 id="normal-secure">Normal Secure</h4>
+<pre class="language-"><code class="lang-nginx"><span class="token directive"><span class="token keyword">server</span></span> <span class="token punctuation">{</span>
+    <span class="token directive"><span class="token keyword">listen</span> <span class="token number">80</span></span><span class="token punctuation">;</span>
+    <span class="token directive"><span class="token keyword">listen</span> [::]:80</span><span class="token punctuation">;</span>
+
+    <span class="token directive"><span class="token keyword">root</span> /var/www/example.com</span><span class="token punctuation">;</span>
+    <span class="token directive"><span class="token keyword">index</span> index.php index.html index.htm</span><span class="token punctuation">;</span>
+
+    <span class="token directive"><span class="token keyword">server_name</span> example.com</span><span class="token punctuation">;</span>
+
+    <span class="token directive"><span class="token keyword">location</span> /</span> <span class="token punctuation">{</span>
+        <span class="token directive"><span class="token keyword">proxy_pass</span> http://127.0.0.1:8010</span><span class="token punctuation">;</span>
+        <span class="token directive"><span class="token keyword">proxy_http_version</span> 1.1</span><span class="token punctuation">;</span>
+        <span class="token directive"><span class="token keyword">proxy_set_header</span> Host <span class="token variable">$host</span></span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h4 id="fullstrict-secure">Full(Strict) Secure</h4>
+<pre class="language-"><code class="lang-nginx"><span class="token directive"><span class="token keyword">server</span></span> <span class="token punctuation">{</span>
+    <span class="token directive"><span class="token keyword">listen</span> <span class="token number">80</span></span><span class="token punctuation">;</span>
+    <span class="token directive"><span class="token keyword">listen</span> [::]:80</span><span class="token punctuation">;</span>
+    <span class="token directive"><span class="token keyword">listen</span> <span class="token number">443</span> ssl http2</span><span class="token punctuation">;</span>
+    <span class="token directive"><span class="token keyword">listen</span> [::]:443 ssl http2</span><span class="token punctuation">;</span>
+
+    <span class="token comment">#root /var/www/example.com;</span>
+    <span class="token comment">#index index.php index.html index.htm;</span>
+
+    <span class="token directive"><span class="token keyword">server_name</span> example.com</span><span class="token punctuation">;</span>
+
+    <span class="token directive"><span class="token keyword">ssl_certificate</span> /etc/ssl/certs/cf_example.com.pem</span><span class="token punctuation">;</span>
+    <span class="token directive"><span class="token keyword">ssl_certificate_key</span> /etc/ssl/private/cf_example.com-key.pem</span><span class="token punctuation">;</span>
+    <span class="token directive"><span class="token keyword">ssl_client_certificate</span> /etc/ssl/certs/origin-pull-ca.pem</span><span class="token punctuation">;</span>
+    <span class="token directive"><span class="token keyword">ssl_verify_client</span> <span class="token boolean">on</span></span><span class="token punctuation">;</span>
+
+    <span class="token directive"><span class="token keyword">location</span> /</span> <span class="token punctuation">{</span>
+        <span class="token directive"><span class="token keyword">proxy_pass</span> http://127.0.0.1:8010</span><span class="token punctuation">;</span>
+        <span class="token directive"><span class="token keyword">proxy_http_version</span> 1.1</span><span class="token punctuation">;</span>
+        <span class="token directive"><span class="token keyword">proxy_set_header</span> Host <span class="token variable">$host</span></span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h3 id="cdn">CDN</h3>
+<pre class="language-"><code class="lang-nginx"><span class="token directive"><span class="token keyword">server</span></span> <span class="token punctuation">{</span>
+    <span class="token directive"><span class="token keyword">listen</span> <span class="token number">80</span></span><span class="token punctuation">;</span>
+    <span class="token directive"><span class="token keyword">server_name</span> cdn.domain.org</span><span class="token punctuation">;</span>
+    <span class="token directive"><span class="token keyword">root</span> /usr/share/nginx/cdn</span><span class="token punctuation">;</span>
+
+    <span class="token directive"><span class="token keyword">location</span> /</span> <span class="token punctuation">{</span>
+        <span class="token directive"><span class="token keyword">proxy_pass</span> http://domain.org</span><span class="token punctuation">;</span>
+        <span class="token directive"><span class="token keyword">proxy_set_header</span> Host <span class="token variable">$http_host</span></span><span class="token punctuation">;</span>
+        <span class="token directive"><span class="token keyword">proxy_set_header</span>  True-Client-IP  <span class="token variable">$remote_addr</span></span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token directive"><span class="token keyword">location</span> ~* \.(jpg|png|gif|jpeg|webp|css|mp3|wav|swf|mov|doc|pdf|xls|ppt|docx|pptx|xlsx)$</span> <span class="token punctuation">{</span>
+        <span class="token directive"><span class="token keyword">expires</span> max</span><span class="token punctuation">;</span>
+        <span class="token directive"><span class="token keyword">proxy_set_header</span>  X-Real-IP  <span class="token variable">$remote_addr</span></span><span class="token punctuation">;</span>
+        <span class="token directive"><span class="token keyword">proxy_pass</span> http://domain.org</span><span class="token punctuation">;</span>
+        <span class="token directive"><span class="token keyword">proxy_ignore_headers</span> X-Accel-Expires Expires Cache-Control</span><span class="token punctuation">;</span>
+        <span class="token directive"><span class="token keyword">proxy_store</span> /usr/share/nginx/cdn<span class="token variable">$uri</span></span><span class="token punctuation">;</span>
+        <span class="token directive"><span class="token keyword">proxy_store_access</span> user:rw group:rw all:r</span><span class="token punctuation">;</span>
+        <span class="token directive"><span class="token keyword">proxy_read_timeout</span> <span class="token number">60s</span></span><span class="token punctuation">;</span>
+        <span class="token directive"><span class="token keyword">proxy_connect_timeout</span> <span class="token number">60s</span></span><span class="token punctuation">;</span>
+        <span class="token directive"><span class="token keyword">proxy_send_timeout</span> <span class="token number">60s</span></span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token directive"><span class="token keyword">location</span> ~ /\.ht</span> <span class="token punctuation">{</span>
+        <span class="token directive"><span class="token keyword">deny</span> all</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token directive"><span class="token keyword">location</span> ~ ~\$</span> <span class="token punctuation">{</span>
+        <span class="token directive"><span class="token keyword">deny</span> all</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment"># An appropriate PHP handler should be set up here</span>
+    <span class="token comment"># location ~ \.php$ { deny all; }</span>
+<span class="token punctuation">}</span>
+</code></pre>
+</body></html>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="UFW.html" class="navigation navigation-prev " aria-label="Previous page: UFW">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="LetsEncrypt.html" class="navigation navigation-next " aria-label="Next page: Let's Encrypt">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Nginx","level":"1.12.2","depth":2,"next":{"title":"Let's Encrypt","level":"1.12.3","depth":2,"path":"Web/LetsEncrypt.md","ref":"./Web/LetsEncrypt.md","articles":[]},"previous":{"title":"UFW","level":"1.12.1","depth":2,"path":"Web/UFW.md","ref":"./Web/UFW.md","articles":[]},"dir":"ltr"},"config":{"plugins":["octocat","tooltips","-lunr","-search","-sharing","-page-toc-button","search-plus","-anchor-navigation-ex","-flexible-alerts","-code","prism","-highlight","-tbfed-pagefooter","-hide-element"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright &copy carry0987","modify_label":"Last Modified : ","modify_format":"YYYY-MM-DD HH:mm:ss"},"prism":{"css":["prismjs/themes/prism-tomorrow.css"],"lang":{"flow":"typescript"},"ignore":["eval-js"]},"octocat":{"url":"https://github.com/carry0987/Linux-Script"},"code":{"copyButtons":true},"tooltips":{},"hide-element":{"elements":[".gitbook-link"]},"fontsettings":{"theme":"white","family":"sans","size":2},"fontSettings":{"theme":"night","family":"sans"},"anchor-navigation-ex":{"showLevel":false,"associatedWithSummary":true,"printLog":false,"multipleH1":false,"mode":"float","showGoTop":true,"float":{"floatIcon":"fa fa-navicon","showLevelIcon":false,"level1Icon":"fa fa-hand-o-right","level2Icon":"fa fa-hand-o-right","level3Icon":"fa fa-hand-o-right"},"pageTop":{"showLevelIcon":false,"level1Icon":"fa fa-hand-o-right","level2Icon":"fa fa-hand-o-right","level3Icon":"fa fa-hand-o-right"}},"flexible-alerts":{"style":"flat"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"search-plus":{}},"theme":"default","author":"carry0987","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Linux-Script","language":"en","gitbook":"*","defaultDescription":"Store Linux Script","description":"Store Linux Script"},"file":{"path":"Web/Nginx.md","mtime":"2025-02-05T08:08:12.154Z","type":"markdown"},"gitbook":{"version":"6.0.2","time":"2025-02-05T08:08:17.723Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <noscript>
+        <style>
+            .honkit-cloak {
+                display: block !important;
+            }
+        </style>
+    </noscript>
+    <script>
+        // Restore sidebar state as critical path for prevent layout shift
+        function __init__getSidebarState(defaultValue){
+            var baseKey = "";
+            var key = baseKey + ":sidebar";
+            try {
+                var value = localStorage[key];
+                if (value === undefined) {
+                    return defaultValue;
+                }
+                var parsed = JSON.parse(value);
+                return parsed == null ? defaultValue : parsed;
+            } catch (e) {
+                return defaultValue;
+            }
+        }
+        function __init__restoreLastSidebarState() {
+            var isMobile = window.matchMedia("(max-width: 600px)").matches;
+            if (isMobile) {
+                // Init last state if not mobile
+                return;
+            }
+            var sidebarState = __init__getSidebarState(true);
+            var book = document.querySelector(".book");
+            // Show sidebar if it enabled
+            if (sidebarState && book) {
+                book.classList.add("without-animation", "with-summary");
+            }
+        }
+
+        try {
+            __init__restoreLastSidebarState();
+        } finally {
+            var book = document.querySelector(".book");
+            book.classList.remove("honkit-cloak");
+        }
+    </script>
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-octocat/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/honkit-plugin-search-plus/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/honkit-plugin-search-plus/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/@honkit/honkit-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
